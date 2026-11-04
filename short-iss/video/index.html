@@ -4,18 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="assets/pills.js"></script>
     <style>
       :root {
-        --ground: #050914;
-        --card: #060b1a;
-        --ink: #ffffff;
-        --tag: #3ddc84;
-        --muted: #8b94a8;
-        --yellow: #fbbf24;
-        --blue: #60c8ff;
-        --red: #ff5d5d;
-        --font-display: "Inter", sans-serif;
-        --font-mono: "JetBrains Mono", monospace;
+        --ground: #050914; --card: #060b1a; --ink: #ffffff; --tag: #3ddc84; --muted: #8b94a8;
+        --yellow: #fbbf24; --blue: #60c8ff; --red: #ff5d5d;
+        --font-display: "Inter", sans-serif; --font-mono: "JetBrains Mono", monospace;
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
@@ -26,54 +20,100 @@
       #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
       #tag-left { position: absolute; left: 72px; top: 196px; font-family: var(--font-mono); font-weight: 700; font-size: 27px; letter-spacing: .13em; color: var(--tag); }
       #tag-right { position: absolute; right: 72px; top: 196px; font-family: var(--font-mono); font-weight: 500; font-size: 25px; letter-spacing: .22em; color: var(--muted); }
-      #glow { position: absolute; left: 190px; top: 1560px; width: 700px; height: 360px; opacity: .38; filter: blur(46px); }
+      #glow { position: absolute; left: 90px; top: 1380px; width: 900px; height: 520px; opacity: .55; filter: blur(34px); }
       #card { position: absolute; left: 20px; top: 320px; width: 1040px; height: 1030px; border-radius: 34px; overflow: hidden;
-        background: var(--card); border: 2px solid rgba(255,255,255,.09); }
+        background: var(--card); border: 2px solid rgba(255,255,255,.1); }
       #gl { position: absolute; inset: 0; width: 1040px; height: 1030px; }
       #dip { position: absolute; inset: 0; background: #050914; opacity: 0; }
-      #scale-note { position: absolute; left: 0; right: 0; top: 26px; text-align: center; font-family: var(--font-mono); font-size: 21px; letter-spacing: .04em; color: #7e89a3; }
-      .pill { position: absolute; font-family: var(--font-mono); font-weight: 700; font-size: 34px; padding: 10px 22px; border-radius: 14px; white-space: nowrap; opacity: 0; }
+      #scale-note { position: absolute; left: 0; right: 0; top: 24px; text-align: center; font-family: var(--font-mono); font-size: 22px; letter-spacing: .04em; color: #9aa6c2; opacity: 0; }
+      .pw { position: absolute; transform: translate(-50%, -50%); z-index: 5; }
+      .pill { display: inline-block; font-family: var(--font-mono); font-weight: 700; font-size: 34px; padding: 10px 22px; border-radius: 14px; white-space: nowrap; opacity: 0; }
       .pill.y { background: var(--yellow); color: #1b1303; }
       .pill.b { background: var(--blue); color: #04202e; }
-      .pill.g { background: var(--tag); color: #04230f; font-size: 26px; padding: 8px 16px; }
-      .pill.r { background: var(--red); color: #2b0606; font-size: 26px; padding: 8px 16px; }
-      #gauge { position: absolute; left: 64px; right: 64px; top: 700px; opacity: 0; font-family: var(--font-mono); }
+      .pill.g { background: var(--tag); color: #04230f; font-size: 28px; padding: 9px 18px; }
+      .pill.r { background: var(--red); color: #2b0606; font-size: 28px; padding: 9px 18px; }
+      .ld { position: absolute; height: 3px; transform-origin: 0 50%; opacity: 0; z-index: 4; border-radius: 2px; }
+      .ld.y { background: var(--yellow); } .ld.b { background: var(--blue); } .ld.g { background: var(--tag); } .ld.r { background: var(--red); }
+      .ad { position: absolute; width: 16px; height: 16px; border-radius: 8px; transform: translate(-50%, -50%); opacity: 0; z-index: 4; border: 3px solid #fff; }
+      .ad.y { background: var(--yellow); } .ad.b { background: var(--blue); } .ad.g { background: var(--tag); } .ad.r { background: var(--red); }
+      #gauge { position: absolute; left: 64px; right: 64px; top: 760px; opacity: 0; font-family: var(--font-mono); z-index: 3; }
       .gb { display: flex; align-items: center; margin-top: 22px; }
       .gl { width: 250px; font-size: 26px; font-weight: 700; color: #dfe6f5; letter-spacing: .05em; }
-      .gt { flex: 1; height: 38px; border-radius: 10px; background: rgba(255,255,255,.08); overflow: hidden; }
+      .gt { flex: 1; height: 38px; border-radius: 10px; background: rgba(255,255,255,.1); overflow: hidden; }
       .gf { height: 100%; width: 0; border-radius: 10px; }
       .gv { width: 130px; text-align: right; font-size: 34px; font-weight: 700; }
-      #qmark { position: absolute; right: 120px; top: 160px; font-family: var(--font-mono); font-weight: 700; font-size: 150px; color: var(--yellow); opacity: 0; }
+      #qmark { position: absolute; right: 130px; top: 190px; font-family: var(--font-mono); font-weight: 700; font-size: 170px; color: var(--yellow); opacity: 0; z-index: 3; }
+      #title { position: absolute; left: 0; right: 0; top: 90px; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 130px; letter-spacing: .55em; padding-left: .55em; color: #fff; opacity: 0; z-index: 6; text-shadow: 0 6px 40px rgba(0,0,0,.6); }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-fps="30" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="88" data-fps="60" data-width="1080" data-height="1920">
       <div id="grid"></div>
       <div id="vignette"></div>
-      <canvas id="glow" width="140" height="72"></canvas>
+      <canvas id="glow" width="180" height="104"></canvas>
       <div id="tag-left">ISS · ORBITE BASSE</div>
       <div id="tag-right">FOCAL COSMOS</div>
       <div id="card">
         <canvas id="gl" width="1040" height="1030"></canvas>
         <div id="scale-note">Terre et orbites · échelle non respectée</div>
-        <div class="pill y" id="p-alt" style="left: 560px; top: 600px;">400 km</div>
-        <div class="pill r" id="p-fall" style="left: 330px; top: 800px;">IL TOMBE</div>
-        <div class="pill b" id="p-grav" style="left: 560px; top: 440px;">GRAVITÉ 90 %</div>
         <div id="gauge">
-          <div class="gb"><div class="gl">AU SOL</div><div class="gt"><div class="gf" id="g1" style="background:#4ade80"></div></div><div class="gv" id="gv1" style="color:#4ade80">100 %</div></div>
-          <div class="gb"><div class="gl">À 400 KM</div><div class="gt"><div class="gf" id="g2" style="background:#60c8ff"></div></div><div class="gv" id="gv2" style="color:#60c8ff">90 %</div></div>
+          <div class="gb"><div class="gl">AU SOL</div><div class="gt"><div class="gf" id="g1" style="background:#4ade80"></div></div><div class="gv" style="color:#4ade80">100 %</div></div>
+          <div class="gb"><div class="gl">À 400 KM</div><div class="gt"><div class="gf" id="g2" style="background:#60c8ff"></div></div><div class="gv" style="color:#60c8ff">90 %</div></div>
         </div>
         <div id="qmark">?</div>
-        <div class="pill g" id="p-yousat" style="left: 90px; top: 110px;">LES ASTRONAUTES</div>
-        <div class="pill y" id="p-canon" style="left: 640px; top: 760px;">1 · TROP FAIBLE</div>
+        <div id="title">ISS</div>
         <div id="dip"></div>
       </div>
 
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
-        data-start="0" data-duration="20" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+        data-start="0" data-duration="88" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
 
-      <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="20" data-track-index="9" data-volume="1"></audio>
+      <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="85" data-track-index="9" data-volume="0.45"></audio>
+      <audio id="amb" src="assets/ambiance.wav" data-start="0" data-duration="88" data-track-index="10" data-volume="1"></audio>
+      <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="88" data-track-index="11" data-volume="1"></audio>
     </div>
+
+    <script>
+      // ----- habillage 2D : pastilles (depuis assets/pills.js), jauge, transitions -----
+      const card = document.getElementById("card");
+      for (const p of window.PILLS) {
+        const lead = !(p.anc.k === "scr");
+        if (lead) {
+          const ld = document.createElement("div"); ld.className = "ld " + p.cls; ld.id = "ld-" + p.id; card.insertBefore(ld, document.getElementById("dip"));
+          const ad = document.createElement("div"); ad.className = "ad " + p.cls; ad.id = "ad-" + p.id; card.insertBefore(ad, document.getElementById("dip"));
+        }
+        const pw = document.createElement("div"); pw.className = "pw"; pw.id = "pw-" + p.id;
+        pw.innerHTML = '<span class="pill ' + p.cls + '" id="pl-' + p.id + '">' + (p.txt || "") + "</span>";
+        card.insertBefore(pw, document.getElementById("dip"));
+      }
+      const tl = gsap.timeline({ paused: true });
+      for (const p of window.PILLS) {
+        tl.fromTo("#pl-" + p.id, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, p.t0);
+        tl.to("#pl-" + p.id, { opacity: 0, duration: 0.15, ease: "power2.in" }, p.t1 - 0.15);
+        if (p.anc.k !== "scr") {
+          tl.fromTo("#ld-" + p.id + ", #ad-" + p.id, { opacity: 0 }, { opacity: 0.95, duration: 0.2 }, p.t0 + 0.05);
+          tl.to("#ld-" + p.id + ", #ad-" + p.id, { opacity: 0, duration: 0.15 }, p.t1 - 0.15);
+        }
+      }
+      tl.fromTo("#tag-left, #tag-right", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.05);
+      for (const [a, b] of [[0.4, 1.4], [8.6, 9.9], [78.9, 82.2]]) {
+        tl.to("#scale-note", { opacity: 1, duration: 0.3 }, a);
+        tl.to("#scale-note", { opacity: 0, duration: 0.2 }, b);
+      }
+      tl.fromTo("#gauge", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3 }, 10.6);
+      tl.fromTo("#g1", { width: "0%" }, { width: "100%", duration: 0.6, ease: "power3.out" }, 10.7);
+      tl.fromTo("#g2", { width: "0%" }, { width: "90%", duration: 0.7, ease: "power3.out" }, 11.5);
+      tl.to("#gauge", { opacity: 0, duration: 0.2 }, 12.95);
+      tl.fromTo("#qmark", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 14.9);
+      tl.to("#qmark", { opacity: 0, duration: 0.15 }, 15.9);
+      tl.fromTo("#title", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 83.4);
+      for (const c of window.CUTS) {
+        tl.fromTo("#dip", { opacity: 0 }, { opacity: 0.8, duration: 0.12, ease: "power1.in" }, c - 0.12);
+        tl.to("#dip", { opacity: 0, duration: 0.18, ease: "power1.out" }, c);
+      }
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
 
     <script type="importmap">{ "imports": { "three": "./lib/three/three.module.min.js" } }</script>
     <script type="module">
@@ -91,7 +131,8 @@
         const c = (a, b, d) => hash3(xi + a, yi + b, zi + d, seed);
         return lerp(lerp(lerp(c(0,0,0), c(1,0,0), u), lerp(c(0,1,0), c(1,1,0), u), v), lerp(lerp(c(0,0,1), c(1,0,1), u), lerp(c(0,1,1), c(1,1,1), u), v), w);
       }
-      function fbm(x, y, z, seed) { let a = 0.5, s = 0, f = 1; for (let i = 0; i < 5; i++) { s += a * vnoise(x * f, y * f, z * f, seed + i); f *= 2.05; a *= 0.5; } return s; }
+      function fbm(x, y, z, seed, oct = 5) { let a = 0.5, s = 0, f = 1; for (let i = 0; i < oct; i++) { s += a * vnoise(x * f, y * f, z * f, seed + i); f *= 2.05; a *= 0.5; } return s; }
+      const fmtInt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
       const W = 1040, H = 1030;
       const canvas = document.getElementById("gl");
@@ -100,64 +141,84 @@
       renderer.setSize(W, H, false);
       renderer.setClearColor(0x050914, 1);
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 400);
+      const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 600);
 
-      const R = 10;            // rayon de la Terre (echelle non respectee pour l'altitude)
-      const RO = 11.5;         // rayon de l'orbite
-      const SUN = new THREE.Vector3(1, 0.25, 0.55).normalize();
+      const R = 10, RO0 = 11.5;
+      const SUN_BASE = Math.atan2(0.55, 1);
+      const SUN = new THREE.Vector3(Math.cos(SUN_BASE), 0.25, Math.sin(SUN_BASE)).normalize();
 
-      // ---------- textures procedurales de la Terre ----------
+      // ---------- materiaux "toon" (rendu plat illustre) ----------
+      const grad = new THREE.DataTexture(new Uint8Array([85, 150, 215, 255]), 4, 1, THREE.RedFormat);
+      grad.minFilter = grad.magFilter = THREE.NearestFilter; grad.needsUpdate = true;
+      const toon = (color, emissive = 0x000000, extra = {}) => new THREE.MeshToonMaterial({ color, gradientMap: grad, emissive, ...extra });
+
+      // ---------- Terre stylisee (textures procedurales) ----------
       function buildEarthTextures() {
         const tw = 1024, th = 512;
         const day = document.createElement("canvas"); day.width = tw; day.height = th;
-        const night = document.createElement("canvas"); night.width = tw; night.height = th;
+        const night = document.createElement("canvas"); night.width = tw * 2; night.height = th * 2;
         const dc = day.getContext("2d"), nc = night.getContext("2d");
-        const di = dc.createImageData(tw, th), ni = nc.createImageData(tw, th);
+        const di = dc.createImageData(tw, th);
+        nc.fillStyle = "#04081a"; nc.fillRect(0, 0, tw * 2, th * 2);
+        const landMask = new Uint8Array(tw * th);
+        const dots = [];
         const rnd = mulberry32(7);
+        const q = (v, steps) => Math.floor(v * steps) / steps;
         for (let j = 0; j < th; j++) {
           const lat = (0.5 - (j + 0.5) / th) * Math.PI;
           for (let i = 0; i < tw; i++) {
             const lon = ((i + 0.5) / tw) * Math.PI * 2 - Math.PI;
             const x = Math.cos(lat) * Math.cos(lon), y = Math.sin(lat), z = Math.cos(lat) * Math.sin(lon);
             const n = fbm(x * 1.7 + 3, y * 1.7 + 3, z * 1.7 + 3, 11);
-            const land = smooth((n - 0.5) / 0.06);
+            const isLand = n > 0.53;
             const alat = Math.abs(lat) / (Math.PI / 2);
-            const ice = smooth((alat - 0.82) / 0.08);
-            const mois = fbm(x * 3 + 9, y * 3 + 9, z * 3 + 9, 31);
-            // ocean
-            let r = lerp(10, 26, n), g = lerp(48, 98, n), b = lerp(110, 190, n);
-            // terre : vert -> sable
-            const lr = lerp(70, 176, smooth((0.62 - mois) * 3)), lg = lerp(130, 150, smooth((0.62 - mois) * 3)), lb = lerp(70, 92, smooth((0.62 - mois) * 3));
-            r = lerp(r, lr, land); g = lerp(g, lg, land); b = lerp(b, lb, land);
-            r = lerp(r, 235, ice); g = lerp(g, 242, ice); b = lerp(b, 250, ice);
-            const cl = smooth((fbm(x * 4 + 50, y * 4 + 50, z * 4 + 50, 77) - 0.56) * 6) * 0.55;
-            r = lerp(r, 245, cl); g = lerp(g, 248, cl); b = lerp(b, 255, cl);
+            const ice = alat > 0.86;
+            const mois = fbm(x * 3 + 9, y * 3 + 9, z * 3 + 9, 31, 3);
+            let r, g, b;
+            if (isLand) {
+              const dry = q(clamp01((0.6 - mois) * 4), 3);
+              r = lerp(58, 188, dry); g = lerp(128, 148, dry); b = lerp(66, 84, dry);
+            } else {
+              const shallow = q(clamp01((n - 0.42) / 0.11), 3);
+              r = lerp(8, 30, shallow); g = lerp(46, 110, shallow); b = lerp(112, 178, shallow);
+            }
+            if (ice) { r = 236; g = 243; b = 250; }
+            const cl = fbm(x * 3.6 + 50, y * 3.6 + 50, z * 3.6 + 50, 77, 4);
+            if (cl > 0.67) { r = lerp(r, 248, 0.55); g = lerp(g, 250, 0.55); b = lerp(b, 255, 0.55); }
             const k = (j * tw + i) * 4;
             di.data[k] = r; di.data[k + 1] = g; di.data[k + 2] = b; di.data[k + 3] = 255;
-            // nuit : lumieres de villes sur la terre
-            const cityN = fbm(x * 9 + 100, y * 9 + 100, z * 9 + 100, 5);
-            const lights = land > 0.5 && ice < 0.2 ? smooth((cityN - 0.64) * 14) * (0.35 + 0.4 * rnd()) : 0;
-            ni.data[k] = 255 * lights; ni.data[k + 1] = 170 * lights; ni.data[k + 2] = 70 * lights; ni.data[k + 3] = 255;
+            if (isLand && !ice) {
+              landMask[j * tw + i] = 1;
+              const cityN = fbm(x * 8 + 100, y * 8 + 100, z * 8 + 100, 5, 3);
+              if (cityN > 0.52 && rnd() < 0.10 + (cityN - 0.52) * 1.6) dots.push([i, j, 0.5 + 0.5 * rnd()]);
+            }
           }
         }
-        dc.putImageData(di, 0, 0); nc.putImageData(ni, 0, 0);
+        dc.putImageData(di, 0, 0);
+        // silhouette des terres la nuit + points de villes
+        nc.fillStyle = "#0a1330";
+        for (let j = 0; j < th; j++) for (let i = 0; i < tw; i++) if (landMask[j * tw + i]) nc.fillRect(i * 2, j * 2, 2, 2);
+        nc.shadowColor = "rgba(255,170,60,0.9)"; nc.shadowBlur = 3;
+        for (const [i, j, s] of dots) { nc.fillStyle = "rgba(255," + Math.round(190 + 40 * s) + "," + Math.round(90 + 60 * s) + ",1)"; nc.beginPath(); nc.arc(i * 2 + 1, j * 2 + 1, 0.8 + 0.8 * s, 0, Math.PI * 2); nc.fill(); }
         const mk = (c) => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t; };
         return { day: mk(day), night: mk(night) };
       }
-
-      const earthMat = (tex) => new THREE.ShaderMaterial({
-        uniforms: { dayMap: { value: tex.day }, nightMap: { value: tex.night }, sun: { value: SUN } },
+      const earthUniforms = { dayMap: { value: null }, nightMap: { value: null }, sun: { value: SUN } };
+      const earthMat = new THREE.ShaderMaterial({
+        uniforms: earthUniforms,
         vertexShader: `varying vec2 vUv; varying vec3 vN; varying vec3 vV;
           void main(){ vUv=uv; vN=normalize(mat3(modelMatrix)*normal); vec4 wp=modelMatrix*vec4(position,1.); vV=normalize(cameraPosition-wp.xyz); gl_Position=projectionMatrix*viewMatrix*wp; }`,
         fragmentShader: `uniform sampler2D dayMap; uniform sampler2D nightMap; uniform vec3 sun; varying vec2 vUv; varying vec3 vN; varying vec3 vV;
           void main(){
-            float ndl=dot(normalize(vN),sun);
-            float d=smoothstep(-0.06,0.22,ndl);
-            vec3 day=texture2D(dayMap,vUv).rgb*(0.25+0.95*max(ndl,0.));
-            vec3 night=texture2D(nightMap,vUv).rgb*1.9+vec3(0.012,0.02,0.05);
+            vec3 n=normalize(vN);
+            float ndl=dot(n,sun);
+            float d=smoothstep(-0.015,0.05,ndl);
+            float shade=0.62+0.38*smoothstep(0.12,0.4,ndl);
+            vec3 day=texture2D(dayMap,vUv).rgb*shade;
+            vec3 night=texture2D(nightMap,vUv).rgb*1.5;
             vec3 col=mix(night,day,d);
-            float rim=pow(1.-max(dot(normalize(vN),vV),0.),3.);
-            col+=vec3(0.25,0.55,1.0)*rim*(0.12+0.5*d);
+            float rim=pow(1.-max(dot(n,vV),0.),4.);
+            col+=vec3(0.25,0.7,1.0)*rim*(0.1+0.5*d);
             gl_FragColor=vec4(col,1.);
           }`,
       });
@@ -166,240 +227,341 @@
         vertexShader: `varying vec3 vN; varying vec3 vV;
           void main(){ vN=normalize(mat3(modelMatrix)*normal); vec4 wp=modelMatrix*vec4(position,1.); vV=normalize(cameraPosition-wp.xyz); gl_Position=projectionMatrix*viewMatrix*wp; }`,
         fragmentShader: `uniform vec3 sun; varying vec3 vN; varying vec3 vV;
-          void main(){ float f=pow(max(0.62-dot(normalize(vN),vV),0.),2.4)*1.5; float l=0.35+0.65*smoothstep(-0.3,0.4,dot(normalize(vN),sun));
-            gl_FragColor=vec4(vec3(0.3,0.62,1.0)*f*l,f*l); }`,
+          void main(){ float f=pow(max(0.5-dot(normalize(vN),vV),0.),3.0)*5.0; float l=0.45+0.55*smoothstep(-0.3,0.4,dot(normalize(vN),sun));
+            gl_FragColor=vec4(vec3(0.35,0.75,1.0)*f*l,clamp(f*l,0.,1.)); }`,
         side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
       });
-
       const tex = buildEarthTextures();
-      const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), earthMat(tex));
-      scene.add(earth);
-      const atmo = new THREE.Mesh(new THREE.SphereGeometry(R * 1.045, 64, 48), atmoMat);
-      scene.add(atmo);
+      earthUniforms.dayMap.value = tex.day; earthUniforms.nightMap.value = tex.night;
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), earthMat); scene.add(earth);
+      const atmo = new THREE.Mesh(new THREE.SphereGeometry(R * 1.035, 64, 48), atmoMat); scene.add(atmo);
 
-      // ---------- etoiles ----------
-      {
-        const rnd = mulberry32(99), n = 1600, p = new Float32Array(n * 3);
-        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 150 + rnd() * 30; p[i*3] = r*s*Math.cos(a); p[i*3+1] = r*u; p[i*3+2] = r*s*Math.sin(a); }
+      // ---------- etoiles (suivent la camera) ----------
+      const stars = (() => {
+        const rnd = mulberry32(99), n = 1800, p = new Float32Array(n * 3);
+        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 250 + rnd() * 40; p[i*3] = r*s*Math.cos(a); p[i*3+1] = r*u; p[i*3+2] = r*s*Math.sin(a); }
         const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
-        scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xcfe0ff, size: 0.55, sizeAttenuation: true, transparent: true, opacity: 0.8 })));
-      }
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xdbe6ff, size: 1.1, sizeAttenuation: true, transparent: true, opacity: 0.85, depthWrite: false }));
+        scene.add(pts); return pts;
+      })();
 
       // ---------- lumieres ----------
-      const sunL = new THREE.DirectionalLight(0xfff1dd, 3.0); sunL.position.copy(SUN).multiplyScalar(60); scene.add(sunL);
-      scene.add(new THREE.HemisphereLight(0x5a78c8, 0x0a1022, 0.9));
+      const sunL = new THREE.DirectionalLight(0xfff1dd, 3.2); scene.add(sunL);
+      scene.add(new THREE.HemisphereLight(0x5a78c8, 0x0a1022, 1.1));
 
-      // ---------- ISS (modele simplifie) ----------
+      // ---------- ISS ----------
+      function panelTexture() {
+        const c = document.createElement("canvas"); c.width = 128; c.height = 64; const x = c.getContext("2d");
+        x.fillStyle = "#1d4390"; x.fillRect(0, 0, 128, 64);
+        x.strokeStyle = "#4f86e0"; x.lineWidth = 2;
+        for (let i = 0; i <= 128; i += 16) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, 64); x.stroke(); }
+        for (let j = 0; j <= 64; j += 16) { x.beginPath(); x.moveTo(0, j); x.lineTo(128, j); x.stroke(); }
+        x.strokeStyle = "#c9d8f5"; x.lineWidth = 3; x.strokeRect(1, 1, 126, 62);
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+      }
       const iss = new THREE.Group();
       {
-        const white = new THREE.MeshStandardMaterial({ color: 0xe8ecf4, roughness: 0.55, metalness: 0.25 });
-        const grey = new THREE.MeshStandardMaterial({ color: 0xa9b2c2, roughness: 0.5, metalness: 0.5 });
-        const gold = new THREE.MeshStandardMaterial({ color: 0xd9a441, roughness: 0.4, metalness: 0.7, emissive: 0x221500 });
-        const panel = new THREE.MeshStandardMaterial({ color: 0x1b3f86, roughness: 0.35, metalness: 0.6, emissive: 0x0a1a40 });
+        const white = toon(0xf1f4fa), grey = toon(0x9aa5ba), gold = toon(0xe0a83c, 0x2a1a00);
+        const panel = toon(0xffffff, 0x0c1c44, { map: panelTexture() });
         const cyl = (r, l, m, rot) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(r, r, l, 24), m); if (rot === "x") c.rotation.z = Math.PI / 2; if (rot === "z") c.rotation.x = Math.PI / 2; return c; };
-        const truss = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.08, 0.08), grey); iss.add(truss);
-        const m1 = cyl(0.17, 1.1, white, "z"); m1.position.set(0, -0.05, 0); iss.add(m1);
-        const m2 = cyl(0.15, 0.9, white, "z"); m2.position.set(0.22, -0.05, 0.9); iss.add(m2);
-        const m3 = cyl(0.15, 0.8, white, "z"); m3.position.set(-0.22, -0.05, -0.85); iss.add(m3);
-        const m4 = cyl(0.12, 0.6, gold, "x"); m4.position.set(0, -0.05, 0.1); iss.add(m4);
+        iss.add(new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.09, 0.09), grey));
+        const m1 = cyl(0.17, 1.2, white, "z"); m1.position.set(0, -0.05, 0); iss.add(m1);
+        const m2 = cyl(0.15, 0.95, white, "z"); m2.position.set(0.24, -0.05, 0.95); iss.add(m2);
+        const m3 = cyl(0.15, 0.85, white, "z"); m3.position.set(-0.24, -0.05, -0.9); iss.add(m3);
+        const m4 = cyl(0.12, 0.7, gold, "x"); m4.position.set(0, -0.05, 0.1); iss.add(m4);
+        for (const zz of [-0.35, 0, 0.35]) { const ring = cyl(0.185, 0.04, grey, "z"); ring.position.set(0, -0.05, zz); iss.add(ring); }
         const dome = new THREE.Mesh(new THREE.SphereGeometry(0.13, 16, 12), white); dome.position.set(0, 0.16, 0.1); iss.add(dome);
+        const dish = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.1, 18), white); dish.position.set(-0.3, 0.2, -0.4); dish.rotation.x = Math.PI; iss.add(dish);
         for (const sx of [-1, 1]) {
           for (const sz of [-1, 1]) {
-            const p = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.02, 0.36), panel);
-            p.position.set(sx * 1.2, 0, sz * 0.28 + (sz > 0 ? 0.04 : -0.04)); iss.add(p);
-            const p2 = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.02, 0.36), panel);
-            p2.position.set(sx * 1.2 + sx * 0.0, 0, sz * 0.28); p2.visible = false; iss.add(p2);
+            const p = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.02, 0.4), panel); p.position.set(sx * 1.2, 0.0, sz * 0.3); iss.add(p);
+            const p2 = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.02, 0.4), panel); p2.position.set(sx * 1.2, 0.0, sz * 0.3 + sz * 0.45); iss.add(p2);
           }
-          const rad = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 0.22), white); rad.position.set(sx * 0.55, 0.28, 0.1); rad.rotation.z = 0.0; iss.add(rad);
+          const rad = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 0.24), white); rad.position.set(sx * 0.55, 0.3, 0.1); iss.add(rad);
+          const rod = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.3, 0.03), grey); rod.position.set(sx * 0.55, 0.15, 0.1); iss.add(rod);
         }
         iss.scale.setScalar(1.25);
       }
       scene.add(iss);
 
-      // objet qui tombe (cle a molette stylisee)
-      const wrench = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.07, 0.07), new THREE.MeshStandardMaterial({ color: 0xffc247, roughness: 0.35, metalness: 0.6, emissive: 0x442a00 }));
-      scene.add(wrench);
+      const wrench = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.07, 0.07), toon(0xffc247, 0x442a00)); scene.add(wrench);
 
-      // anneau d'orbite
-      const orbitRing = (() => { const pts = []; for (let i = 0; i <= 256; i++) { const a = (i / 256) * Math.PI * 2; pts.push(new THREE.Vector3(Math.sin(a) * RO, 0, Math.cos(a) * RO)); }
-        const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineDashedMaterial({ color: 0xfbbf24, dashSize: 0.5, gapSize: 0.35, transparent: true, opacity: 0.8 })); l.computeLineDistances(); scene.add(l); return l; })();
+      const orbitRing = (() => { const m = new THREE.Mesh(new THREE.TorusGeometry(RO0, 0.022, 6, 300), new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.6 })); m.rotation.x = Math.PI / 2; scene.add(m); return m; })();
+      const moonRing = (() => { const m = new THREE.Mesh(new THREE.TorusGeometry(42, 0.12, 6, 300), new THREE.MeshBasicMaterial({ color: 0x60c8ff, transparent: true, opacity: 0.45 })); m.rotation.x = Math.PI / 2; scene.add(m); return m; })();
 
-      // fleches de gravite
       const gravArrows = new THREE.Group();
       {
-        const m = new THREE.LineBasicMaterial({ color: 0x60c8ff, transparent: true, opacity: 0.95 });
+        const mat = new THREE.MeshBasicMaterial({ color: 0x60c8ff });
         for (let k = -2; k <= 2; k++) {
-          const a = Math.PI / 180 * (k * 7), p0 = new THREE.Vector3(Math.sin(a) * (RO + 0.2), 0, Math.cos(a) * (RO + 0.2)), p1 = p0.clone().multiplyScalar((R + 0.9) / (RO + 0.2));
-          gravArrows.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([p0, p1]), m));
-          const head = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.4, 12), new THREE.MeshBasicMaterial({ color: 0x60c8ff }));
-          head.position.copy(p1).add(p0.clone().sub(p1).normalize().multiplyScalar(-0.0)); head.lookAt(p1.clone().multiplyScalar(2)); head.rotateX(Math.PI / 2); head.rotateX(Math.PI); gravArrows.add(head);
+          const a = Math.PI / 180 * (k * 7);
+          const dir = new THREE.Vector3(-Math.sin(a), 0, -Math.cos(a));
+          const p0 = new THREE.Vector3(Math.sin(a) * (RO0 + 0.1), 0, Math.cos(a) * (RO0 + 0.1));
+          const len = 0.8;
+          const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, len, 8), mat);
+          shaft.position.copy(p0).addScaledVector(dir, len / 2); shaft.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir); gravArrows.add(shaft);
+          const head = new THREE.Mesh(new THREE.ConeGeometry(0.11, 0.26, 12), mat);
+          head.position.copy(p0).addScaledVector(dir, len + 0.1); head.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir); gravArrows.add(head);
         }
       }
       scene.add(gravArrows);
 
-      // ligne altitude (ISS -> surface)
-      const altLine = (() => { const g = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, -1, 0)]); const l = new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0xfbbf24 })); scene.add(l); return l; })();
+      const mkLine = (color, dashed) => {
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(6), 3));
+        const l = new THREE.Line(g, dashed ? new THREE.LineDashedMaterial({ color, dashSize: 0.3, gapSize: 0.2 }) : new THREE.LineBasicMaterial({ color })); l.frustumCulled = false; scene.add(l); return l;
+      };
+      const setLine = (l, a, b) => { const p = l.geometry.attributes.position; p.setXYZ(0, a.x, a.y, a.z); p.setXYZ(1, b.x, b.y, b.z); p.needsUpdate = true; if (l.material.isLineDashedMaterial) l.computeLineDistances(); };
+      const altLine = mkLine(0xfbbf24, false);
+      const tanLine = mkLine(0xfbbf24, true), dropLine = mkLine(0xff5d5d, false), cannonTan = mkLine(0xfbbf24, true);
 
-      // ---------- astronaute ----------
-      const astro = new THREE.Group();
-      {
-        const suit = new THREE.MeshStandardMaterial({ color: 0xf2f4f8, roughness: 0.6, metalness: 0.1 });
-        const visor = new THREE.MeshStandardMaterial({ color: 0xc9902a, roughness: 0.15, metalness: 0.9, emissive: 0x2a1700 });
-        const dark = new THREE.MeshStandardMaterial({ color: 0x8892a6, roughness: 0.5, metalness: 0.3 });
-        const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.45, 0.55, 8, 20), suit); astro.add(body);
-        const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.42, 28, 20), suit); helmet.position.set(0, 0.92, 0); astro.add(helmet);
-        const vz = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.62), visor); vz.position.set(0, 0.94, 0.17); vz.rotation.x = Math.PI * 0.42; astro.add(vz);
-        const pack = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.8, 0.3), dark); pack.position.set(0, 0.05, -0.42); astro.add(pack);
-        for (const s of [-1, 1]) {
-          const arm = new THREE.Mesh(new THREE.CapsuleGeometry(0.15, 0.55, 6, 14), suit); arm.position.set(s * 0.62, 0.15, 0.12); arm.rotation.z = s * 0.9; arm.rotation.x = -0.4; astro.add(arm);
-          const leg = new THREE.Mesh(new THREE.CapsuleGeometry(0.19, 0.6, 6, 14), suit); leg.position.set(s * 0.22, -0.95, 0.1); leg.rotation.z = s * 0.18; leg.rotation.x = -0.3; astro.add(leg);
+      // ---------- astronautes ----------
+      function makeAstro(s) {
+        const g = new THREE.Group();
+        const suit = toon(0xf4f6fa), visor = toon(0xd29a2e, 0x3a2400), dark = toon(0x8a95aa), orange = toon(0xff8a3d);
+        g.add(new THREE.Mesh(new THREE.CapsuleGeometry(0.45, 0.55, 8, 20), suit));
+        const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.42, 28, 20), suit); helmet.position.set(0, 0.92, 0); g.add(helmet);
+        const vz = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.62), visor); vz.position.set(0, 0.94, 0.17); vz.rotation.x = Math.PI * 0.42; g.add(vz);
+        const pack = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.82, 0.32), dark); pack.position.set(0, 0.05, -0.42); g.add(pack);
+        const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.08, 0.5), orange); stripe.position.set(0, 0.35, 0.02); g.add(stripe);
+        for (const sg of [-1, 1]) {
+          const arm = new THREE.Mesh(new THREE.CapsuleGeometry(0.15, 0.55, 6, 14), suit); arm.position.set(sg * 0.62, 0.15, 0.12); arm.rotation.z = sg * 0.9; arm.rotation.x = -0.4; g.add(arm);
+          const glove = new THREE.Mesh(new THREE.SphereGeometry(0.17, 12, 10), dark); glove.position.set(sg * 0.95, -0.12, 0.3); g.add(glove);
+          const leg = new THREE.Mesh(new THREE.CapsuleGeometry(0.19, 0.6, 6, 14), suit); leg.position.set(sg * 0.22, -0.95, 0.1); leg.rotation.z = sg * 0.18; leg.rotation.x = -0.3; g.add(leg);
+          const boot = new THREE.Mesh(new THREE.SphereGeometry(0.22, 12, 10), dark); boot.position.set(sg * 0.3, -1.4, 0.2); g.add(boot);
         }
-        astro.scale.setScalar(1.0);
+        g.scale.setScalar(s); scene.add(g); return g;
       }
-      scene.add(astro);
+      const astroS = makeAstro(1.0), astroI = makeAstro(0.34), astroE = makeAstro(0.62);
 
-      // ---------- Newton : montagne + canon + boulets ----------
+      // ---------- Newton : montagne + canon + 3 tirs ----------
       const newton = new THREE.Group();
-      const cannonBase = new THREE.Vector3(0, R + 0.05, 0);
-      const trailMat = (c) => new THREE.LineBasicMaterial({ color: c, transparent: true, opacity: 0.95 });
-      let trails = [], balls = [];
+      const CAN = new THREE.Vector3(0.3, R + 1.2, 0);
+      const trails = [];
       {
-        const rock = new THREE.MeshStandardMaterial({ color: 0x5b6b86, roughness: 0.9, metalness: 0.05, flatShading: true });
+        const rock = toon(0x6a7b99);
         const m = new THREE.Mesh(new THREE.ConeGeometry(1.0, 1.4, 7), rock); m.position.set(0, R + 0.35, 0); newton.add(m);
         const m2 = new THREE.Mesh(new THREE.ConeGeometry(0.7, 0.9, 6), rock); m2.position.set(-0.7, R + 0.1, 0.2); newton.add(m2);
-        const cm = new THREE.MeshStandardMaterial({ color: 0x2a3140, roughness: 0.4, metalness: 0.8 });
+        const cm = toon(0x2d3546);
         const cannon = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.13, 0.62, 16), cm); cannon.position.set(0.22, R + 1.18, 0); cannon.rotation.z = -Math.PI / 2 + 0.05; newton.add(cannon);
         const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.05, 20), cm); wheel.rotation.x = Math.PI / 2; wheel.position.set(0.12, R + 1.1, 0); newton.add(wheel);
-        // trajectoires : tir 1 (court), tir 2 (plus long)
-        const shots = [{ t0: 18.75, ang: 0.08, speed: 0.34, color: 0xfbbf24 }, { t0: 21.2, ang: 0.15, speed: 0.58, color: 0x60c8ff }];
+        const shots = [
+          { t0: 18.75, dur: 1.7, v: 2.4, loops: 1, color: 0xfbbf24 },
+          { t0: 21.2, dur: 2.3, v: 3.7, loops: 1, color: 0x60c8ff },
+          { t0: 28.9, dur: 9.0, v: 4.63, loops: 2, color: 0x3ddc84 },
+        ];
         for (const s of shots) {
-          // integration simple deterministe dans le plan XY (gravite centrale)
-          const pts = [], dt = 0.05; let p = new THREE.Vector2(0.3, R + 1.2), v = new THREE.Vector2(s.speed * 7, 0.0 + s.ang * 3);
-          const gk = 2.4;
-          for (let i = 0; i < 600; i++) {
+          const pts = [], dt = 0.04; let p = new THREE.Vector2(CAN.x, CAN.y), v = new THREE.Vector2(s.v, 0); const gk = 2.4;
+          const maxN = s.loops === 2 ? 800 : 700;
+          for (let i = 0; i < maxN; i++) {
             pts.push(new THREE.Vector3(p.x, p.y, 0));
             const r = p.length(), a = p.clone().multiplyScalar(-gk * R * R / (r * r * r));
             v.addScaledVector(a, dt); p.addScaledVector(v, dt);
-            if (p.length() <= R + 0.02) { pts.push(new THREE.Vector3(p.x, p.y, 0)); break; }
+            if (s.loops === 1 && p.length() <= R + 0.02) { pts.push(new THREE.Vector3(p.x, p.y, 0)); break; }
           }
           s.pts = pts;
-          const g = new THREE.BufferGeometry().setFromPoints(pts);
-          const l = new THREE.Line(g, trailMat(s.color)); l.geometry.setDrawRange(0, 0); newton.add(l);
-          const ball = new THREE.Mesh(new THREE.SphereGeometry(0.15, 16, 12), new THREE.MeshBasicMaterial({ color: s.color })); ball.visible = false; newton.add(ball);
+          const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: s.color })); l.geometry.setDrawRange(0, 0); l.frustumCulled = false; newton.add(l);
+          const ball = new THREE.Mesh(new THREE.SphereGeometry(0.17, 16, 12), new THREE.MeshBasicMaterial({ color: s.color })); ball.visible = false; newton.add(ball);
           trails.push({ line: l, ball, s });
         }
       }
       scene.add(newton);
 
-      // ---------- trajectoire camera ----------
-      // coordonnees locales a l'ISS : r = radial (vers le haut), t = tangent, y = axe orbital
-      const ISSANG0 = 0.0, OMEGA = 0.018;
-      function issAngle(t) { return ISSANG0 + OMEGA * t; }
-      function basis(a) { return { r: new THREE.Vector3(Math.sin(a), 0, Math.cos(a)), t: new THREE.Vector3(Math.cos(a), 0, -Math.sin(a)), y: new THREE.Vector3(0, 1, 0) }; }
-      // waypoints : [t, camR, camT, camY, lookR, lookT, lookY]
-      const WP = [
-        [0.0,  3.0, -9.0, 1.5,  -2.5, 0.5, 0.0],
-        [3.6,  2.6, -8.0, 1.2,  -2.8, 0.3, 0.0],
-        [4.2,  4.5, -11.0, 2.5, -3.0, 0.5, 0.0],
-        [7.2,  7.0, -13.0, 4.0, -4.0, 0.0, 0.0],
-        [8.4,  18.0, -12.0, 8.0, -6.0, 0.0, 0.0],
-        [9.6,  22.0, -10.0, 8.0, -6.0, 0.0, 0.0],
-        [12.8, 24.0, -6.0, 8.0, -6.0, 0.0, 0.0],
-      ];
-      function camAt(t) {
-        let i = 0; while (i < WP.length - 2 && t > WP[i + 1][0]) i++;
-        const a = WP[i], b = WP[i + 1], k = smooth((t - a[0]) / (b[0] - a[0]));
-        const o = []; for (let j = 1; j < 7; j++) o.push(lerp(a[j], b[j], k)); return o;
+      // ---------- Lune ----------
+      const moon = (() => {
+        const c = document.createElement("canvas"); c.width = 256; c.height = 128; const x = c.getContext("2d");
+        x.fillStyle = "#b9bfcc"; x.fillRect(0, 0, 256, 128); const r = mulberry32(5);
+        for (let i = 0; i < 40; i++) { x.fillStyle = "rgba(120,128,146," + (0.3 + r() * 0.4) + ")"; x.beginPath(); x.arc(r() * 256, r() * 128, 3 + r() * 12, 0, 7); x.fill(); }
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+        const m = new THREE.Mesh(new THREE.SphereGeometry(3.2, 40, 28), toon(0xffffff, 0x000000, { map: t })); scene.add(m); return m;
+      })();
+
+      // ---------- ascenseur (chute libre) ----------
+      const elev = new THREE.Group();
+      let cableTop, cableLow, elevGroupPos = new THREE.Vector3(-300, 0, 0);
+      {
+        const frame = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(3.2, 4.0, 3.2)), new THREE.LineBasicMaterial({ color: 0xdfe6f5 })); elev.add(frame);
+        const floor = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.12, 3.2), toon(0x3a4660)); floor.position.y = -2.0; elev.add(floor);
+        const back = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 4.0), new THREE.MeshBasicMaterial({ color: 0x1a2440, transparent: true, opacity: 0.55, side: THREE.DoubleSide })); back.position.z = -1.6; elev.add(back);
+        astroE.position.set(0, -0.1, 0);
+        scene.add(elev);
+        cableTop = mkLine(0xdfe6f5, false); cableLow = mkLine(0xdfe6f5, false);
+        // traits de parallaxe verticaux
+        const r2 = mulberry32(21), pos = [];
+        for (let i = 0; i < 70; i++) { const x = -300 + (r2() * 2 - 1) * 16, z = -6 - r2() * 8, y0 = -120 + r2() * 150; pos.push(x, y0, z, x, y0 + 2 + r2() * 6, z); }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(pos), 3));
+        const lines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0xaac4ff, transparent: true, opacity: 0.35 })); lines.frustumCulled = false; lines.name = "streaks"; scene.add(lines); elev.userData.streaks = lines;
       }
 
-      function renderAt(time) {
-        const t = time;
-        const ang = issAngle(t), B = basis(ang);
+      // ---------- poussee moteur et particules d'air ----------
+      const flame = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.9, 12), new THREE.MeshBasicMaterial({ color: 0xffa23a })); scene.add(flame);
+      const airN = 260, airBase = (() => { const r = mulberry32(3), a = []; for (let i = 0; i < airN; i++) a.push([r() * 14 - 7, r() * 5 - 2.5, r() * 6 - 3]); return a; })();
+      const airPts = new THREE.Points(new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(new Float32Array(airN * 3), 3)), new THREE.PointsMaterial({ color: 0xbfe6ff, size: 0.08, transparent: true, opacity: 0.9 }));
+      airPts.frustumCulled = false; scene.add(airPts);
+
+      // ---------- plans (camera) ----------
+      // kf : [dt, camA, camB, camC, lookA, lookB, lookC]   iss: (radial, tangent, axe)   abs: (x, y, z)
+      const IS = (a, b, kf, show, o = {}) => ({ a, b, f: "iss", kf, show, ...o });
+      const AB = (a, b, kf, show, o = {}) => ({ a, b, f: "abs", kf, show, ...o });
+      const SHOTS = [
+        IS(0, 3.9,    [[0, 3, -9, 1.5, -2.5, .5, 0], [3.9, 2.6, -8, 1.2, -2.8, .3, 0]], "EIOWH"),
+        IS(3.9, 7.5,  [[0, 2.6, -8, 1.2, -2.8, .3, 0], [3.6, 7, -13, 4, -4, 0, 0]], "EIO"),
+        IS(7.5, 9.7,  [[0, 7, -13, 4, -4, 0, 0], [2.2, 6, -9, 3, -1, 0, 0]], "EIOG"),
+        IS(9.7, 13.2, [[0, 6, -9, 3, -1, 0, 0], [1.2, 18, -12, 8, -6, 0, 0], [3.5, 24, -6, 8, -6, 0, 0]], "EIOG"),
+        AB(13.2, 16.0, [[0, 300, .2, 6.2, 300, 0, 0], [2.8, 300, .2, 5.0, 300, 0, 0]], "A"),
+        AB(16.0, 18.5, [[0, -3.5, R + 4, 15, 2.5, R - .8, 0], [2.5, -2.6, R + 3.6, 13.5, 3.2, R - .8, 0]], "EN"),
+        AB(18.5, 21.0, [[0, -2.6, R + 3.6, 13.5, 3.2, R - .8, 0], [2.5, -2.2, R + 3.2, 12.5, 3.6, R - .8, 0]], "EN"),
+        AB(21.0, 23.8, [[0, -2.2, R + 3.2, 12.5, 3.6, R - .8, 0], [2.8, 0, R + 2, 22, 5, R - 3, 0]], "EN"),
+        AB(23.8, 28.6, [[0, 0, R + 2, 22, 5, R - 3, 0], [4.8, 0, R + 3, 34, 0, R - 4, 0]], "ENC"),
+        AB(28.6, 33.5, [[0, 0, R + 3, 34, 0, R - 4, 0], [4.9, 0, 2, 42, 0, 0, 0]], "EN"),
+        AB(33.5, 38.2, [[0, 0, 2, 42, 0, 0, 0], [4.7, 0, 4, 36, 0, 0, 0]], "EN"),
+        IS(38.2, 42.6, [[0, 3, -9, 1.5, -2.5, .5, 0], [4.4, 3, -7, 1.5, -2.5, .5, 0]], "EIO"),
+        IS(42.6, 49.0, [[0, 1.5, 2.5, 11, -.5, 2.5, 0], [6.4, 1.5, 2.5, 11.5, -.5, 2.5, 0]], "EIOT", { up: "r" }),
+        IS(49.0, 52.6, [[0, 6, -11, 3, -3, .5, 0], [3.6, 6, -11, 3, -3, .5, 0]], "EIOG"),
+        IS(52.6, 55.2, [[0, 6, -11, 3, -3, .5, 0], [2.6, 6, -11, 3, -3, .5, 0]], "EIO"),
+        IS(55.2, 58.2, [[0, 6, -11, 3, -3, .5, 0], [1.0, 4, -6, 1.5, -2, .5, 0], [3.0, 4, -6, 1.5, -2, .5, 0]], "EIOD"),
+        IS(58.2, 62.0, [[0, 4, -6, 1.5, -2, .5, 0], [3.8, 5, -9, 2, -3, 0, 0]], "EIOD"),
+        IS(62.0, 64.6, [[0, 5, -9, 2, -3, 0, 0], [2.6, 4, -7, 1.5, -2, .5, 0]], "EIOF"),
+        IS(64.6, 68.7, [[0, 4, -7, 1.5, -2, .5, 0], [4.1, 3.5, -6.5, 2, -1, 1, 0]], "EIOGB"),
+        AB(68.7, 70.9, [[0, -300, .5, 12, -300, -.5, 0], [2.2, -300, -1, 12, -300, -2, 0]], "L", { track: 0.96 }),
+        AB(70.9, 73.7, [[0, -300, -1, 12, -300, -2, 0], [2.8, -300, -1, 10, -300, -2, 0]], "L", { track: 0.96 }),
+        IS(73.7, 76.0, [[0, 24, -6, 8, -6, 0, 0], [2.3, 26, -4, 10, -6, 0, 0]], "EIO"),
+        IS(76.0, 78.7, [[0, 26, -4, 10, -6, 0, 0], [2.7, 28, -2, 10, -6, 0, 0]], "EIO"),
+        AB(78.7, 82.5, [[0, 0, 30, 120, 0, 0, 0], [3.8, 0, 28, 112, 0, 0, 0]], "EMP"),
+        IS(82.5, 88.1, [[0, 7, -13, 4, -4, 0, 0], [5.6, 9, -15, 5, -4, 0, 0]], "EIO"),
+      ];
+
+      const issAngle = (t) => 0.018 * t + 2 * Math.PI * smooth((t - 52.6) / 2.6);
+      const issRadius = (t) => RO0 - 0.4 * smooth((t - 58.3) / 3.3) + 0.4 * smooth((t - 62.2) / 2.2);
+      const altKm = (t) => 408 - 2 * smooth((t - 58.3) / 3.3) + 2 * smooth((t - 62.2) / 2.2);
+      const sunAngleAt = (t) => SUN_BASE + 2 * Math.PI * 3 * smooth((t - 76.0) / 2.7);
+      const elevY = (t) => (t < 69.6 ? 0 : -0.5 * 7 * (t - 69.6) * (t - 69.6));
+      const moonAng = (t) => 0.35 + 0.04 * (t - 78.7);
+
+      function basis(a) { return { r: new THREE.Vector3(Math.sin(a), 0, Math.cos(a)), t: new THREE.Vector3(Math.cos(a), 0, -Math.sin(a)), y: new THREE.Vector3(0, 1, 0) }; }
+      const loc = (pos, B, o) => pos.clone().addScaledVector(B.r, o[0]).addScaledVector(B.t, o[1]).addScaledVector(B.y, o[2]);
+
+      const sv = (obj, on) => { obj.visible = !!on; };
+      const proj = new THREE.Vector3();
+      const glowCtx = document.getElementById("glow").getContext("2d");
+
+      function renderAt(t) {
+        const shot = SHOTS.find((s) => t >= s.a && t < s.b) || SHOTS[SHOTS.length - 1];
+        const show = (c) => shot.show.indexOf(c) >= 0;
+        const ang = issAngle(t), B = basis(ang), RO = issRadius(t);
         const issPos = B.r.clone().multiplyScalar(RO);
+
+        // soleil
+        const sa = sunAngleAt(t); SUN.set(Math.cos(sa), 0.25, Math.sin(sa)).normalize(); sunL.position.copy(SUN).multiplyScalar(80);
+
         iss.position.copy(issPos);
         iss.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(B.t, B.r, B.r.clone().cross(B.t).multiplyScalar(-1)));
-        // vue "espace" (0-13 s) / astronaute (13.3-16.2) / newton (16.2-...)
-        const space = t < 13.2, astroShot = t >= 13.2 && t < 16.1, newtonShot = t >= 16.1;
-        iss.visible = space; orbitRing.visible = space && t > 3.6; earth.visible = !astroShot; atmo.visible = !astroShot;
-        gravArrows.visible = t > 8.0 && t < 13.0; astro.visible = astroShot; newton.visible = newtonShot;
-        altLine.visible = t > 1.0 && t < 4.1; wrench.visible = t > 1.5 && t < 4.1;
+        sv(earth, show("E")); sv(atmo, show("E")); sv(iss, show("I")); sv(orbitRing, show("O"));
+        sv(gravArrows, show("G")); sv(astroS, show("A")); sv(astroI, show("B")); sv(newton, show("N")); sv(moon, show("M")); sv(moonRing, show("P"));
+        sv(wrench, show("W")); sv(altLine, show("H")); sv(tanLine, show("T")); sv(dropLine, show("T")); sv(cannonTan, show("C"));
+        sv(elev, show("L")); sv(astroE, show("L")); sv(elev.userData.streaks, show("L")); sv(cableTop, show("L")); sv(cableLow, show("L"));
+        sv(flame, show("F")); sv(airPts, show("D"));
+        earth.rotation.y = 0.05 * t; atmo.rotation.y = 0;
+        gravArrows.rotation.y = ang; orbitRing.scale.setScalar(RO / RO0);
 
-        if (space) {
-          const c = camAt(Math.min(t, 12.8));
-          const camPos = issPos.clone().addScaledVector(B.r, c[0]).addScaledVector(B.t, c[1]).addScaledVector(B.y, c[2]);
-          const look = issPos.clone().addScaledVector(B.r, c[3]).addScaledVector(B.t, c[4]).addScaledVector(B.y, c[5]);
-          camera.position.copy(camPos); camera.up.set(0, 1, 0); camera.lookAt(look);
-          earth.rotation.y = 0.05 * t;
-          // objet qui tombe : depart de l'ISS a t=1.6, chute acceleree
-          if (wrench.visible) {
-            const f = Math.max(0, t - 1.6); const drop = 0.5 * 0.9 * f * f;
-            wrench.position.copy(issPos).addScaledVector(B.r, 0.5 - drop).addScaledVector(B.t, 0.3);
-            wrench.rotation.set(f * 2.2, f * 1.3, f * 3.1);
-            const gg = altLine.geometry.attributes.position; const sp = issPos.clone().addScaledVector(B.r, -0.2); const ep = issPos.clone().multiplyScalar((R + 0.1) / RO);
-            gg.setXYZ(0, sp.x, sp.y, sp.z); gg.setXYZ(1, ep.x, ep.y, ep.z); gg.needsUpdate = true;
-          }
-          // fleches de gravite suivent l'ISS
-          gravArrows.rotation.y = ang;
-        } else if (astroShot) {
-          const f = t - 13.2;
-          camera.position.set(0, 0.2, 6.2); camera.up.set(0, 1, 0); camera.lookAt(0, 0, 0);
-          astro.position.set(Math.sin(f * 0.8) * 0.5 - 0.2, 0.15 * Math.sin(f * 1.1) + 0.1, 0);
-          astro.rotation.set(0.25 + 0.5 * Math.sin(f * 0.7), f * 0.55 + 0.3, 0.2 * Math.sin(f * 0.9));
-        } else {
-          const f = t - 16.1;
-          camera.position.set(lerp(-3.5, -2.2, smooth(f / 5)), R + lerp(4.0, 3.2, smooth(f / 5)), lerp(15, 12.5, smooth(f / 5)));
-          camera.up.set(0, 1, 0); camera.lookAt(lerp(2.5, 3.6, smooth(f / 5)), R - 0.8, 0);
-          earth.rotation.y = 0;
-          for (const tr of trails) {
-            const n = tr.s.pts.length, k = clamp01((t - tr.s.t0) / 3.2);
-            const idx = Math.floor(k * (n - 1));
-            tr.line.geometry.setDrawRange(0, t >= tr.s.t0 ? idx + 1 : 0);
-            tr.ball.visible = t >= tr.s.t0 && k < 1 + 1e-6 && t >= tr.s.t0;
-            const pp = tr.s.pts[Math.min(idx, n - 1)]; tr.ball.position.set(pp.x, pp.y, pp.z);
-          }
+        // objet qui tombe
+        const wp = new THREE.Vector3();
+        { const f = Math.max(0, t - 1.6), drop = 0.5 * 0.9 * f * f;
+          wp.copy(issPos).addScaledVector(B.r, 0.5 - drop).addScaledVector(B.t, 0.3); wrench.position.copy(wp); wrench.rotation.set(f * 2.2, f * 1.3, f * 3.1);
+          if (show("H")) setLine(altLine, issPos.clone().addScaledVector(B.r, -0.2), issPos.clone().multiplyScalar((R + 0.1) / RO)); }
+
+        // astronaute de studio
+        { const f = t - 13.2; astroS.position.set(300 + Math.sin(f * 0.8) * 0.5 - 0.2, 0.15 * Math.sin(f * 1.1) + 0.1, 0); astroS.rotation.set(0.25 + 0.5 * Math.sin(f * 0.7), f * 0.55 + 0.3, 0.2 * Math.sin(f * 0.9)); }
+        // astronaute a cote de l'ISS
+        const aiPos = loc(issPos, B, [0.5, 2.7, 0.9]); astroI.position.copy(aiPos); astroI.rotation.set(0.3 * Math.sin(t * 0.9), t * 0.4, 0.2 * Math.sin(t * 0.7));
+        // tangente et chute (schema 8 km / 5 m)
+        { const L = 5.0, endT = issPos.clone().addScaledVector(B.t, L); setLine(tanLine, issPos, endT);
+          const ang2 = Math.atan2(L, RO), onRing = new THREE.Vector3(Math.sin(ang + ang2) * RO, 0, Math.cos(ang + ang2) * RO);
+          setLine(dropLine, endT, onRing); }
+        setLine(cannonTan, new THREE.Vector3(CAN.x, CAN.y, 0), new THREE.Vector3(CAN.x + 24, CAN.y, 0));
+
+        // ascenseur
+        const ey = elevY(t); elev.position.set(-300, ey, 0); astroE.position.set(-300 + 0.1 * Math.sin(t * 1.2), ey + 0.1 + 0.25 * Math.sin(t * 1.7) + (t > 69.6 ? 0.45 * smooth((t - 69.6) / 1.2) : 0), 0);
+        astroE.rotation.set(0.2 * Math.sin(t * 1.1), 0.4 + t * 0.3, 0.3 * Math.sin(t * 0.8));
+        if (t < 69.6) { setLine(cableTop, new THREE.Vector3(-300, 16, 0), new THREE.Vector3(-300, 2.0, 0)); setLine(cableLow, new THREE.Vector3(-300, 2.0, 0), new THREE.Vector3(-300, 2.0, 0)); }
+        else { setLine(cableTop, new THREE.Vector3(-300, 16, 0), new THREE.Vector3(-300, 7.0, 0)); setLine(cableLow, new THREE.Vector3(-300, ey + 2.0, 0), new THREE.Vector3(-300, ey + 5.2, 0)); }
+
+        // poussee + air
+        const fPos = loc(issPos, B, [0, -2.3, 0]); flame.position.copy(fPos);
+        flame.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), B.t.clone().multiplyScalar(-1));
+        const fl = (t >= 62.0 && t < 64.6) ? (0.7 + 0.3 * Math.sin(t * 40)) : 0; flame.scale.set(fl, fl, fl);
+        { const arr = airPts.geometry.attributes.position; const sp = (t * 7) % 14;
+          for (let i = 0; i < airN; i++) { const b = airBase[i]; let tt = b[0] - sp; if (tt < -7) tt += 14; const p = loc(issPos, B, [b[1] + 0.2, tt, b[2]]); arr.setXYZ(i, p.x, p.y, p.z); } arr.needsUpdate = true; }
+
+        // Newton : boulets
+        for (const tr of trails) {
+          const n = tr.s.pts.length, k = clamp01((t - tr.s.t0) / tr.s.dur), idx = Math.floor(k * (n - 1));
+          tr.line.geometry.setDrawRange(0, t >= tr.s.t0 ? idx + 1 : 0);
+          tr.ball.visible = t >= tr.s.t0; const pp = tr.s.pts[Math.min(idx, n - 1)]; tr.ball.position.set(pp.x, pp.y, pp.z);
         }
+        // Lune
+        const ma = moonAng(t); moon.position.set(Math.sin(ma) * 42, 0, Math.cos(ma) * 42);
+
+        // camera
+        const lt = t - shot.a, kf = shot.kf; let i = 0; while (i < kf.length - 2 && lt > kf[i + 1][0]) i++;
+        const A = kf[i], Bk = kf[i + 1], k = smooth((lt - A[0]) / (Bk[0] - A[0]));
+        const c = []; for (let j = 1; j < 7; j++) c.push(lerp(A[j], Bk[j], k));
+        let cp, lk;
+        if (shot.f === "iss") { cp = loc(issPos, B, [c[0], c[1], c[2]]); lk = loc(issPos, B, [c[3], c[4], c[5]]); camera.up.copy(shot.up === "r" ? B.r : new THREE.Vector3(0, 1, 0)); }
+        else { cp = new THREE.Vector3(c[0], c[1], c[2]); lk = new THREE.Vector3(c[3], c[4], c[5]); camera.up.set(0, 1, 0); if (shot.track) { cp.y += ey * shot.track; lk.y += ey * shot.track; } }
+        camera.position.copy(cp); camera.lookAt(lk); camera.updateMatrixWorld(true);
+        stars.position.copy(cp);
+
         renderer.render(scene, camera);
-        // reflet flou sous le cadre
-        glowCtx.clearRect(0, 0, 140, 72); glowCtx.drawImage(canvas, 0, 560, 1040, 470, 0, 0, 140, 72);
+        glowCtx.clearRect(0, 0, 180, 104); glowCtx.drawImage(canvas, 0, 440, 1040, 590, 0, 0, 180, 104);
+
+        updatePills(t, { issPos, B, wp, aiPos, fPos, ey });
       }
-      const glowCtx = document.getElementById("glow").getContext("2d");
+
+      // ---------- pastilles attachees aux objets ----------
+      const ballPos = (idx) => trails[idx].ball.position.clone();
+      function anchor(p, ctx) {
+        const a = p.anc;
+        switch (a.k) {
+          case "iss": return loc(ctx.issPos, ctx.B, a.o || [0, 0, 0]);
+          case "issmid": return ctx.issPos.clone().multiplyScalar(0.5 + (R / issRadius(0)) * 0.5);
+          case "wrench": return ctx.wp.clone();
+          case "canon": return CAN.clone();
+          case "ball1": return ballPos(0); case "ball2": return ballPos(1); case "ball3": return ballPos(2);
+          case "moon": return moon.position.clone();
+          case "astroI": return ctx.aiPos.clone();
+          case "flame": return ctx.fPos.clone();
+          case "elev": return new THREE.Vector3(-300, ctx.ey + (a.dy || 0), 0);
+          default: return null;
+        }
+      }
+      function counterText(p, t) {
+        const c = p.cnt;
+        if (c.k === "alt") return altKm(t).toFixed(1).replace(".", ",") + " km";
+        const k = smooth((t - c.t0) / (c.t1 - c.t0)); const v = lerp(c.from, c.to, k);
+        return fmtInt(v) + (c.suf || "");
+      }
+      function updatePills(t, ctx) {
+        for (const p of window.PILLS) {
+          if (t < p.t0 - 0.05 || t > p.t1 + 0.05) continue;
+          const pw = document.getElementById("pw-" + p.id), pl = document.getElementById("pl-" + p.id);
+          if (p.cnt) { const s = counterText(p, t); if (pl.textContent !== s) pl.textContent = s; }
+          if (p.anc.k === "scr") { pw.style.left = p.anc.x + "px"; pw.style.top = p.anc.y + "px"; continue; }
+          const v = anchor(p, ctx); if (!v) continue;
+          proj.copy(v).project(camera);
+          const ax = (proj.x * 0.5 + 0.5) * W, ay = (-proj.y * 0.5 + 0.5) * H;
+          const cx = Math.min(W - 170, Math.max(170, ax + p.off[0])), cy = Math.min(H - 110, Math.max(110, ay + p.off[1]));
+          pw.style.left = cx + "px"; pw.style.top = cy + "px";
+          const ld = document.getElementById("ld-" + p.id), ad = document.getElementById("ad-" + p.id);
+          const dx = cx - ax, dy = cy - ay, len = Math.max(0, Math.hypot(dx, dy) - 36);
+          ld.style.left = ax + "px"; ld.style.top = ay + "px"; ld.style.width = len + "px"; ld.style.transform = "rotate(" + Math.atan2(dy, dx) + "rad)";
+          ad.style.left = ax + "px"; ad.style.top = ay + "px";
+        }
+      }
 
       window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
       window.__hf.buildReady["stage"] = Promise.resolve();
       window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
       renderAt(0);
       window.__renderAt = renderAt;
-    </script>
-
-    <script>
-      // ----- habillage 2D : pastilles, jauge, transitions -----
-      const tl = gsap.timeline({ paused: true });
-      const pop = (sel, a, b) => {
-        tl.fromTo(sel, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, a);
-        tl.to(sel, { opacity: 0, duration: 0.15, ease: "power2.in" }, b - 0.15);
-      };
-      tl.fromTo("#tag-left, #tag-right", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.05);
-      tl.fromTo("#scale-note", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.4);
-      tl.to("#scale-note", { opacity: 0, duration: 0.2 }, 13.0);
-      pop("#p-alt", 1.6, 3.5);
-      pop("#p-fall", 3.0, 4.0);
-      pop("#p-grav", 9.9, 13.0);
-      tl.fromTo("#gauge", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3 }, 10.4);
-      tl.fromTo("#g1", { width: "0%" }, { width: "100%", duration: 0.6, ease: "power3.out" }, 10.5);
-      tl.fromTo("#g2", { width: "0%" }, { width: "90%", duration: 0.7, ease: "power3.out" }, 11.3);
-      tl.to("#gauge", { opacity: 0, duration: 0.2 }, 12.9);
-      // astronautes flottent-ils ?
-      pop("#p-yousat", 13.5, 16.0);
-      tl.fromTo("#qmark", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 14.9);
-      tl.to("#qmark", { opacity: 0, duration: 0.15 }, 16.0);
-      pop("#p-canon", 19.0, 20);
-      // fondus de plan (dip) aux changements de decor
-      for (const [a, b] of [[13.05, 13.35], [15.95, 16.25]]) {
-        tl.fromTo("#dip", { opacity: 0 }, { opacity: 0.9, duration: (b - a) / 2, ease: "power1.in" }, a);
-        tl.to("#dip", { opacity: 0, duration: (b - a) / 2, ease: "power1.out" }, a + (b - a) / 2);
-      }
-      window.__timelines = window.__timelines || {};
-      window.__timelines["main"] = tl;
     </script>
   </body>
 </html>

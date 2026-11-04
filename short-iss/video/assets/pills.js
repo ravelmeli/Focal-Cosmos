@@ -1,0 +1,36 @@
+// Annotations de la vidéo : données déclaratives (temps en secondes).
+// cls : y=jaune, b=bleu, g=vert, r=rouge. anc : ancre 3D (ou scr = position fixe dans le cadre). off : décalage en px.
+window.CUTS = [13.2, 16.0, 38.2, 42.6, 49.0, 68.7, 73.7, 78.7, 82.5];
+window.PILLS = [
+  { id: "alt",   cls: "y", t0: 1.5,  t1: 3.6,  txt: "400 km",            anc: { k: "issmid" },            off: [-170, 10] },
+  { id: "fall",  cls: "r", t0: 3.0,  t1: 4.0,  txt: "IL TOMBE",          anc: { k: "wrench" },            off: [150, -70] },
+  { id: "never", cls: "g", t0: 5.4,  t1: 7.3,  txt: "JAMAIS AU SOL",     anc: { k: "iss", o: [0, 0, 0] }, off: [0, -170] },
+  { id: "g0",    cls: "b", t0: 8.0,  t1: 9.6,  txt: "GRAVITÉ ≠ 0",       anc: { k: "iss", o: [0, 0, 0] }, off: [0, -140] },
+  { id: "g90",   cls: "b", t0: 10.0, t1: 13.0, txt: "GRAVITÉ 90 %",      anc: { k: "scr", x: 520, y: 330 } },
+  { id: "astro", cls: "g", t0: 13.5, t1: 16.0, txt: "LES ASTRONAUTES",   anc: { k: "scr", x: 330, y: 150 } },
+  { id: "canon", cls: "g", t0: 16.3, t1: 18.4, txt: "CANON",             anc: { k: "canon" },             off: [-190, -150] },
+  { id: "t1",    cls: "y", t0: 19.1, t1: 21.0, txt: "TIR 1 · TROP COURT", anc: { k: "ball1" },            off: [-60, 170] },
+  { id: "t2",    cls: "b", t0: 21.6, t1: 23.6, txt: "TIR 2 · PLUS LOIN", anc: { k: "ball2" },             off: [-60, 190] },
+  { id: "curve", cls: "y", t0: 24.2, t1: 27.8, txt: "LA TERRE SE COURBE", anc: { k: "scr", x: 520, y: 820 } },
+  { id: "t3",    cls: "g", t0: 29.2, t1: 33.4, txt: "TIR 3",             anc: { k: "ball3" },             off: [170, -110] },
+  { id: "fall2", cls: "r", t0: 33.8, t1: 36.0, txt: "ÇA TOMBE",          anc: { k: "ball3" },             off: [170, 120] },
+  { id: "orb",   cls: "g", t0: 36.4, t1: 38.0, txt: "UNE ORBITE",        anc: { k: "scr", x: 520, y: 150 } },
+  { id: "spd",   cls: "b", t0: 38.6, t1: 42.4, cnt: { from: 0, to: 28000, t0: 38.6, t1: 40.4, suf: " km/h" }, anc: { k: "iss", o: [0, 0, 0] }, off: [0, -190] },
+  { id: "sec",   cls: "y", t0: 40.4, t1: 42.5, txt: "8 km / s",          anc: { k: "iss", o: [0, 0, 0] }, off: [0, 190] },
+  { id: "d8",    cls: "y", t0: 43.0, t1: 48.6, txt: "8 km",              anc: { k: "iss", o: [-0.2, 2.5, 0] }, off: [0, -130] },
+  { id: "d5",    cls: "r", t0: 44.6, t1: 48.6, txt: "5 m",               anc: { k: "iss", o: [-0.6, 5.0, 0] }, off: [130, 80] },
+  { id: "perm",  cls: "r", t0: 49.3, t1: 52.4, txt: "CHUTE PERMANENTE",  anc: { k: "iss", o: [0, 0, 0] }, off: [0, -180] },
+  { id: "per",   cls: "y", t0: 52.9, t1: 55.0, cnt: { from: 0, to: 92, t0: 52.7, t1: 54.9, suf: " min" }, anc: { k: "scr", x: 520, y: 150 } },
+  { id: "air",   cls: "g", t0: 55.7, t1: 58.1, txt: "AIR RÉSIDUEL",      anc: { k: "iss", o: [0, 0, 0] }, off: [-60, -190] },
+  { id: "alt2",  cls: "y", t0: 58.4, t1: 64.4, cnt: { k: "alt" },        anc: { k: "iss", o: [0, 0, 0] }, off: [-120, -230] },
+  { id: "loss",  cls: "r", t0: 59.8, t1: 61.9, txt: "−2 km / MOIS",      anc: { k: "iss", o: [0, 0, 0] }, off: [130, 190] },
+  { id: "push",  cls: "g", t0: 62.3, t1: 64.4, txt: "POUSSÉE MOTEUR",    anc: { k: "flame" },             off: [-60, 190] },
+  { id: "spd2",  cls: "b", t0: 65.0, t1: 68.6, txt: "28 000 km/h",       anc: { k: "astroI" },            off: [0, -190] },
+  { id: "same",  cls: "y", t0: 66.2, t1: 68.6, txt: "MÊME CHUTE",        anc: { k: "iss", o: [0, 0, 0] }, off: [0, 200] },
+  { id: "cable", cls: "r", t0: 69.2, t1: 70.8, txt: "CÂBLE CASSÉ",       anc: { k: "elev", dy: 3.0 },     off: [190, -80] },
+  { id: "ffall", cls: "y", t0: 71.2, t1: 73.6, txt: "CHUTE LIBRE",       anc: { k: "elev", dy: 2.2 },     off: [190, -100] },
+  { id: "zero",  cls: "b", t0: 72.2, t1: 73.6, txt: "POIDS = 0",         anc: { k: "elev", dy: -2.2 },    off: [-190, 100] },
+  { id: "sun",   cls: "y", t0: 76.3, t1: 78.6, cnt: { from: 1, to: 16, t0: 76.3, t1: 78.4, suf: " / 16 LEVERS" }, anc: { k: "scr", x: 520, y: 150 } },
+  { id: "moon",  cls: "g", t0: 79.0, t1: 82.2, txt: "LUNE · 384 400 km", anc: { k: "moon" },              off: [0, -120] },
+  { id: "mfall", cls: "r", t0: 80.4, t1: 82.4, txt: "ELLE AUSSI TOMBE",  anc: { k: "scr", x: 520, y: 860 } }
+];
