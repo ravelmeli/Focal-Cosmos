@@ -1,3 +1,4 @@
 video/render-full.log
 video/.hyperframes/
 work-*/
+.*.hf-transaction-*/
