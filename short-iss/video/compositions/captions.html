@@ -1,0 +1,83 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .cg { position: absolute; left: 0; right: 0; top: 1440px; height: 110px; display: flex; justify-content: center; align-items: center; }
+    .cb { display: inline-block; font-family: "Inter", sans-serif; font-weight: 700; font-size: 58px; line-height: 1; color: #fff;
+      background: #04060c; border: 2px solid rgba(255,255,255,.22); padding: 20px 34px; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+      <div id="cg0" class="cg clip" data-start="0.100" data-duration="0.620"><span class="cb">Si tu lâches</span></div>
+      <div id="cg1" class="cg clip" data-start="0.720" data-duration="0.620"><span class="cb">un objet à</span></div>
+      <div id="cg2" class="cg clip" data-start="1.340" data-duration="1.560"><span class="cb">400 km d&#x27;altitude,</span></div>
+      <div id="cg3" class="cg clip" data-start="3.240" data-duration="0.580"><span class="cb">il tombe.</span></div>
+      <div id="cg4" class="cg clip" data-start="4.160" data-duration="0.880"><span class="cb">Pourtant, la station</span></div>
+      <div id="cg5" class="cg clip" data-start="5.040" data-duration="1.040"><span class="cb">spatiale ne touche</span></div>
+      <div id="cg6" class="cg clip" data-start="6.080" data-duration="1.060"><span class="cb">jamais le sol.</span></div>
+      <div id="cg7" class="cg clip" data-start="7.640" data-duration="0.440"><span class="cb">Et ce n&#x27;est</span></div>
+      <div id="cg8" class="cg clip" data-start="8.080" data-duration="0.680"><span class="cb">pas parce qu&#x27;il</span></div>
+      <div id="cg9" class="cg clip" data-start="8.760" data-duration="0.240"><span class="cb">n&#x27;y a plus</span></div>
+      <div id="cg10" class="cg clip" data-start="9.000" data-duration="0.500"><span class="cb">de gravité.</span></div>
+      <div id="cg11" class="cg clip" data-start="9.760" data-duration="0.720"><span class="cb">À cette hauteur,</span></div>
+      <div id="cg12" class="cg clip" data-start="10.480" data-duration="0.400"><span class="cb">elle vaut encore</span></div>
+      <div id="cg13" class="cg clip" data-start="10.880" data-duration="1.380"><span class="cb">90 % de celle</span></div>
+      <div id="cg14" class="cg clip" data-start="12.260" data-duration="0.420"><span class="cb">du sol.</span></div>
+      <div id="cg15" class="cg clip" data-start="13.280" data-duration="0.980"><span class="cb">Alors pourquoi les</span></div>
+      <div id="cg16" class="cg clip" data-start="14.260" data-duration="1.820"><span class="cb">astronautes flottent-ils?</span></div>
+      <div id="cg17" class="cg clip" data-start="16.080" data-duration="0.920"><span class="cb">Imagine un canon</span></div>
+      <div id="cg18" class="cg clip" data-start="17.000" data-duration="0.680"><span class="cb">tout en haut</span></div>
+      <div id="cg19" class="cg clip" data-start="17.680" data-duration="0.600"><span class="cb">d&#x27;une montagne.</span></div>
+      <div id="cg20" class="cg clip" data-start="18.720" data-duration="0.480"><span class="cb">Tu tires un</span></div>
+      <div id="cg21" class="cg clip" data-start="19.200" data-duration="0.280"><span class="cb">boulet,</span></div>
+      <div id="cg22" class="cg clip" data-start="19.760" data-duration="0.240"><span class="cb">il retombe un</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cg0 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 0.100);
+    tl.to("#cg0 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 0.660);
+    tl.fromTo("#cg1 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 0.720);
+    tl.to("#cg1 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 1.280);
+    tl.fromTo("#cg2 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 1.340);
+    tl.to("#cg2 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 2.840);
+    tl.fromTo("#cg3 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 3.240);
+    tl.to("#cg3 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 3.760);
+    tl.fromTo("#cg4 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 4.160);
+    tl.to("#cg4 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 4.980);
+    tl.fromTo("#cg5 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 5.040);
+    tl.to("#cg5 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 6.020);
+    tl.fromTo("#cg6 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 6.080);
+    tl.to("#cg6 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 7.080);
+    tl.fromTo("#cg7 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 7.640);
+    tl.to("#cg7 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 8.020);
+    tl.fromTo("#cg8 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 8.080);
+    tl.to("#cg8 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 8.700);
+    tl.fromTo("#cg9 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 8.760);
+    tl.to("#cg9 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 8.940);
+    tl.fromTo("#cg10 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 9.000);
+    tl.to("#cg10 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 9.440);
+    tl.fromTo("#cg11 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 9.760);
+    tl.to("#cg11 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 10.420);
+    tl.fromTo("#cg12 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 10.480);
+    tl.to("#cg12 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 10.820);
+    tl.fromTo("#cg13 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 10.880);
+    tl.to("#cg13 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 12.200);
+    tl.fromTo("#cg14 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 12.260);
+    tl.to("#cg14 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 12.620);
+    tl.fromTo("#cg15 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 13.280);
+    tl.to("#cg15 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 14.200);
+    tl.fromTo("#cg16 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 14.260);
+    tl.to("#cg16 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 16.020);
+    tl.fromTo("#cg17 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 16.080);
+    tl.to("#cg17 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 16.940);
+    tl.fromTo("#cg18 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 17.000);
+    tl.to("#cg18 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 17.620);
+    tl.fromTo("#cg19 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 17.680);
+    tl.to("#cg19 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 18.220);
+    tl.fromTo("#cg20 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 18.720);
+    tl.to("#cg20 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 19.140);
+    tl.fromTo("#cg21 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 19.200);
+    tl.to("#cg21 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 19.420);
+    tl.fromTo("#cg22 .cb", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power2.out" }, 19.760);
+    tl.to("#cg22 .cb", { opacity: 0, duration: 0.06, ease: "power2.in" }, 19.940);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>
