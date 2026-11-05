@@ -20,12 +20,19 @@
       #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
       #tag-left { position: absolute; left: 72px; top: 196px; font-family: var(--font-mono); font-weight: 700; font-size: 27px; letter-spacing: .13em; color: var(--tag); }
       #tag-right { position: absolute; right: 72px; top: 196px; font-family: var(--font-mono); font-weight: 500; font-size: 25px; letter-spacing: .22em; color: var(--muted); }
-      #glow { position: absolute; left: 90px; top: 1380px; width: 900px; height: 520px; opacity: .55; filter: blur(34px); }
+      #glow { position: absolute; left: 90px; top: 1380px; width: 900px; height: 520px; opacity: .6; filter: blur(34px); }
+      #prog { position: absolute; left: 280px; top: 1668px; width: 520px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.13); }
+      #prog-fill { height: 100%; width: 0; border-radius: 3px; background: var(--tag); }
       #card { position: absolute; left: 20px; top: 320px; width: 1040px; height: 1030px; border-radius: 34px; overflow: hidden;
         background: var(--card); border: 2px solid rgba(255,255,255,.1); }
-      #gl { position: absolute; inset: 0; width: 1040px; height: 1030px; }
-      #dip { position: absolute; inset: 0; background: #050914; opacity: 0; }
-      #scale-note { position: absolute; left: 0; right: 0; top: 24px; text-align: center; font-family: var(--font-mono); font-size: 22px; letter-spacing: .04em; color: #9aa6c2; opacity: 0; }
+      #gl, #mb { position: absolute; inset: 0; width: 1040px; height: 1030px; }
+      #gl { filter: contrast(1.05) saturate(1.12); }
+      #mb { opacity: 0; filter: contrast(1.05) saturate(1.12); }
+      #bloom { position: absolute; left: -30px; top: -30px; width: 1100px; height: 1090px; filter: blur(22px); mix-blend-mode: screen; opacity: .42; }
+      #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0) 55%, rgba(0,0,6,.5) 100%); }
+      #grain { position: absolute; inset: 0; width: 1040px; height: 1030px; mix-blend-mode: overlay; opacity: .11; }
+      #dip { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(190,220,255,.55), rgba(5,9,20,.95) 75%); opacity: 0; }
+      #scale-note { position: absolute; left: 0; right: 0; top: 24px; text-align: center; font-family: var(--font-mono); font-size: 22px; letter-spacing: .04em; color: #9aa6c2; opacity: 0; z-index: 5; }
       .pw { position: absolute; transform: translate(-50%, -50%); z-index: 5; }
       .pill { display: inline-block; font-family: var(--font-mono); font-weight: 700; font-size: 34px; padding: 10px 22px; border-radius: 14px; white-space: nowrap; opacity: 0; }
       .pill.y { background: var(--yellow); color: #1b1303; }
@@ -43,7 +50,12 @@
       .gf { height: 100%; width: 0; border-radius: 10px; }
       .gv { width: 130px; text-align: right; font-size: 34px; font-weight: 700; }
       #qmark { position: absolute; right: 130px; top: 190px; font-family: var(--font-mono); font-weight: 700; font-size: 170px; color: var(--yellow); opacity: 0; z-index: 3; }
+      #hook { position: absolute; left: 0; right: 0; top: 70px; text-align: center; z-index: 6; opacity: 1; }
+      #hook .h1 { font-family: var(--font-display); font-weight: 800; font-size: 112px; line-height: .98; color: #fff; letter-spacing: -.01em; text-shadow: 0 8px 40px rgba(0,0,0,.65); }
+      #hook .h2 { margin-top: 14px; font-family: var(--font-mono); font-weight: 700; font-size: 38px; letter-spacing: .06em; color: var(--yellow); text-shadow: 0 4px 24px rgba(0,0,0,.7); }
       #title { position: absolute; left: 0; right: 0; top: 90px; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 130px; letter-spacing: .55em; padding-left: .55em; color: #fff; opacity: 0; z-index: 6; text-shadow: 0 6px 40px rgba(0,0,0,.6); }
+      #cta { position: absolute; left: 0; right: 0; top: 880px; text-align: center; font-family: var(--font-mono); font-weight: 700; font-size: 30px; letter-spacing: .08em; color: #fff; opacity: 0; z-index: 6; text-shadow: 0 4px 24px rgba(0,0,0,.8); }
+      #cta span { color: var(--tag); }
     </style>
   </head>
   <body>
@@ -55,21 +67,29 @@
       <div id="tag-right">FOCAL COSMOS</div>
       <div id="card">
         <canvas id="gl" width="1040" height="1030"></canvas>
+        <canvas id="mb" width="1040" height="1030"></canvas>
+        <canvas id="bloom" width="275" height="272"></canvas>
+        <div id="vig"></div>
+        <canvas id="grain" width="260" height="258"></canvas>
         <div id="scale-note">Terre et orbites · échelle non respectée</div>
         <div id="gauge">
           <div class="gb"><div class="gl">AU SOL</div><div class="gt"><div class="gf" id="g1" style="background:#4ade80"></div></div><div class="gv" style="color:#4ade80">100 %</div></div>
           <div class="gb"><div class="gl">À 400 KM</div><div class="gt"><div class="gf" id="g2" style="background:#60c8ff"></div></div><div class="gv" style="color:#60c8ff">90 %</div></div>
         </div>
         <div id="qmark">?</div>
+        <div id="hook"><div class="h1">L'ISS TOMBE</div><div class="h2">SANS JAMAIS TOUCHER LE SOL</div></div>
         <div id="title">ISS</div>
+        <div id="cta"><span>▶</span> ABONNE-TOI · UN NOUVEAU VOYAGE CHAQUE SEMAINE</div>
         <div id="dip"></div>
       </div>
+      <div id="prog"><div id="prog-fill"></div></div>
 
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
         data-start="0" data-duration="88" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
 
       <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="85" data-track-index="9" data-volume="0.45"></audio>
       <audio id="amb" src="assets/ambiance.wav" data-start="0" data-duration="88" data-track-index="10" data-volume="1"></audio>
+<!--SFX-->
       <audio id="whoosh1" src="assets/whoosh-short.mp3" data-start="12.90" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
       <audio id="whoosh2" src="assets/whoosh-short.mp3" data-start="15.70" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
       <audio id="whoosh3" src="assets/whoosh-short.mp3" data-start="37.90" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
@@ -79,10 +99,17 @@
       <audio id="whoosh7" src="assets/whoosh-short.mp3" data-start="73.40" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
       <audio id="whoosh8" src="assets/whoosh-short.mp3" data-start="78.40" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
       <audio id="whoosh9" src="assets/whoosh-short.mp3" data-start="82.20" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
+      <audio id="impact1" src="assets/impact-bass-1.mp3" data-start="10.00" data-duration="2.12" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="impact2" src="assets/impact-bass-2.mp3" data-start="38.50" data-duration="2.59" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="impact3" src="assets/impact-bass-1.mp3" data-start="76.20" data-duration="2.12" data-track-index="12" data-volume="0.28"></audio>
+      <audio id="impact4" src="assets/impact-bass-1.mp3" data-start="44.50" data-duration="2.12" data-track-index="12" data-volume="0.22"></audio>
+      <audio id="riser" src="assets/riser.mp3" data-start="72.62" data-duration="10.03" data-track-index="13" data-volume="0.16"></audio>
+      <audio id="sparkle" src="assets/sparkle.mp3" data-start="83.40" data-duration="1.8" data-track-index="14" data-volume="0.3"></audio>
+      <!--/SFX-->
     </div>
 
     <script>
-      // ----- habillage 2D : pastilles (depuis assets/pills.js), jauge, transitions -----
+      // ----- habillage 2D : pastilles (depuis assets/pills.js), jauge, accroche, transitions -----
       const card = document.getElementById("card");
       for (const p of window.PILLS) {
         const lead = !(p.anc.k === "scr");
@@ -103,11 +130,13 @@
           tl.to("#ld-" + p.id + ", #ad-" + p.id, { opacity: 0, duration: 0.15 }, p.t1 - 0.15);
         }
       }
-      tl.fromTo("#tag-left, #tag-right", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.05);
-      for (const [a, b] of [[0.4, 1.4], [8.6, 9.9], [78.9, 82.2]]) {
+            for (const [a, b] of [[2.9, 3.4], [8.6, 9.9], [78.9, 82.2]]) {
         tl.to("#scale-note", { opacity: 1, duration: 0.3 }, a);
         tl.to("#scale-note", { opacity: 0, duration: 0.2 }, b);
       }
+      // accroche : visible des la premiere image (miniature), puis revient en fin pour la boucle
+      tl.to("#hook", { opacity: 0, duration: 0.35, ease: "power2.in" }, 2.5);
+      tl.to("#hook", { opacity: 1, duration: 0.6, ease: "power2.out" }, 87.35);
       tl.fromTo("#gauge", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3 }, 10.6);
       tl.fromTo("#g1", { width: "0%" }, { width: "100%", duration: 0.6, ease: "power3.out" }, 10.7);
       tl.fromTo("#g2", { width: "0%" }, { width: "90%", duration: 0.7, ease: "power3.out" }, 11.5);
@@ -115,43 +144,39 @@
       tl.fromTo("#qmark", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 14.9);
       tl.to("#qmark", { opacity: 0, duration: 0.15 }, 15.9);
       tl.fromTo("#title", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 83.4);
+      tl.to("#title", { opacity: 0, duration: 0.35 }, 86.9);
+      tl.fromTo("#cta", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 85.0);
+      tl.to("#cta", { opacity: 0, duration: 0.3 }, 86.9);
+      tl.fromTo("#prog-fill", { width: "0px" }, { width: "520px", duration: 88, ease: "none" }, 0);
       for (const c of window.CUTS) {
-        tl.fromTo("#dip", { opacity: 0 }, { opacity: 0.8, duration: 0.12, ease: "power1.in" }, c - 0.12);
-        tl.to("#dip", { opacity: 0, duration: 0.18, ease: "power1.out" }, c);
+        tl.fromTo("#dip", { opacity: 0 }, { opacity: 0.55, duration: 0.1, ease: "power1.in" }, c - 0.1);
+        tl.to("#dip", { opacity: 0, duration: 0.2, ease: "power1.out" }, c);
       }
       window.__timelines = window.__timelines || {};
       window.__timelines["main"] = tl;
     </script>
 
-    <script type="importmap">{ "imports": { "three": "./lib/three/three.module.min.js" } }</script>
+    <script type="importmap">{ "imports": { "three": "./lib/three/three.module.min.js", "three/addons/": "./lib/three/addons/" } }</script>
     <script type="module">
       import * as THREE from "three";
+      import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+      import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
       // ---------- utilitaires deterministes ----------
       function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
       const clamp01 = (x) => Math.min(1, Math.max(0, x));
       const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
       const lerp = (a, b, k) => a + (b - a) * k;
-      function hash3(x, y, z, seed) { let h = (x * 374761393 + y * 668265263 + z * 2147483647 + seed * 1274126177) | 0; h = (h ^ (h >>> 13)) * 1274126177; h = h ^ (h >>> 16); return (h >>> 0) / 4294967296; }
-      function vnoise(x, y, z, seed) {
-        const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), xf = x - xi, yf = y - yi, zf = z - zi;
-        const u = smooth(xf), v = smooth(yf), w = smooth(zf);
-        const c = (a, b, d) => hash3(xi + a, yi + b, zi + d, seed);
-        return lerp(lerp(lerp(c(0,0,0), c(1,0,0), u), lerp(c(0,1,0), c(1,1,0), u), v), lerp(lerp(c(0,0,1), c(1,0,1), u), lerp(c(0,1,1), c(1,1,1), u), v), w);
-      }
-      function fbm(x, y, z, seed, oct = 5) { let a = 0.5, s = 0, f = 1; for (let i = 0; i < oct; i++) { s += a * vnoise(x * f, y * f, z * f, seed + i); f *= 2.05; a *= 0.5; } return s; }
       const fmtInt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
       const W = 1040, H = 1030;
       const canvas = document.getElementById("gl");
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
-      renderer.setPixelRatio(1);
-      renderer.setSize(W, H, false);
-      renderer.setClearColor(0x050914, 1);
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.setClearColor(0x050914, 1);
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 600);
+      const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 1200);
 
-      const R = 10, RO0 = 11.5;
+      const R = 10, RO0 = 11.5, LOOP = 88;
       const SUN_BASE = Math.atan2(0.55, 1);
       const SUN = new THREE.Vector3(Math.cos(SUN_BASE), 0.25, Math.sin(SUN_BASE)).normalize();
 
@@ -160,57 +185,9 @@
       grad.minFilter = grad.magFilter = THREE.NearestFilter; grad.needsUpdate = true;
       const toon = (color, emissive = 0x000000, extra = {}) => new THREE.MeshToonMaterial({ color, gradientMap: grad, emissive, ...extra });
 
-      // ---------- Terre stylisee (textures procedurales) ----------
-      function buildEarthTextures() {
-        const tw = 1024, th = 512;
-        const day = document.createElement("canvas"); day.width = tw; day.height = th;
-        const night = document.createElement("canvas"); night.width = tw * 2; night.height = th * 2;
-        const dc = day.getContext("2d"), nc = night.getContext("2d");
-        const di = dc.createImageData(tw, th);
-        nc.fillStyle = "#04081a"; nc.fillRect(0, 0, tw * 2, th * 2);
-        const landMask = new Uint8Array(tw * th);
-        const dots = [];
-        const rnd = mulberry32(7);
-        const q = (v, steps) => Math.floor(v * steps) / steps;
-        for (let j = 0; j < th; j++) {
-          const lat = (0.5 - (j + 0.5) / th) * Math.PI;
-          for (let i = 0; i < tw; i++) {
-            const lon = ((i + 0.5) / tw) * Math.PI * 2 - Math.PI;
-            const x = Math.cos(lat) * Math.cos(lon), y = Math.sin(lat), z = Math.cos(lat) * Math.sin(lon);
-            const n = fbm(x * 1.7 + 3, y * 1.7 + 3, z * 1.7 + 3, 11);
-            const isLand = n > 0.53;
-            const alat = Math.abs(lat) / (Math.PI / 2);
-            const ice = alat > 0.86;
-            const mois = fbm(x * 3 + 9, y * 3 + 9, z * 3 + 9, 31, 3);
-            let r, g, b;
-            if (isLand) {
-              const dry = q(clamp01((0.6 - mois) * 4), 3);
-              r = lerp(58, 188, dry); g = lerp(128, 148, dry); b = lerp(66, 84, dry);
-            } else {
-              const shallow = q(clamp01((n - 0.42) / 0.11), 3);
-              r = lerp(8, 30, shallow); g = lerp(46, 110, shallow); b = lerp(112, 178, shallow);
-            }
-            if (ice) { r = 236; g = 243; b = 250; }
-            const cl = fbm(x * 3.6 + 50, y * 3.6 + 50, z * 3.6 + 50, 77, 4);
-            if (cl > 0.67) { r = lerp(r, 248, 0.55); g = lerp(g, 250, 0.55); b = lerp(b, 255, 0.55); }
-            const k = (j * tw + i) * 4;
-            di.data[k] = r; di.data[k + 1] = g; di.data[k + 2] = b; di.data[k + 3] = 255;
-            if (isLand && !ice) {
-              landMask[j * tw + i] = 1;
-              const cityN = fbm(x * 8 + 100, y * 8 + 100, z * 8 + 100, 5, 3);
-              if (cityN > 0.52 && rnd() < 0.10 + (cityN - 0.52) * 1.6) dots.push([i, j, 0.5 + 0.5 * rnd()]);
-            }
-          }
-        }
-        dc.putImageData(di, 0, 0);
-        // silhouette des terres la nuit + points de villes
-        nc.fillStyle = "#0a1330";
-        for (let j = 0; j < th; j++) for (let i = 0; i < tw; i++) if (landMask[j * tw + i]) nc.fillRect(i * 2, j * 2, 2, 2);
-        nc.shadowColor = "rgba(255,170,60,0.9)"; nc.shadowBlur = 3;
-        for (const [i, j, s] of dots) { nc.fillStyle = "rgba(255," + Math.round(190 + 40 * s) + "," + Math.round(90 + 60 * s) + ",1)"; nc.beginPath(); nc.arc(i * 2 + 1, j * 2 + 1, 0.8 + 0.8 * s, 0, Math.PI * 2); nc.fill(); }
-        const mk = (c) => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t; };
-        return { day: mk(day), night: mk(night) };
-      }
+      // ---------- Terre : textures issues de la carte NASA (voir tools/build_earth.py) ----------
+      const texLoader = new THREE.TextureLoader();
+      const loadTex = (url) => texLoader.loadAsync(url).then((t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; });
       const earthUniforms = { dayMap: { value: null }, nightMap: { value: null }, sun: { value: SUN } };
       const earthMat = new THREE.ShaderMaterial({
         uniforms: earthUniforms,
@@ -221,12 +198,12 @@
             vec3 n=normalize(vN);
             float ndl=dot(n,sun);
             float d=smoothstep(-0.015,0.05,ndl);
-            float shade=0.62+0.38*smoothstep(0.12,0.4,ndl);
+            float shade=0.78+0.22*smoothstep(0.12,0.4,ndl);
             vec3 day=texture2D(dayMap,vUv).rgb*shade;
             vec3 night=texture2D(nightMap,vUv).rgb*1.5;
             vec3 col=mix(night,day,d);
             float rim=pow(1.-max(dot(n,vV),0.),4.);
-            col+=vec3(0.25,0.7,1.0)*rim*(0.1+0.5*d);
+            col+=vec3(0.25,0.7,1.0)*rim*(0.06+0.32*d);
             gl_FragColor=vec4(col,1.);
           }`,
       });
@@ -235,67 +212,91 @@
         vertexShader: `varying vec3 vN; varying vec3 vV;
           void main(){ vN=normalize(mat3(modelMatrix)*normal); vec4 wp=modelMatrix*vec4(position,1.); vV=normalize(cameraPosition-wp.xyz); gl_Position=projectionMatrix*viewMatrix*wp; }`,
         fragmentShader: `uniform vec3 sun; varying vec3 vN; varying vec3 vV;
-          void main(){ float f=pow(max(0.5-dot(normalize(vN),vV),0.),3.0)*5.0; float l=0.45+0.55*smoothstep(-0.3,0.4,dot(normalize(vN),sun));
+          void main(){ float f=pow(max(0.5-dot(normalize(vN),vV),0.),3.0)*3.4; float l=0.45+0.55*smoothstep(-0.3,0.4,dot(normalize(vN),sun));
             gl_FragColor=vec4(vec3(0.35,0.75,1.0)*f*l,clamp(f*l,0.,1.)); }`,
         side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
       });
-      const tex = buildEarthTextures();
-      earthUniforms.dayMap.value = tex.day; earthUniforms.nightMap.value = tex.night;
-      const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), earthMat); scene.add(earth);
+      const earth = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), earthMat); earth.rotation.set(0.7, 1.4, 0); scene.add(earth);
       const atmo = new THREE.Mesh(new THREE.SphereGeometry(R * 1.035, 64, 48), atmoMat); scene.add(atmo);
 
-      // ---------- etoiles (suivent la camera) ----------
+      // ---------- ciel : carte d'etoiles NASA (Hipparcos), suit la camera ----------
+      const sky = new THREE.Mesh(new THREE.SphereGeometry(900, 48, 32), new THREE.MeshBasicMaterial({ color: 0x3a4660, side: THREE.BackSide, depthWrite: false, fog: false }));
+      sky.visible = false; scene.add(sky);
       const stars = (() => {
-        const rnd = mulberry32(99), n = 1800, p = new Float32Array(n * 3);
-        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 250 + rnd() * 40; p[i*3] = r*s*Math.cos(a); p[i*3+1] = r*u; p[i*3+2] = r*s*Math.sin(a); }
+        const rnd = mulberry32(99), n = 1400, p = new Float32Array(n * 3);
+        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 700 + rnd() * 40; p[i*3] = r*s*Math.cos(a); p[i*3+1] = r*u; p[i*3+2] = r*s*Math.sin(a); }
         const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
-        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xdbe6ff, size: 1.1, sizeAttenuation: true, transparent: true, opacity: 0.85, depthWrite: false }));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xdbe6ff, size: 2.2, sizeAttenuation: false, transparent: true, opacity: 0.85, depthWrite: false }));
         scene.add(pts); return pts;
       })();
 
       // ---------- lumieres ----------
       const sunL = new THREE.DirectionalLight(0xfff1dd, 3.2); scene.add(sunL);
-      scene.add(new THREE.HemisphereLight(0x5a78c8, 0x0a1022, 1.1));
+      scene.add(new THREE.HemisphereLight(0x6f8fe0, 0x0a1022, 1.15));
+      const fill = new THREE.DirectionalLight(0x7aa2ff, 0.7); fill.position.set(-30, 10, -20); scene.add(fill);
 
-      // ---------- ISS ----------
+      // ---------- modeles NASA (NASA-3D-Resources, sans copyright) ----------
+      const iss = new THREE.Group(); scene.add(iss);
+      const astroS = new THREE.Group(), astroI = new THREE.Group(), astroE = new THREE.Group(); scene.add(astroS, astroI, astroE);
+      const wrench = new THREE.Group(); scene.add(wrench);
+
+      function normalize(obj, target) {
+        const box = new THREE.Box3().setFromObject(obj), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
+        obj.position.sub(c); const g = new THREE.Group(); g.add(obj); g.scale.setScalar(target / Math.max(size.x, size.y, size.z)); return { g, size };
+      }
       function panelTexture() {
-        const c = document.createElement("canvas"); c.width = 128; c.height = 64; const x = c.getContext("2d");
-        x.fillStyle = "#1d4390"; x.fillRect(0, 0, 128, 64);
+        const c = document.createElement("canvas"); c.width = 128; c.height = 256; const x = c.getContext("2d");
+        x.fillStyle = "#1d4390"; x.fillRect(0, 0, 128, 256);
         x.strokeStyle = "#4f86e0"; x.lineWidth = 2;
-        for (let i = 0; i <= 128; i += 16) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, 64); x.stroke(); }
-        for (let j = 0; j <= 64; j += 16) { x.beginPath(); x.moveTo(0, j); x.lineTo(128, j); x.stroke(); }
-        x.strokeStyle = "#c9d8f5"; x.lineWidth = 3; x.strokeRect(1, 1, 126, 62);
+        for (let i = 0; i <= 128; i += 16) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, 256); x.stroke(); }
+        for (let j = 0; j <= 256; j += 16) { x.beginPath(); x.moveTo(0, j); x.lineTo(128, j); x.stroke(); }
+        x.strokeStyle = "#c9d8f5"; x.lineWidth = 4; x.strokeRect(2, 2, 124, 252);
         const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
       }
-      const iss = new THREE.Group();
-      {
-        const white = toon(0xf1f4fa), grey = toon(0x9aa5ba), gold = toon(0xe0a83c, 0x2a1a00);
-        const panel = toon(0xffffff, 0x0c1c44, { map: panelTexture() });
-        const cyl = (r, l, m, rot) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(r, r, l, 24), m); if (rot === "x") c.rotation.z = Math.PI / 2; if (rot === "z") c.rotation.x = Math.PI / 2; return c; };
-        iss.add(new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.09, 0.09), grey));
-        const m1 = cyl(0.17, 1.2, white, "z"); m1.position.set(0, -0.05, 0); iss.add(m1);
-        const m2 = cyl(0.15, 0.95, white, "z"); m2.position.set(0.24, -0.05, 0.95); iss.add(m2);
-        const m3 = cyl(0.15, 0.85, white, "z"); m3.position.set(-0.24, -0.05, -0.9); iss.add(m3);
-        const m4 = cyl(0.12, 0.7, gold, "x"); m4.position.set(0, -0.05, 0.1); iss.add(m4);
-        for (const zz of [-0.35, 0, 0.35]) { const ring = cyl(0.185, 0.04, grey, "z"); ring.position.set(0, -0.05, zz); iss.add(ring); }
-        const dome = new THREE.Mesh(new THREE.SphereGeometry(0.13, 16, 12), white); dome.position.set(0, 0.16, 0.1); iss.add(dome);
-        const dish = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.1, 18), white); dish.position.set(-0.3, 0.2, -0.4); dish.rotation.x = Math.PI; iss.add(dish);
-        for (const sx of [-1, 1]) {
-          for (const sz of [-1, 1]) {
-            const p = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.02, 0.4), panel); p.position.set(sx * 1.2, 0.0, sz * 0.3); iss.add(p);
-            const p2 = new THREE.Mesh(new THREE.BoxGeometry(0.95, 0.02, 0.4), panel); p2.position.set(sx * 1.2, 0.0, sz * 0.3 + sz * 0.45); iss.add(p2);
-          }
-          const rad = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 0.24), white); rad.position.set(sx * 0.55, 0.3, 0.1); iss.add(rad);
-          const rod = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.3, 0.03), grey); rod.position.set(sx * 0.55, 0.15, 0.1); iss.add(rod);
-        }
-        iss.scale.setScalar(1.25);
-      }
-      scene.add(iss);
+      const panelMat = toon(0xffffff, 0x0c1c44, { map: panelTexture() });
+      const draco = new DRACOLoader(); draco.setDecoderPath("./lib/three/draco/");
+      const gltf = new GLTFLoader(); gltf.setDRACOLoader(draco);
+      const toonify = (root, pick) => root.traverse((o) => {
+        if (!o.isMesh) return;
+        const m = o.material; const mk = (mm) => new THREE.MeshToonMaterial({ color: mm.color ? mm.color.clone() : 0xffffff, map: mm.map || null, gradientMap: grad });
+        o.material = Array.isArray(m) ? m.map(mk) : mk(m);
+        if (pick) pick(o);
+      });
 
-      const wrench = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.07, 0.07), toon(0xffc247, 0x442a00)); scene.add(wrench);
+      const modelsReady = Promise.all([
+        gltf.loadAsync("assets/models/iss.glb").then((m) => {
+          const root = m.scene;
+          // panneaux (grands elements plats) en bleu, le reste en blanc/gris clair
+          toonify(root, (o) => {
+            o.geometry.computeBoundingBox(); const s = o.geometry.boundingBox.getSize(new THREE.Vector3()); const d = [s.x, s.y, s.z].sort((a, b) => a - b);
+            if (/^(bended|pCylinder)/.test(o.name)) { o.visible = false; return; }   // pieces parasites du modele (forment un gros nuage blanc)
+            const flat = d[0] / d[2] < 0.12 && d[2] > 6;
+            const mats = Array.isArray(o.material) ? o.material : [o.material];
+            for (const mm of mats) { mm.map = null; if (flat) { mm.color.set(0x2c58ad); mm.emissive = new THREE.Color(0x050f2a); } else mm.color.set(0xdde3ee); }
+            window.__issMeshes = (window.__issMeshes || []).concat([{ n: o.name, flat, size: [s.x, s.y, s.z].map((v) => +v.toFixed(1)) }]);
+          });
+          const { g, size } = normalize(root, 4.8); window.__issSize = [size.x, size.y, size.z];
+          g.rotation.set(0, 0, -Math.PI / 2); // empilement des modules -> axe X local (vitesse)
+          const wrap = new THREE.Group(); wrap.add(g); iss.add(wrap);
+        }),
+        gltf.loadAsync("assets/models/astronaut.glb").then((m) => {
+          const root = m.scene; toonify(root, (o) => { const mats = Array.isArray(o.material) ? o.material : [o.material]; for (const mm of mats) { if (!mm.map) mm.color.multiplyScalar(0.86); } });
+          root.rotation.x = 0; const { g } = normalize(root, 2.8);
+          const place = (grp, h) => { const c = g.clone(true); c.scale.multiplyScalar(h / 2.8); grp.add(c); };
+          place(astroS, 2.8); place(astroI, 0.95); place(astroE, 1.7);
+        }),
+        gltf.loadAsync("assets/models/wrench.glb").then((m) => {
+          const root = m.scene; toonify(root, (o) => { const mats = Array.isArray(o.material) ? o.material : [o.material]; for (const mm of mats) { mm.color.set(0xffc247); mm.emissive = new THREE.Color(0x442a00); } });
+          const { g } = normalize(root, 0.75); g.rotation.z = Math.PI / 2; wrench.add(g);
+        }),
+        loadTex("assets/tex/earth_day.jpg").then((t) => { earthUniforms.dayMap.value = t; }),
+        loadTex("assets/tex/earth_night.png").then((t) => { earthUniforms.nightMap.value = t; }),
+                loadTex("assets/tex/moon.jpg").then((t) => { moonSprite.material.map = t; moonSprite.material.needsUpdate = true; }),
+      ]);
 
       const orbitRing = (() => { const m = new THREE.Mesh(new THREE.TorusGeometry(RO0, 0.022, 6, 300), new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.6 })); m.rotation.x = Math.PI / 2; scene.add(m); return m; })();
       const moonRing = (() => { const m = new THREE.Mesh(new THREE.TorusGeometry(42, 0.12, 6, 300), new THREE.MeshBasicMaterial({ color: 0x60c8ff, transparent: true, opacity: 0.45 })); m.rotation.x = Math.PI / 2; scene.add(m); return m; })();
+      const moonSprite = new THREE.Sprite(new THREE.SpriteMaterial({ color: 0xffffff, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true })); moonSprite.scale.setScalar(8.4); scene.add(moonSprite);
 
       const gravArrows = new THREE.Group();
       {
@@ -320,25 +321,6 @@
       const setLine = (l, a, b) => { const p = l.geometry.attributes.position; p.setXYZ(0, a.x, a.y, a.z); p.setXYZ(1, b.x, b.y, b.z); p.needsUpdate = true; if (l.material.isLineDashedMaterial) l.computeLineDistances(); };
       const altLine = mkLine(0xfbbf24, false);
       const tanLine = mkLine(0xfbbf24, true), dropLine = mkLine(0xff5d5d, false), cannonTan = mkLine(0xfbbf24, true);
-
-      // ---------- astronautes ----------
-      function makeAstro(s) {
-        const g = new THREE.Group();
-        const suit = toon(0xf4f6fa), visor = toon(0xd29a2e, 0x3a2400), dark = toon(0x8a95aa), orange = toon(0xff8a3d);
-        g.add(new THREE.Mesh(new THREE.CapsuleGeometry(0.45, 0.55, 8, 20), suit));
-        const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.42, 28, 20), suit); helmet.position.set(0, 0.92, 0); g.add(helmet);
-        const vz = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.62), visor); vz.position.set(0, 0.94, 0.17); vz.rotation.x = Math.PI * 0.42; g.add(vz);
-        const pack = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.82, 0.32), dark); pack.position.set(0, 0.05, -0.42); g.add(pack);
-        const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.08, 0.5), orange); stripe.position.set(0, 0.35, 0.02); g.add(stripe);
-        for (const sg of [-1, 1]) {
-          const arm = new THREE.Mesh(new THREE.CapsuleGeometry(0.15, 0.55, 6, 14), suit); arm.position.set(sg * 0.62, 0.15, 0.12); arm.rotation.z = sg * 0.9; arm.rotation.x = -0.4; g.add(arm);
-          const glove = new THREE.Mesh(new THREE.SphereGeometry(0.17, 12, 10), dark); glove.position.set(sg * 0.95, -0.12, 0.3); g.add(glove);
-          const leg = new THREE.Mesh(new THREE.CapsuleGeometry(0.19, 0.6, 6, 14), suit); leg.position.set(sg * 0.22, -0.95, 0.1); leg.rotation.z = sg * 0.18; leg.rotation.x = -0.3; g.add(leg);
-          const boot = new THREE.Mesh(new THREE.SphereGeometry(0.22, 12, 10), dark); boot.position.set(sg * 0.3, -1.4, 0.2); g.add(boot);
-        }
-        g.scale.setScalar(s); scene.add(g); return g;
-      }
-      const astroS = makeAstro(1.0), astroI = makeAstro(0.34), astroE = makeAstro(0.62);
 
       // ---------- Newton : montagne + canon + 3 tirs ----------
       const newton = new THREE.Group();
@@ -373,36 +355,25 @@
       }
       scene.add(newton);
 
-      // ---------- Lune ----------
-      const moon = (() => {
-        const c = document.createElement("canvas"); c.width = 256; c.height = 128; const x = c.getContext("2d");
-        x.fillStyle = "#b9bfcc"; x.fillRect(0, 0, 256, 128); const r = mulberry32(5);
-        for (let i = 0; i < 40; i++) { x.fillStyle = "rgba(120,128,146," + (0.3 + r() * 0.4) + ")"; x.beginPath(); x.arc(r() * 256, r() * 128, 3 + r() * 12, 0, 7); x.fill(); }
-        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-        const m = new THREE.Mesh(new THREE.SphereGeometry(3.2, 40, 28), toon(0xffffff, 0x000000, { map: t })); scene.add(m); return m;
-      })();
-
       // ---------- ascenseur (chute libre) ----------
       const elev = new THREE.Group();
-      let cableTop, cableLow, elevGroupPos = new THREE.Vector3(-300, 0, 0);
+      let cableTop, cableLow;
       {
         const frame = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(3.2, 4.0, 3.2)), new THREE.LineBasicMaterial({ color: 0xdfe6f5 })); elev.add(frame);
         const floor = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.12, 3.2), toon(0x3a4660)); floor.position.y = -2.0; elev.add(floor);
         const back = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 4.0), new THREE.MeshBasicMaterial({ color: 0x1a2440, transparent: true, opacity: 0.55, side: THREE.DoubleSide })); back.position.z = -1.6; elev.add(back);
-        astroE.position.set(0, -0.1, 0);
         scene.add(elev);
         cableTop = mkLine(0xdfe6f5, false); cableLow = mkLine(0xdfe6f5, false);
-        // traits de parallaxe verticaux
         const r2 = mulberry32(21), pos = [];
         for (let i = 0; i < 70; i++) { const x = -300 + (r2() * 2 - 1) * 16, z = -6 - r2() * 8, y0 = -120 + r2() * 150; pos.push(x, y0, z, x, y0 + 2 + r2() * 6, z); }
         const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(pos), 3));
-        const lines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0xaac4ff, transparent: true, opacity: 0.35 })); lines.frustumCulled = false; lines.name = "streaks"; scene.add(lines); elev.userData.streaks = lines;
+        const lines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0xaac4ff, transparent: true, opacity: 0.35 })); lines.frustumCulled = false; scene.add(lines); elev.userData.streaks = lines;
       }
 
       // ---------- poussee moteur et particules d'air ----------
       const flame = new THREE.Mesh(new THREE.ConeGeometry(0.16, 0.9, 12), new THREE.MeshBasicMaterial({ color: 0xffa23a })); scene.add(flame);
       const airN = 260, airBase = (() => { const r = mulberry32(3), a = []; for (let i = 0; i < airN; i++) a.push([r() * 14 - 7, r() * 5 - 2.5, r() * 6 - 3]); return a; })();
-      const airPts = new THREE.Points(new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(new Float32Array(airN * 3), 3)), new THREE.PointsMaterial({ color: 0xbfe6ff, size: 0.08, transparent: true, opacity: 0.9 }));
+      const airPts = new THREE.Points(new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(new Float32Array(airN * 3), 3)), new THREE.PointsMaterial({ color: 0xbfe6ff, size: 0.055, transparent: true, opacity: 0.85 }));
       airPts.frustumCulled = false; scene.add(airPts);
 
       // ---------- plans (camera) ----------
@@ -419,61 +390,84 @@
         AB(18.5, 21.0, [[0, -2.6, R + 3.6, 13.5, 3.2, R - .8, 0], [2.5, -2.2, R + 3.2, 12.5, 3.6, R - .8, 0]], "EN"),
         AB(21.0, 23.8, [[0, -2.2, R + 3.2, 12.5, 3.6, R - .8, 0], [2.8, 0, R + 2, 22, 5, R - 3, 0]], "EN"),
         AB(23.8, 28.6, [[0, 0, R + 2, 22, 5, R - 3, 0], [4.8, 0, R + 3, 34, 0, R - 4, 0]], "ENC"),
-        AB(28.6, 33.5, [[0, 0, R + 3, 34, 0, R - 4, 0], [4.9, 0, 2, 42, 0, 0, 0]], "EN"),
-        AB(33.5, 38.2, [[0, 0, 2, 42, 0, 0, 0], [4.7, 0, 4, 36, 0, 0, 0]], "EN"),
-        IS(38.2, 42.6, [[0, 3, -9, 1.5, -2.5, .5, 0], [4.4, 3, -7, 1.5, -2.5, .5, 0]], "EIO"),
-        IS(42.6, 49.0, [[0, 1.5, 2.5, 11, -.5, 2.5, 0], [6.4, 1.5, 2.5, 11.5, -.5, 2.5, 0]], "EIOT", { up: "r" }),
-        IS(49.0, 52.6, [[0, 6, -11, 3, -3, .5, 0], [3.6, 6, -11, 3, -3, .5, 0]], "EIOG"),
-        IS(52.6, 55.2, [[0, 6, -11, 3, -3, .5, 0], [2.6, 6, -11, 3, -3, .5, 0]], "EIO"),
-        IS(55.2, 58.2, [[0, 6, -11, 3, -3, .5, 0], [1.0, 4, -6, 1.5, -2, .5, 0], [3.0, 4, -6, 1.5, -2, .5, 0]], "EIOD"),
-        IS(58.2, 62.0, [[0, 4, -6, 1.5, -2, .5, 0], [3.8, 5, -9, 2, -3, 0, 0]], "EIOD"),
-        IS(62.0, 64.6, [[0, 5, -9, 2, -3, 0, 0], [2.6, 4, -7, 1.5, -2, .5, 0]], "EIOF"),
+        AB(28.6, 33.5, [[0, 0, R + 3, 34, 0, R - 4, 0], [2.4, -9, 6, 38, 0, 0, 0], [4.9, -16, 5, 36, 0, 0, 0]], "EN"),
+        AB(33.5, 38.2, [[0, -16, 5, 36, 0, 0, 0], [2.4, 0, 2, 41, 0, 0, 0], [4.7, 14, 4, 37, 0, 0, 0]], "EN"),
+        IS(38.2, 42.6, [[0, 3, -9, 1.5, -2.5, .5, 0], [2.2, 4.5, -7, 3, -2.5, .5, 0], [4.4, 3, -7, 1.5, -2.5, .5, 0]], "EIO"),
+        IS(42.6, 49.0, [[0, 1.5, 2.5, 11, -.5, 2.5, 0], [3.2, 2.5, 2.5, 9.5, -.5, 2.5, 0], [6.4, 1.5, 2.5, 11.5, -.5, 2.5, 0]], "EIOT", { up: "r" }),
+        IS(49.0, 52.6, [[0, 6, -11, 3, -3, .5, 0], [1.8, 3.2, -8, 1.8, -2, .3, 0], [3.6, 5, -12, 4, -3, .3, 0]], "EIOG"),
+        IS(52.6, 55.2, [[0, 5, -12, 4, -3, .3, 0], [2.6, 9, -8, 6, -4, 0, 0]], "EIO"),
+        IS(55.2, 58.2, [[0, 9, -8, 6, -4, 0, 0], [1.0, 4, -6, 1.5, -2, .5, 0], [3.0, 5, -5, 2.5, -2, 1, 0]], "EIOD"),
+        IS(58.2, 62.0, [[0, 5, -5, 2.5, -2, 1, 0], [1.9, 4, -7, 1.5, -3, 0, 0], [3.8, 5.5, -9, 3, -3, 0, 0]], "EIOD"),
+        IS(62.0, 64.6, [[0, 5.5, -9, 3, -3, 0, 0], [2.6, 4, -7, 1.5, -2, .5, 0]], "EIOF"),
         IS(64.6, 68.7, [[0, 4, -7, 1.5, -2, .5, 0], [4.1, 3.5, -6.5, 2, -1, 1, 0]], "EIOGB"),
         AB(68.7, 70.9, [[0, -300, .5, 12, -300, -.5, 0], [2.2, -300, -1, 12, -300, -2, 0]], "L", { track: 0.96 }),
         AB(70.9, 73.7, [[0, -300, -1, 12, -300, -2, 0], [2.8, -300, -1, 10, -300, -2, 0]], "L", { track: 0.96 }),
         IS(73.7, 76.0, [[0, 24, -6, 8, -6, 0, 0], [2.3, 26, -4, 10, -6, 0, 0]], "EIO"),
-        IS(76.0, 78.7, [[0, 26, -4, 10, -6, 0, 0], [2.7, 28, -2, 10, -6, 0, 0]], "EIO"),
+        IS(76.0, 78.7, [[0, 26, -4, 10, -6, 0, 0], [2.7, 22, -14, 6, -6, 0, 0]], "EIO"),
         AB(78.7, 82.5, [[0, 0, 30, 120, 0, 0, 0], [3.8, 0, 28, 112, 0, 0, 0]], "EMP"),
-        IS(82.5, 88.1, [[0, 7, -13, 4, -4, 0, 0], [5.6, 9, -15, 5, -4, 0, 0]], "EIO"),
+        IS(82.5, 88.1, [[0, 7, -13, 4, -4, 0, 0], [4.4, 9, -15, 5, -4, 0, 0], [5.5, 3, -9, 1.5, -2.5, .5, 0]], "EIOW"),
       ];
+      // coups de zoom (punch-in) sur les chiffres cles
+      const PUNCH = [10.0, 38.9, 44.6, 52.9, 76.3, 83.0];
 
-      const issAngle = (t) => 0.018 * t + 2 * Math.PI * smooth((t - 52.6) / 2.6);
+      const A_ = (t) => 2 * Math.PI * (t / LOOP) + 2 * Math.PI * smooth((t - 52.6) / 2.6);   // angle orbital (boucle : 2 tours a t=LOOP)
+      const issAngle = (t) => A_(t);
       const issRadius = (t) => RO0 - 0.4 * smooth((t - 58.3) / 3.3) + 0.4 * smooth((t - 62.2) / 2.2);
       const altKm = (t) => 408 - 2 * smooth((t - 58.3) / 3.3) + 2 * smooth((t - 62.2) / 2.2);
-      const sunAngleAt = (t) => SUN_BASE + 2 * Math.PI * 3 * smooth((t - 76.0) / 2.7);
+      const sunExtra = (t) => 2 * Math.PI * 3 * smooth((t - 76.0) / 2.7);
       const elevY = (t) => (t < 69.6 ? 0 : -0.5 * 7 * (t - 69.6) * (t - 69.6));
       const moonAng = (t) => 0.35 + 0.04 * (t - 78.7);
 
       function basis(a) { return { r: new THREE.Vector3(Math.sin(a), 0, Math.cos(a)), t: new THREE.Vector3(Math.cos(a), 0, -Math.sin(a)), y: new THREE.Vector3(0, 1, 0) }; }
       const loc = (pos, B, o) => pos.clone().addScaledVector(B.r, o[0]).addScaledVector(B.t, o[1]).addScaledVector(B.y, o[2]);
-
       const sv = (obj, on) => { obj.visible = !!on; };
       const proj = new THREE.Vector3();
       const glowCtx = document.getElementById("glow").getContext("2d");
+      const bloomCv = document.getElementById("bloom"), bloomCtx = bloomCv.getContext("2d");
+      const grainCv = document.getElementById("grain"), grainCtx = grainCv.getContext("2d"), grainImg = grainCtx.createImageData(260, 258);
+      const mbCv = document.getElementById("mb"), mbCtx = mbCv.getContext("2d");
+      const ease = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
 
-      function renderAt(t) {
+      function fovAt(t) {
+        let f = 42;
+        for (const c of window.CUTS) {
+          if (t >= c - 0.22 && t < c) f = Math.max(f, lerp(42, 78, ease((t - (c - 0.22)) / 0.22)));
+          else if (t >= c && t < c + 0.3) f = Math.max(f, lerp(78, 42, ease((t - c) / 0.3)));
+        }
+        for (const p of PUNCH) { if (t >= p && t < p + 0.45) f -= 7 * Math.sin(Math.PI * clamp01((t - p) / 0.45)); }
+        return f;
+      }
+      function blurShutter(t) {
+        for (const c of window.CUTS) if (t >= c - 0.22 && t < c + 0.3) return 0.07;
+        for (const p of PUNCH) if (t >= p && t < p + 0.45) return 0.03;
+        return 0;
+      }
+
+      let ctxState = null;
+      function applyState(t) {
         const shot = SHOTS.find((s) => t >= s.a && t < s.b) || SHOTS[SHOTS.length - 1];
         const show = (c) => shot.show.indexOf(c) >= 0;
         const ang = issAngle(t), B = basis(ang), RO = issRadius(t);
         const issPos = B.r.clone().multiplyScalar(RO);
 
-        // soleil
-        const sa = sunAngleAt(t); SUN.set(Math.cos(sa), 0.25, Math.sin(sa)).normalize(); sunL.position.copy(SUN).multiplyScalar(80);
+        // soleil : fixe par rapport a l'ISS dans les plans orbitaux (boucle), fixe dans le monde sinon
+        const sa = SUN_BASE - (shot.f === "iss" ? ang : 0) + (shot.f === "iss" ? sunExtra(t) : 0);
+        SUN.set(Math.cos(sa), 0.25, Math.sin(sa)).normalize(); sunL.position.copy(SUN).multiplyScalar(80);
 
         iss.position.copy(issPos);
         iss.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(B.t, B.r, B.r.clone().cross(B.t).multiplyScalar(-1)));
         sv(earth, show("E")); sv(atmo, show("E")); sv(iss, show("I")); sv(orbitRing, show("O"));
-        sv(gravArrows, show("G")); sv(astroS, show("A")); sv(astroI, show("B")); sv(newton, show("N")); sv(moon, show("M")); sv(moonRing, show("P"));
+        sv(gravArrows, show("G")); sv(astroS, show("A")); sv(astroI, show("B")); sv(newton, show("N")); sv(moonSprite, show("M")); sv(moonRing, show("P"));
         sv(wrench, show("W")); sv(altLine, show("H")); sv(tanLine, show("T")); sv(dropLine, show("T")); sv(cannonTan, show("C"));
         sv(elev, show("L")); sv(astroE, show("L")); sv(elev.userData.streaks, show("L")); sv(cableTop, show("L")); sv(cableLow, show("L"));
         sv(flame, show("F")); sv(airPts, show("D"));
-        earth.rotation.y = 0.05 * t; atmo.rotation.y = 0;
         gravArrows.rotation.y = ang; orbitRing.scale.setScalar(RO / RO0);
 
-        // objet qui tombe
+        // objet qui tombe (cle NASA)
         const wp = new THREE.Vector3();
         { const f = Math.max(0, t - 1.6), drop = 0.5 * 0.9 * f * f;
           wp.copy(issPos).addScaledVector(B.r, 0.5 - drop).addScaledVector(B.t, 0.3); wrench.position.copy(wp); wrench.rotation.set(f * 2.2, f * 1.3, f * 3.1);
+          if (t >= 86.0) { wrench.position.copy(issPos).addScaledVector(B.r, 0.5).addScaledVector(B.t, 0.3); wrench.rotation.set(0, 0, 0); }
           if (show("H")) setLine(altLine, issPos.clone().addScaledVector(B.r, -0.2), issPos.clone().multiplyScalar((R + 0.1) / RO)); }
 
         // astronaute de studio
@@ -487,13 +481,13 @@
         setLine(cannonTan, new THREE.Vector3(CAN.x, CAN.y, 0), new THREE.Vector3(CAN.x + 24, CAN.y, 0));
 
         // ascenseur
-        const ey = elevY(t); elev.position.set(-300, ey, 0); astroE.position.set(-300 + 0.1 * Math.sin(t * 1.2), ey + 0.1 + 0.25 * Math.sin(t * 1.7) + (t > 69.6 ? 0.45 * smooth((t - 69.6) / 1.2) : 0), 0);
+        const ey = elevY(t); elev.position.set(-300, ey, 0); astroE.position.set(-300 + 0.1 * Math.sin(t * 1.2), ey - 0.9 + 0.25 * Math.sin(t * 1.7) + (t > 69.6 ? 0.45 * smooth((t - 69.6) / 1.2) : 0), 0);
         astroE.rotation.set(0.2 * Math.sin(t * 1.1), 0.4 + t * 0.3, 0.3 * Math.sin(t * 0.8));
         if (t < 69.6) { setLine(cableTop, new THREE.Vector3(-300, 16, 0), new THREE.Vector3(-300, 2.0, 0)); setLine(cableLow, new THREE.Vector3(-300, 2.0, 0), new THREE.Vector3(-300, 2.0, 0)); }
         else { setLine(cableTop, new THREE.Vector3(-300, 16, 0), new THREE.Vector3(-300, 7.0, 0)); setLine(cableLow, new THREE.Vector3(-300, ey + 2.0, 0), new THREE.Vector3(-300, ey + 5.2, 0)); }
 
         // poussee + air
-        const fPos = loc(issPos, B, [0, -2.3, 0]); flame.position.copy(fPos);
+        const fPos = loc(issPos, B, [0, -2.9, 0]); flame.position.copy(fPos);
         flame.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), B.t.clone().multiplyScalar(-1));
         const fl = (t >= 62.0 && t < 64.6) ? (0.7 + 0.3 * Math.sin(t * 40)) : 0; flame.scale.set(fl, fl, fl);
         { const arr = airPts.geometry.attributes.position; const sp = (t * 7) % 14;
@@ -506,22 +500,40 @@
           tr.ball.visible = t >= tr.s.t0; const pp = tr.s.pts[Math.min(idx, n - 1)]; tr.ball.position.set(pp.x, pp.y, pp.z);
         }
         // Lune
-        const ma = moonAng(t); moon.position.set(Math.sin(ma) * 42, 0, Math.cos(ma) * 42);
+        const ma = moonAng(t); moonSprite.position.set(Math.sin(ma) * 42, 0, Math.cos(ma) * 42);
 
         // camera
         const lt = t - shot.a, kf = shot.kf; let i = 0; while (i < kf.length - 2 && lt > kf[i + 1][0]) i++;
-        const A = kf[i], Bk = kf[i + 1], k = smooth((lt - A[0]) / (Bk[0] - A[0]));
-        const c = []; for (let j = 1; j < 7; j++) c.push(lerp(A[j], Bk[j], k));
+        const Ak = kf[i], Bk = kf[i + 1], k = smooth((lt - Ak[0]) / (Bk[0] - Ak[0]));
+        const c = []; for (let j = 1; j < 7; j++) c.push(lerp(Ak[j], Bk[j], k));
         let cp, lk;
         if (shot.f === "iss") { cp = loc(issPos, B, [c[0], c[1], c[2]]); lk = loc(issPos, B, [c[3], c[4], c[5]]); camera.up.copy(shot.up === "r" ? B.r : new THREE.Vector3(0, 1, 0)); }
         else { cp = new THREE.Vector3(c[0], c[1], c[2]); lk = new THREE.Vector3(c[3], c[4], c[5]); camera.up.set(0, 1, 0); if (shot.track) { cp.y += ey * shot.track; lk.y += ey * shot.track; } }
-        camera.position.copy(cp); camera.lookAt(lk); camera.updateMatrixWorld(true);
-        stars.position.copy(cp);
+        camera.position.copy(cp); camera.lookAt(lk);
+        // leger mouvement "a la main"
+        camera.rotateX(0.0035 * Math.sin(t * 1.1)); camera.rotateY(0.0035 * Math.sin(t * 0.83 + 1)); camera.rotateZ(0.002 * Math.sin(t * 0.6));
+        const fv = fovAt(t); if (Math.abs(camera.fov - fv) > 1e-4) { camera.fov = fv; camera.updateProjectionMatrix(); }
+        camera.updateMatrixWorld(true);
+        stars.position.copy(cp); sky.position.copy(cp);
+        ctxState = { issPos, B, wp, aiPos, fPos, ey };
+      }
 
-        renderer.render(scene, camera);
-        glowCtx.clearRect(0, 0, 180, 104); glowCtx.drawImage(canvas, 0, 440, 1040, 590, 0, 0, 180, 104);
-
-        updatePills(t, { issPos, B, wp, aiPos, fPos, ey });
+      function renderAt(t) {
+        const sh = blurShutter(t);
+        if (sh > 0) {
+          const n = 4;
+          for (let s = 0; s < n; s++) {
+            applyState(t - sh * (1 - s / (n - 1))); renderer.render(scene, camera);
+            mbCtx.globalAlpha = 1 / (s + 1); mbCtx.drawImage(canvas, 0, 0);
+          }
+          mbCtx.globalAlpha = 1; mbCv.style.opacity = "1";
+        } else { applyState(t); renderer.render(scene, camera); mbCv.style.opacity = "0"; }
+        const src = sh > 0 ? mbCv : canvas;
+        glowCtx.clearRect(0, 0, 180, 104); glowCtx.drawImage(src, 0, 440, 1040, 590, 0, 0, 180, 104);
+        // bloom (seuil approche par contraste) + grain de film
+        bloomCtx.clearRect(0, 0, 275, 272); bloomCtx.filter = "contrast(3.2) brightness(0.9) saturate(1.2)"; bloomCtx.drawImage(src, 0, 0, 275, 272); bloomCtx.filter = "none";
+        { const rnd = mulberry32(Math.floor(t * 60) + 7), d = grainImg.data; for (let i = 0; i < d.length; i += 4) { const v = 128 + (rnd() - 0.5) * 150; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; } grainCtx.putImageData(grainImg, 0, 0); }
+        updatePills(t, ctxState);
       }
 
       // ---------- pastilles attachees aux objets ----------
@@ -534,7 +546,7 @@
           case "wrench": return ctx.wp.clone();
           case "canon": return CAN.clone();
           case "ball1": return ballPos(0); case "ball2": return ballPos(1); case "ball3": return ballPos(2);
-          case "moon": return moon.position.clone();
+          case "moon": return moonSprite.position.clone();
           case "astroI": return ctx.aiPos.clone();
           case "flame": return ctx.fPos.clone();
           case "elev": return new THREE.Vector3(-300, ctx.ey + (a.dy || 0), 0);
@@ -566,10 +578,11 @@
       }
 
       window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
-      window.__hf.buildReady["stage"] = Promise.resolve();
+      window.__hf.buildReady["stage"] = modelsReady.then(() => { renderAt(0); window.__hf.ready = true; });
       window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
-      renderAt(0);
       window.__renderAt = renderAt;
+      window.__dbg = { renderer, camera, scene, wrench, moonSprite, iss, astroS, astroI, astroE, THREE };
+      window.__inspect = () => ({ iss: window.__issMeshes, size: window.__issSize });
     </script>
   </body>
 </html>
