@@ -10,7 +10,7 @@
 
 ## ➤ Description de la video : 
 
-Le 18 novembre 2026, selon la NASA, la sonde Voyager 1 atteint un jour-lumière de la Terre : environ 25,9 milliards de kilomètres. La lumière du Soleil met 8 minutes pour nous atteindre, mais une journée entière pour arriver jusqu'à elle. Un message envoyé aujourd'hui est reçu demain, et sa réponse met encore une journée à revenir.
+Le 18 novembre 2026, selon la NASA, Voyager 1 atteint un jour-lumière de la Terre : environ 25,9 milliards de kilomètres. La lumière du Soleil met 8 minutes pour nous atteindre, mais une journée entière pour arriver jusqu'à la sonde. Un message envoyé aujourd'hui est reçu demain, et sa réponse met encore une journée à revenir.
 
 Lancée en 1977, Voyager 1 file à environ 17 km/s (61 000 km/h). Pourtant, à cette vitesse, il lui faudrait environ 75 000 ans pour atteindre Proxima du Centaure, l'étoile la plus proche, à 4,24 années-lumière. Elle n'a même pas atteint le nuage de Oort : il lui faudra encore environ 300 ans pour y entrer.
 
@@ -22,3 +22,15 @@ Lancée en 1977, Voyager 1 file à environ 17 km/s (61 000 km/h). Pourtant, à c
 ## ➤ Tag : 
 
 voyager 1, voyager 1 un jour lumiere, distance de voyager 1, vitesse de voyager 1, sonde voyager, nasa voyager, jour lumiere, annee lumiere, proxima du centaure, nuage d oort, echelle de l univers, vertige cosmique, astronomie, astrophysique, espace,
+
+## ➤ Commentaire épinglé :
+
+Quel message enverrais-tu à Voyager 1 ? Elle ne le recevra que demain 👇 Abonne-toi : un nouveau voyage dans l'espace chaque semaine.
+
+## ➤ Texte de la miniature :
+
+49 ANS = 1 SEUL JOUR-LUMIÈRE
+
+## ➤ Publication :
+
+Avant le 18 novembre 2026 (date annoncée par la NASA pour le franchissement d'un jour-lumière). Langue : français. Catégorie : Science et technologie.
