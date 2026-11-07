@@ -1,7 +1,7 @@
 // Annotations de la vidéo « Voyager 1 » : données déclaratives (temps en secondes).
 // cls : y=jaune, b=bleu, g=vert, r=rouge, k=étiquette discrète. anc : ancre 3D (ou scr = position fixe dans le cadre). off : décalage en px.
 window.CUTS = [9.0, 22.4, 30.3, 40.9, 56.4, 64.4];
-window.PUNCH = [12.6, 24.0, 28.0, 46.4, 50.3, 61.8];
+window.PUNCH = [12.6, 18.8, 24.0, 28.0, 33.0, 36.0, 42.5, 44.8, 46.4, 49.6, 50.3, 52.8, 54.4, 57.2, 59.2, 60.6, 61.8];
 window.PILLS = [
   // accroche
   { id: "lance", cls: "g", t0: 2.3,  t1: 4.6,  txt: "LANCÉE EN 1977",           anc: { k: "voy" },   off: [-200, 160] },

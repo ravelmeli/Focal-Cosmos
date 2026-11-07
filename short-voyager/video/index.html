@@ -7,7 +7,7 @@
     <script src="assets/pills.js"></script>
     <style>
       :root {
-        --ground: #050914; --card: #060b1a; --ink: #ffffff; --tag: #3ddc84; --muted: #8b94a8;
+        --ground: #050914; --card: #0b1737; --ink: #ffffff; --tag: #3ddc84; --muted: #8b94a8;
         --yellow: #fbbf24; --blue: #60c8ff; --red: #ff4d4d;
         --font-display: "Inter", sans-serif; --font-mono: "JetBrains Mono", monospace;
       }
@@ -26,8 +26,8 @@
       #card { position: absolute; left: 20px; top: 320px; width: 1040px; height: 1030px; border-radius: 34px; overflow: hidden;
         background: var(--card); border: 2px solid rgba(255,255,255,.1); }
       #gl, #mb { position: absolute; inset: 0; width: 1040px; height: 1030px; }
-      #gl { filter: contrast(1.05) saturate(0.95) brightness(1.14); }
-      #mb { opacity: 0; filter: contrast(1.05) saturate(0.95) brightness(1.14); }
+      #gl { filter: contrast(1.05) saturate(0.95) brightness(1.26); }
+      #mb { opacity: 0; filter: contrast(1.05) saturate(0.95) brightness(1.26); }
       #bloom { position: absolute; left: -30px; top: -30px; width: 1100px; height: 1090px; filter: blur(22px); mix-blend-mode: screen; opacity: .42; }
       #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0) 58%, rgba(0,0,6,.45) 100%); }
       #grain { position: absolute; inset: 0; width: 1040px; height: 1030px; mix-blend-mode: overlay; opacity: .11; }
@@ -111,15 +111,15 @@
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
         data-start="0" data-duration="81" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
 
-      <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="76.96" data-track-index="9" data-volume="0.33"></audio>
-      <audio id="amb" src="assets/ambiance.wav" data-start="0" data-duration="81" data-track-index="10" data-volume="0.8"></audio>
+      <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="76.96" data-track-index="9" data-volume="0.27"></audio>
+      <audio id="amb" src="assets/ambiance.wav" data-start="0" data-duration="81" data-track-index="10" data-volume="0.7"></audio>
 <!--SFX-->
-      <audio id="whoosh1" src="assets/whoosh-short.mp3" data-start="8.70" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
-      <audio id="whoosh2" src="assets/whoosh-short.mp3" data-start="22.10" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
-      <audio id="whoosh3" src="assets/whoosh-short.mp3" data-start="30.00" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
-      <audio id="whoosh4" src="assets/whoosh-short.mp3" data-start="40.60" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
-      <audio id="whoosh5" src="assets/whoosh-short.mp3" data-start="56.10" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
-      <audio id="whoosh6" src="assets/whoosh-short.mp3" data-start="64.10" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
+      <audio id="whoosh1" src="assets/whoosh-short.mp3" data-start="8.70" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh2" src="assets/whoosh-short.mp3" data-start="22.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh3" src="assets/whoosh-short.mp3" data-start="30.00" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh4" src="assets/whoosh-short.mp3" data-start="40.60" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh5" src="assets/whoosh-short.mp3" data-start="56.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh6" src="assets/whoosh-short.mp3" data-start="64.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
       <audio id="impact1" src="assets/impact-bass-1.mp3" data-start="12.60" data-duration="2.12" data-track-index="12" data-volume="0.22"></audio>
       <audio id="impact2" src="assets/impact-bass-1.mp3" data-start="24.00" data-duration="2.12" data-track-index="12" data-volume="0.2"></audio>
       <audio id="impact3" src="assets/impact-bass-2.mp3" data-start="46.00" data-duration="2.59" data-track-index="12" data-volume="0.26"></audio>
@@ -210,7 +210,7 @@
       const W = 1040, H = 1030, LOOP = 81;
       const canvas = document.getElementById("gl");
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
-      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.setClearColor(0x050914, 1);
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.setClearColor(0x0b1737, 1);
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(42, W / H, 0.01, 3000);
 
@@ -315,6 +315,9 @@
         const sg = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowSun, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true })); sg.scale.setScalar(22); sg.position.x = -28; ruler.add(sg);
         for (let h = 0; h <= 24; h++) { const tk = new THREE.Mesh(new THREE.BoxGeometry(0.12, 1.6, 0.12), new THREE.MeshBasicMaterial({ color: 0x7f9ad0, transparent: true, opacity: 0.55 })); tk.position.set(lerp(-28, 26, h / 24), 0, 0); ruler.add(tk); }
         for (const x of [-28, -14, 26]) { const tk = new THREE.Mesh(new THREE.BoxGeometry(0.18, 3.2, 0.18), new THREE.MeshBasicMaterial({ color: 0xcfe0ff })); tk.position.set(x, 0, 0); ruler.add(tk); } }
+      const dust = (() => { const r = mulberry32(31), n = 220, base = []; for (let i = 0; i < n; i++) base.push([r(), r(), r()]);
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xaac4ff, size: 2.6, sizeAttenuation: false, transparent: true, opacity: 0.7, depthWrite: false })); pts.frustumCulled = false; pts.userData.base = base; scene.add(pts); return pts; })();
       const earthR = makeEarth(0.22); earthR.g.position.set(X1 - 14, 0, 0);
       const photon = mkSprite(glowWhite, 5.2); const photonTrail = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 1, 8), new THREE.MeshBasicMaterial({ color: 0xdff0ff, transparent: true, opacity: 0.8 })); photonTrail.rotation.z = Math.PI / 2; scene.add(photonTrail);
       const msg = mkSprite(glowOrange, 4.6); const msgTrail = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 1, 8), new THREE.MeshBasicMaterial({ color: 0xffa24a, transparent: true, opacity: 0.8 })); msgTrail.rotation.z = Math.PI / 2; scene.add(msgTrail);
@@ -323,6 +326,7 @@
       const proxTicks = [];
       const proxLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(X2, 0, 0), new THREE.Vector3(X2 + 200, 0, 0)]), new THREE.LineBasicMaterial({ color: 0x8fb4ff, transparent: true, opacity: 0.6 })); scene.add(proxLine);
       for (let k = 1; k <= 4; k++) { const tk = new THREE.Mesh(new THREE.BoxGeometry(0.5, 7, 0.5), new THREE.MeshBasicMaterial({ color: 0x9fb8e8, transparent: true, opacity: 0.7 })); tk.position.set(X2 + k * 200 / 4.24, 0, 0); scene.add(tk); proxTicks.push(tk); }
+      const pulses = [0, 1, 2, 3].map(() => mkSprite(glowWhite, 0.035, false));
       const sunDot = mkSprite(glowSun, 0.07, false); sunDot.position.set(X2, 0, 0);
       const vtickDot = mkSprite(glowYellow, 0.05, false); vtickDot.position.set(X2 + 0.13, 0, 0);
       const proxStar = mkSprite(glowRed, 0.16, false); proxStar.position.set(X2 + 200, 0, 0);
@@ -333,11 +337,11 @@
       const oort = (() => {
         const rnd = mulberry32(17), n = 9000, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), c = new THREE.Color();
         for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 40 + rnd() * 22;
-          pos[i*3] = X3 + r*s*Math.cos(a); pos[i*3+1] = r*u; pos[i*3+2] = r*s*Math.sin(a);
+          pos[i*3] = r*s*Math.cos(a); pos[i*3+1] = r*u; pos[i*3+2] = r*s*Math.sin(a);
           c.setHSL(0.58 + rnd() * 0.08, 0.5, 0.55 + rnd() * 0.3); col[i*3] = c.r; col[i*3+1] = c.g; col[i*3+2] = c.b; }
         const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("color", new THREE.BufferAttribute(col, 3));
-        const pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 2.4, sizeAttenuation: false, vertexColors: true, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false }));
-        scene.add(pts); return pts; })();
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 3.0, sizeAttenuation: false, vertexColors: true, transparent: true, opacity: 1.0, blending: THREE.AdditiveBlending, depthWrite: false }));
+        pts.position.set(X3, 0, 0); scene.add(pts); return pts; })();
       const sunO = mkSprite(glowSun, 0.09, false); sunO.position.set(X3, 0, 0);
       const oortV = mkSprite(glowYellow, 0.06, false); oortV.position.set(X3 + 2.6, 0, 0);
       const oortRing = new THREE.Mesh(new THREE.TorusGeometry(2.6, 0.04, 6, 120), new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.55 })); oortRing.rotation.x = Math.PI / 2; oortRing.position.set(X3, 0, 0); scene.add(oortRing);
@@ -347,12 +351,12 @@
       const AB = (a, b, kf, show) => ({ a, b, kf, show });
       const SHOTS = [
         AB(0, 9.0,     [[0, 3.2, 1.2, 10, 0, 0.5, 0], [9.0, 2.4, 0.9, 8.2, 0, 0.5, 0]], "V"),
-        AB(9.0, 22.4,  [[0, X1 - 1, 14, 90, X1 - 1, 0, 0], [13.4, X1 + 1, 9, 80, X1, 0, 0]], "R"),
+        AB(9.0, 22.4,  [[0, X1 - 1, 14, 90, X1 - 1, 0, 0], [4.5, X1 - 3, 8, 74, X1 - 2, 0, 0], [8.6, X1 + 2, 11, 80, X1 + 1, 0, 0], [13.4, X1 + 1, 9, 84, X1, 0, 0]], "R"),
         AB(22.4, 30.3, [[0, 5, 1.5, 10, 0, 0, 0], [7.9, 3.5, 1, 8.5, 0, 0, 0]], "VS"),
         AB(30.3, 40.9, [[0, X1 + 18, 5, 30, X1 + 24, 0, 0], [4.5, X1 + 8, 12, 62, X1, 0, 0], [10.6, X1 - 1, 15, 80, X1 - 1, 0, 0]], "R"),
-        AB(40.9, 48.3, [[0, X2 + 0.5, 0.25, 2.2, X2 + 0.15, 0, 0], [3.4, X2 + 3, 1.2, 10, X2 + 1, 0, 0], [7.4, X2 + 100, 30, 300, X2 + 100, 0, 0]], "P"),
-        AB(48.3, 56.4, [[0, X2 + 100, 30, 300, X2 + 100, 0, 0], [8.1, X2 + 100, 22, 280, X2 + 100, 0, 0]], "P"),
-        AB(56.4, 64.4, [[0, X3 + 130, 60, 200, X3, 0, 0], [4, X3 + 40, 70, 210, X3, 0, 0], [8, X3 - 90, 50, 200, X3, 0, 0]], "O"),
+        AB(40.9, 48.3, [[0, X2 + 0.5, 0.25, 2.2, X2 + 0.15, 0, 0], [1.8, X2 + 0.9, 0.5, 3.4, X2 + 0.2, 0, 0], [3.4, X2 + 3, 1.2, 10, X2 + 1, 0, 0], [7.4, X2 + 100, 30, 300, X2 + 100, 0, 0]], "P"),
+        AB(48.3, 56.4, [[0, X2 + 100, 30, 300, X2 + 100, 0, 0], [2.6, X2 + 60, 14, 190, X2 + 50, 0, 0], [5.4, X2 + 140, 18, 200, X2 + 150, 0, 0], [8.1, X2 + 100, 22, 280, X2 + 100, 0, 0]], "P"),
+        AB(56.4, 64.4, [[0, X3 + 130, 60, 200, X3, 0, 0], [2.5, X3 + 70, 40, 130, X3, 0, 0], [5.2, X3 + 30, 30, 100, X3, 0, 0], [8, X3 - 60, 40, 150, X3, 0, 0]], "O"),
         AB(64.4, 70.0, [[0, 4.2, 1.0, 10, 0, 0.5, 0], [5.6, 3.2, 0.8, 8.5, 0, 0.5, 0]], "V"),
         AB(70.0, 81.1, [[0, 3.2, 0.8, 8.5, 0, 0.5, 0], [11.1, 3.2, 1.2, 10, 0, 0.5, 0]], "V"),
       ];
@@ -387,7 +391,7 @@
         const show = (c) => shot.show.indexOf(c) >= 0;
         const V = show("V"), Rr = show("R"), P = show("P"), O = show("O");
         sv(voy, V); sv(sunFar, V); sv(streaks, show("S")); sv(ruler, Rr); sv(voyR, Rr); sv(earthR.g, Rr);
-        [proxLine, sunDot, vtickDot, proxStar, voyP, proxSolid, ...proxTicks].forEach((o) => sv(o, P)); [oort, sunO, oortV, oortRing].forEach((o) => sv(o, O));
+        [proxLine, sunDot, vtickDot, proxStar, voyP, proxSolid, ...proxTicks, ...pulses].forEach((o) => sv(o, P)); sv(dust, Rr); [oort, sunO, oortV, oortRing].forEach((o) => sv(o, O));
         SUN.copy(SUN_DEFAULT); if (Rr) SUN.set(-1, 0.12, 0.45).normalize();
         sunL.position.copy(SUN).multiplyScalar(80);
 
@@ -421,6 +425,10 @@
         { const k = smooth((t - 48.6) / 3.8); const vx = 0.13 + (199.5 - 0.13) * Math.pow(k, 2.2); voyP.position.set(X2 + vx, 0, 0); sv(voyP, P && t >= 48.4);
           tip.vtick = new THREE.Vector3(X2 + 0.13, 0, 0); tip.prox = new THREE.Vector3(X2 + 200, 0, 0); tip.voyP = voyP.position.clone(); }
 
+        // poussiere (repere de mouvement) et impulsions de lumiere
+        { const arr = dust.geometry.attributes.position, b = dust.userData.base; for (let i = 0; i < b.length; i++) arr.setXYZ(i, X1 - 32 + ((b[i][0] * 64 + t * 5) % 64), (b[i][1] - 0.5) * 24, (b[i][2] - 0.5) * 30); arr.needsUpdate = true; }
+        pulses.forEach((sp, i) => sp.position.set(X2 + ((t * 38 + i * 50) % 200), 0, 0));
+        oort.rotation.y = 0.1 * t; oort.rotation.x = 0.35;
         // Oort
         tip.oortV = new THREE.Vector3(X3 + 2.6, 0, 0); tip.oortS = new THREE.Vector3(X3 + 30, 20, 40);
 

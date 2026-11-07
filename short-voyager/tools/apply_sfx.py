@@ -6,7 +6,7 @@ d = sys.argv[1]
 cuts = [float(x) for x in re.findall(r"CUTS\s*=\s*\[([^\]]*)\]", open(f"{d}/assets/pills.js").read())[0].split(",")]
 tags = []
 for i, c in enumerate(cuts):
-    tags.append(f'      <audio id="whoosh{i+1}" src="assets/whoosh-short.mp3" data-start="{c-0.3:.2f}" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>')
+    tags.append(f'      <audio id="whoosh{i+1}" src="assets/whoosh-short.mp3" data-start="{c-0.3:.2f}" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>')
 for i, (t, f, v, dur) in enumerate([(12.6, "impact-bass-1", 0.22, 2.12), (24.0, "impact-bass-1", 0.2, 2.12), (46.0, "impact-bass-2", 0.26, 2.59), (50.3, "impact-bass-1", 0.24, 2.12), (61.8, "impact-bass-1", 0.22, 2.12)]):
     tags.append(f'      <audio id="impact{i+1}" src="assets/{f}.mp3" data-start="{t:.2f}" data-duration="{dur}" data-track-index="12" data-volume="{v}"></audio>')
 tags.append('      <audio id="sparkle" src="assets/sparkle.mp3" data-start="64.60" data-duration="1.8" data-track-index="14" data-volume="0.28"></audio>')
