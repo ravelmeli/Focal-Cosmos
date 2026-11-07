@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script src="assets/pills.js"></script>
+    <style>
+      :root {
+        --ground: #050914; --card: #0b1737; --ink: #ffffff; --tag: #3ddc84; --muted: #8b94a8;
+        --yellow: #fbbf24; --blue: #60c8ff; --red: #ff4d4d;
+        --font-display: "Inter", sans-serif; --font-mono: "JetBrains Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: var(--font-display); background: var(--ground); }
+      #grid { position: absolute; inset: 0;
+        background-image: linear-gradient(rgba(90,130,210,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(90,130,210,.07) 1px, transparent 1px);
+        background-size: 54px 54px; }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 40%, rgba(0,0,0,.5) 100%); }
+      #tag-left { position: absolute; left: 72px; top: 196px; font-family: var(--font-mono); font-weight: 700; font-size: 27px; letter-spacing: .13em; color: var(--tag); }
+      #tag-right { position: absolute; right: 72px; top: 196px; font-family: var(--font-mono); font-weight: 500; font-size: 25px; letter-spacing: .22em; color: var(--muted); }
+      #glow { position: absolute; left: 90px; top: 1380px; width: 900px; height: 520px; opacity: .6; filter: blur(34px); }
+      #prog { position: absolute; left: 280px; top: 1668px; width: 520px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.13); }
+      #prog-fill { height: 100%; width: 0; border-radius: 3px; background: var(--tag); }
+      #card { position: absolute; left: 20px; top: 320px; width: 1040px; height: 1030px; border-radius: 34px; overflow: hidden;
+        background: var(--card); border: 2px solid rgba(255,255,255,.1); }
+      #gl, #mb { position: absolute; inset: 0; width: 1040px; height: 1030px; }
+      #gl { filter: contrast(1.05) saturate(0.95) brightness(1.26); }
+      #mb { opacity: 0; filter: contrast(1.05) saturate(0.95) brightness(1.26); }
+      #bloom { position: absolute; left: -30px; top: -30px; width: 1100px; height: 1090px; filter: blur(22px); mix-blend-mode: screen; opacity: .42; }
+      #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0) 58%, rgba(0,0,6,.45) 100%); }
+      #grain { position: absolute; inset: 0; width: 1040px; height: 1030px; mix-blend-mode: overlay; opacity: .11; }
+      #dip { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(190,220,255,.55), rgba(5,9,20,.95) 75%); opacity: 0; }
+      #scale-note { position: absolute; left: 0; right: 0; top: 24px; text-align: center; font-family: var(--font-mono); font-size: 22px; letter-spacing: .04em; color: #9aa6c2; opacity: 0; z-index: 5; }
+      .pw { position: absolute; transform: translate(-50%, -50%); z-index: 5; }
+      .pill { display: inline-block; font-family: var(--font-mono); font-weight: 700; font-size: 34px; padding: 10px 22px; border-radius: 14px; white-space: nowrap; opacity: 0; }
+      .pill.y { background: var(--yellow); color: #1b1303; }
+      .pill.b { background: var(--blue); color: #04202e; }
+      .pill.g { background: var(--tag); color: #04230f; font-size: 28px; padding: 9px 18px; }
+      .pill.r { background: var(--red); color: #2b0606; font-size: 28px; padding: 9px 18px; }
+      .pill.k { background: rgba(255,255,255,.14); color: #e4eaf8; font-size: 24px; padding: 7px 16px; border: 2px solid rgba(255,255,255,.22); letter-spacing: .06em; }
+      .ld { position: absolute; height: 3px; transform-origin: 0 50%; opacity: 0; z-index: 4; border-radius: 2px; }
+      .ld.y { background: var(--yellow); } .ld.b { background: var(--blue); } .ld.g { background: var(--tag); } .ld.r { background: var(--red); } .ld.k { background: rgba(255,255,255,.55); }
+      .ad { position: absolute; width: 16px; height: 16px; border-radius: 8px; transform: translate(-50%, -50%); opacity: 0; z-index: 4; border: 3px solid #fff; }
+      .ad.y { background: var(--yellow); } .ad.b { background: var(--blue); } .ad.g { background: var(--tag); } .ad.r { background: var(--red); } .ad.k { background: rgba(255,255,255,.8); }
+      .cmp { position: absolute; left: 64px; right: 64px; top: 760px; opacity: 0; font-family: var(--font-mono); z-index: 3; }
+      .cb2 { display: flex; align-items: center; margin-top: 22px; }
+      .cl { width: 320px; font-size: 24px; font-weight: 700; color: #dfe6f5; letter-spacing: .04em; }
+      .ct { flex: 1; height: 38px; border-radius: 10px; background: rgba(255,255,255,.1); overflow: hidden; }
+      .cf { height: 100%; width: 0; border-radius: 10px; }
+      .cv { width: 170px; text-align: right; font-size: 28px; font-weight: 700; }
+      #hook { position: absolute; left: 0; right: 0; top: 48px; text-align: center; z-index: 6; opacity: 1; }
+      #hook .h1 { font-family: var(--font-display); font-weight: 800; font-size: 96px; line-height: .98; color: #fff; letter-spacing: -.01em; text-shadow: 0 8px 40px rgba(0,0,0,.65); }
+      #hook .h2 { margin-top: 12px; font-family: var(--font-mono); font-weight: 700; font-size: 40px; letter-spacing: .06em; color: var(--yellow); text-shadow: 0 4px 24px rgba(0,0,0,.7); }
+      #title { position: absolute; left: 0; right: 0; top: 90px; text-align: center; font-family: var(--font-display); font-weight: 800; font-size: 100px; line-height: 1.0; color: #fff; opacity: 0; z-index: 6; text-shadow: 0 6px 40px rgba(0,0,0,.6); }
+      #title .t2 { color: var(--yellow); }
+      #cta-comment { position: absolute; left: 60px; right: 60px; top: 70px; z-index: 6; opacity: 0; display: flex; align-items: center; gap: 22px;
+        background: #fff; color: #0a0f1d; border-radius: 28px; padding: 22px 30px; box-shadow: 0 10px 40px rgba(0,0,0,.45); }
+      #cta-comment svg { flex: none; width: 58px; height: 58px; }
+      #cta-comment .q { font-family: var(--font-display); font-weight: 800; font-size: 42px; line-height: 1.08; }
+      #cta-comment .q small { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 24px; letter-spacing: .1em; color: #d02727; margin-bottom: 6px; }
+      #cta-sub { position: absolute; left: 0; right: 0; top: 780px; height: 220px; z-index: 6; opacity: 0; }
+      .sub { position: absolute; left: 50%; top: 0; transform: translateX(-50%); display: flex; align-items: center; gap: 18px; padding: 24px 46px; border-radius: 22px;
+        font-family: var(--font-display); font-weight: 800; font-size: 54px; letter-spacing: .02em; white-space: nowrap; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+      .sub svg { width: 56px; height: 56px; }
+      #sub-on { background: #ff0033; color: #fff; }
+      #sub-off { background: #3a3f4c; color: #e8ecf5; opacity: 0; }
+      #sub-note { position: absolute; left: 0; right: 0; top: 132px; text-align: center; font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: .1em; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,.8); }
+      #cursor { position: absolute; left: 0; top: 0; width: 64px; height: 64px; z-index: 7; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="82" data-fps="60" data-width="1080" data-height="1920">
+      <div id="grid"></div>
+      <div id="vignette"></div>
+      <canvas id="glow" width="180" height="104"></canvas>
+      <div id="tag-left">ÉCHELLE · SYSTÈME SOLAIRE</div>
+      <div id="tag-right">FOCAL COSMOS</div>
+      <div id="card">
+        <canvas id="gl" width="1040" height="1030"></canvas>
+        <canvas id="mb" width="1040" height="1030"></canvas>
+        <canvas id="bloom" width="275" height="272"></canvas>
+        <div id="vig"></div>
+        <canvas id="grain" width="260" height="258"></canvas>
+        <div id="scale-note">Échelles non respectées</div>
+        <div class="cmp" id="cmp1">
+          <div class="cb2"><div class="cl">PARIS → NEW YORK</div><div class="ct"><div class="cf" id="c1a" style="background:#60c8ff"></div></div><div class="cv" style="color:#60c8ff">5 840 km</div></div>
+          <div class="cb2"><div class="cl">BALLE → PROXIMA</div><div class="ct"><div class="cf" id="c1b" style="background:#ff4d4d"></div></div><div class="cv" style="color:#ff4d4d">≈ 6 900 km</div></div>
+        </div>
+        <div id="hook"><div class="h1">OÙ EST<br />LA TERRE ?</div><div class="h2">SOLEIL = BALLE DE BASKET</div></div>
+        <div id="title"><div>L'ESPACE</div><div class="t2">DONNE LE VERTIGE</div></div>
+        <div id="cta-comment">
+          <svg viewBox="0 0 64 64"><path d="M8 10h48a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H30L16 58V46H8a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z" fill="#ff0033"/><circle cx="20" cy="28" r="3.6" fill="#fff"/><circle cx="32" cy="28" r="3.6" fill="#fff"/><circle cx="44" cy="28" r="3.6" fill="#fff"/></svg>
+          <div class="q"><small>COMMENTE</small>REGARDE À 26 M. QU'Y A-T-IL ?</div>
+        </div>
+        <div id="cta-sub">
+          <div class="sub" id="sub-on"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v.7A6.5 6.5 0 0 0 5.5 11v4l-2 3v1h17v-1l-2-3v-4A6.5 6.5 0 0 0 14 4.7V4a2 2 0 0 0-2-2zm-2.3 18a2.3 2.3 0 0 0 4.6 0z" fill="#fff"/></svg>S'ABONNER</div>
+          <div class="sub" id="sub-off"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v.7A6.5 6.5 0 0 0 5.5 11v4l-2 3v1h17v-1l-2-3v-4A6.5 6.5 0 0 0 14 4.7V4a2 2 0 0 0-2-2zm-2.3 18a2.3 2.3 0 0 0 4.6 0z" fill="#e8ecf5"/></svg>ABONNÉ ✓</div>
+          <div id="sub-note">NE MANQUE AUCUN VOYAGE</div>
+        </div>
+        <svg id="cursor" viewBox="0 0 24 24"><path d="M5 2l14 10-6 1.5 3.5 7-2.8 1.4-3.5-7L5 19z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
+        <div id="dip"></div>
+      </div>
+      <div id="prog"><div id="prog-fill"></div></div>
+
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
+        data-start="0" data-duration="82" data-track-index="3" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+
+      <audio id="voix" src="assets/voix.wav" data-start="0" data-duration="78.4" data-track-index="9" data-volume="0.27"></audio>
+      <audio id="amb" src="assets/ambiance.wav" data-start="0" data-duration="82" data-track-index="10" data-volume="0.7"></audio>
+<!--SFX-->
+      <audio id="whoosh1" src="assets/whoosh-short.mp3" data-start="3.80" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh2" src="assets/whoosh-short.mp3" data-start="9.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh3" src="assets/whoosh-short.mp3" data-start="18.70" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh4" src="assets/whoosh-short.mp3" data-start="46.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="whoosh5" src="assets/whoosh-short.mp3" data-start="60.10" data-duration="0.57" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="impact1" src="assets/impact-bass-1.mp3" data-start="6.00" data-duration="2.12" data-track-index="12" data-volume="0.22"></audio>
+      <audio id="impact2" src="assets/impact-bass-1.mp3" data-start="10.90" data-duration="2.12" data-track-index="12" data-volume="0.2"></audio>
+      <audio id="impact3" src="assets/impact-bass-1.mp3" data-start="27.40" data-duration="2.12" data-track-index="12" data-volume="0.2"></audio>
+      <audio id="impact4" src="assets/impact-bass-2.mp3" data-start="40.30" data-duration="2.59" data-track-index="12" data-volume="0.26"></audio>
+      <audio id="impact5" src="assets/impact-bass-1.mp3" data-start="56.40" data-duration="2.12" data-track-index="12" data-volume="0.24"></audio>
+      <audio id="sparkle" src="assets/sparkle.mp3" data-start="67.20" data-duration="1.8" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="ping" src="assets/ping.mp3" data-start="70.60" data-duration="1.32" data-track-index="15" data-volume="0.3"></audio>
+      <audio id="click" src="assets/click.mp3" data-start="77.40" data-duration="0.36" data-track-index="16" data-volume="0.5"></audio>
+      <audio id="chime" src="assets/chime.mp3" data-start="77.55" data-duration="1.5" data-track-index="17" data-volume="0.25"></audio>
+      <!--/SFX-->
+    </div>
+
+    <script>
+      // ----- habillage 2D : pastilles (assets/pills.js), accroche, titre, comparaisons, appel a l'action, transitions -----
+      const card = document.getElementById("card");
+      for (const p of window.PILLS) {
+        const lead = !(p.anc.k === "scr");
+        if (lead) {
+          const ld = document.createElement("div"); ld.className = "ld " + p.cls; ld.id = "ld-" + p.id; card.insertBefore(ld, document.getElementById("dip"));
+          const ad = document.createElement("div"); ad.className = "ad " + p.cls; ad.id = "ad-" + p.id; card.insertBefore(ad, document.getElementById("dip"));
+        }
+        const pw = document.createElement("div"); pw.className = "pw"; pw.id = "pw-" + p.id;
+        pw.innerHTML = '<span class="pill ' + p.cls + '" id="pl-' + p.id + '">' + (p.txt || "") + "</span>";
+        card.insertBefore(pw, document.getElementById("dip"));
+      }
+      const tl = gsap.timeline({ paused: true });
+      for (const p of window.PILLS) {
+        tl.fromTo("#pl-" + p.id, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, p.t0);
+        tl.to("#pl-" + p.id, { opacity: 0, duration: 0.15, ease: "power2.in" }, p.t1 - 0.15);
+        if (p.anc.k !== "scr") {
+          tl.fromTo("#ld-" + p.id + ", #ad-" + p.id, { opacity: 0 }, { opacity: 0.95, duration: 0.2 }, p.t0 + 0.05);
+          tl.to("#ld-" + p.id + ", #ad-" + p.id, { opacity: 0, duration: 0.15 }, p.t1 - 0.15);
+        }
+      }
+      for (const [a, b] of [[19.2, 20.8], [36.8, 38.4]]) {
+        tl.to("#scale-note", { opacity: 1, duration: 0.3 }, a);
+        tl.to("#scale-note", { opacity: 0, duration: 0.2 }, b);
+      }
+      // accroche : visible des la premiere image (miniature), puis revient en fin pour la boucle
+      tl.to("#hook", { opacity: 0, duration: 0.35, ease: "power2.in" }, 3.6);
+      tl.to("#hook", { opacity: 1, duration: 0.6, ease: "power2.out" }, 81.4);
+      // comparaison Paris-New York / Proxima
+      tl.fromTo("#cmp1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3 }, 58.0);
+      tl.fromTo("#c1a", { width: "0%" }, { width: "84%", duration: 0.6, ease: "power3.out" }, 58.2);
+      tl.fromTo("#c1b", { width: "0%" }, { width: "100%", duration: 0.7, ease: "power3.out" }, 58.9);
+      tl.to("#cmp1", { opacity: 0, duration: 0.2 }, 60.2);
+      // titre de chute
+      tl.fromTo("#title", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 67.0);
+      tl.to("#title", { opacity: 0, duration: 0.35 }, 70.4);
+      // appel a commenter
+      tl.fromTo("#cta-comment", { opacity: 0, y: 24, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 70.6);
+      tl.to("#cta-comment", { opacity: 0, duration: 0.3 }, 78.2);
+      // appel a s'abonner : bouton, curseur, clic, cloche
+      tl.fromTo("#cta-sub", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 75.6);
+      tl.fromTo("#cursor", { opacity: 0, x: 760, y: 1000 }, { opacity: 1, x: 560, y: 900, duration: 0.9, ease: "power2.inOut" }, 76.4);
+      tl.to("#sub-on", { scale: 0.93, duration: 0.1, ease: "power2.in" }, 77.4);
+      tl.to("#sub-on", { opacity: 0, duration: 0.12 }, 77.5);
+      tl.to("#sub-off", { opacity: 1, duration: 0.12 }, 77.5);
+      tl.fromTo("#sub-off svg", { rotate: 0 }, { rotate: 18, duration: 0.08, yoyo: true, repeat: 5, ease: "sine.inOut" }, 77.65);
+      tl.to("#cursor", { opacity: 0, duration: 0.25 }, 78.2);
+      tl.to("#cta-sub", { opacity: 0, duration: 0.35 }, 81.3);
+      tl.fromTo("#prog-fill", { width: "0px" }, { width: "520px", duration: 82, ease: "none" }, 0);
+      for (const c of window.CUTS) {
+        tl.fromTo("#dip", { opacity: 0 }, { opacity: 0.55, duration: 0.1, ease: "power1.in" }, c - 0.1);
+        tl.to("#dip", { opacity: 0, duration: 0.2, ease: "power1.out" }, c);
+      }
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+
+    <script type="importmap">{ "imports": { "three": "./lib/three/three.module.min.js" } }</script>
+    <script type="module">
+      import * as THREE from "three";
+
+      // ---------- utilitaires deterministes ----------
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const fmtInt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+      const W = 1040, H = 1030, LOOP = 82;
+      const canvas = document.getElementById("gl");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.setClearColor(0x0b1737, 1);
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(42, W / H, 0.05, 300);
+
+      const R = 10, X1 = 1000, X2 = 2000, X3 = 3000;
+      const SUN_BASE = Math.atan2(0.55, 1);
+      const SUN = new THREE.Vector3(Math.cos(SUN_BASE), 0.25, Math.sin(SUN_BASE)).normalize();
+
+      // ---------- Terre (tete d'epingle) : textures NASA stylisees ----------
+      const texLoader = new THREE.TextureLoader();
+      const loadTex = (url) => texLoader.loadAsync(url).then((t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; });
+      const earthUniforms = { dayMap: { value: null }, nightMap: { value: null }, sun: { value: SUN } };
+      const earthMat = new THREE.ShaderMaterial({
+        uniforms: earthUniforms,
+        vertexShader: `varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+          void main(){ vUv=uv; vN=normalize(mat3(modelMatrix)*normal); vec4 wp=modelMatrix*vec4(position,1.); vV=normalize(cameraPosition-wp.xyz); gl_Position=projectionMatrix*viewMatrix*wp; }`,
+        fragmentShader: `uniform sampler2D dayMap; uniform sampler2D nightMap; uniform vec3 sun; varying vec2 vUv; varying vec3 vN; varying vec3 vV;
+          void main(){
+            vec3 n=normalize(vN); float ndl=dot(n,sun); float d=smoothstep(-0.015,0.05,ndl); float shade=0.8+0.2*smoothstep(0.12,0.4,ndl);
+            vec3 col=mix(texture2D(nightMap,vUv).rgb*1.5, texture2D(dayMap,vUv).rgb*shade, d);
+            float rim=pow(1.-max(dot(n,vV),0.),4.); col+=vec3(0.25,0.7,1.0)*rim*(0.06+0.3*d);
+            gl_FragColor=vec4(col,1.);
+          }`,
+      });
+      const earthHead = new THREE.Mesh(new THREE.SphereGeometry(1.1, 64, 48), earthMat); earthHead.position.set(X2, 0, 0); earthHead.rotation.set(0.5, 1.4, 0); scene.add(earthHead);
+
+      // ---------- etoiles (suivent la camera) ----------
+      const stars = (() => {
+        const rnd = mulberry32(99), n = 1500, p = new Float32Array(n * 3);
+        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 250 + rnd() * 30; p[i*3] = r*s*Math.cos(a); p[i*3+1] = r*u; p[i*3+2] = r*s*Math.sin(a); }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xdbe6ff, size: 2.2, sizeAttenuation: false, transparent: true, opacity: 0.85, depthWrite: false }));
+        scene.add(pts); return pts;
+      })();
+
+      // ---------- lumieres ----------
+      const sunL = new THREE.DirectionalLight(0xfff1dd, 3.0); sunL.position.copy(SUN).multiplyScalar(80); scene.add(sunL);
+      scene.add(new THREE.HemisphereLight(0x8fa8ff, 0x1a2036, 1.35));
+      const fillL = new THREE.DirectionalLight(0x7aa2ff, 0.9); fillL.position.set(-30, 10, 20); scene.add(fillL);
+
+      // ---------- halos / sprites ----------
+      const mkGlow = (r, g, b) => { const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d"); const gr = x.createRadialGradient(128, 128, 0, 128, 128, 128);
+        gr.addColorStop(0, `rgba(${r},${g},${b},1)`); gr.addColorStop(0.2, `rgba(${r},${g},${b},.65)`); gr.addColorStop(0.55, `rgba(${r},${g},${b},.16)`); gr.addColorStop(1, `rgba(${r},${g},${b},0)`); x.fillStyle = gr; x.fillRect(0, 0, 256, 256);
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; };
+      const G = { orange: mkGlow(255, 150, 60), white: mkGlow(230, 240, 255), blue: mkGlow(90, 170, 255), red: mkGlow(255, 90, 70), gray: mkGlow(190, 200, 215), yellow: mkGlow(255, 226, 120), tan: mkGlow(230, 200, 140), cyan: mkGlow(110, 230, 255), green: mkGlow(120, 240, 150) };
+      const mkSprite = (tex, scale, atten = true) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, sizeAttenuation: atten })); s.scale.setScalar(scale); scene.add(s); return s; };
+
+      // ---------- balle de basket ----------
+      function ballTexture() {
+        const c = document.createElement("canvas"); c.width = 1024; c.height = 512; const x = c.getContext("2d"); const r = mulberry32(3);
+        x.fillStyle = "#e0702a"; x.fillRect(0, 0, 1024, 512);
+        for (let i = 0; i < 12000; i++) { x.fillStyle = r() < 0.5 ? `rgba(120,50,15,${0.1 + r() * 0.2})` : `rgba(255,175,95,${0.1 + r() * 0.2})`; x.fillRect(r() * 1024, r() * 512, 2, 2); }
+        x.strokeStyle = "#140a05"; x.lineWidth = 8; x.lineCap = "round";
+        x.beginPath(); x.moveTo(0, 256); x.lineTo(1024, 256); x.stroke();
+        for (const u of [0, 512, 1024]) { x.beginPath(); x.moveTo(u, 0); x.lineTo(u, 512); x.stroke(); }
+        for (const [u0, s] of [[256, 1], [768, -1]]) { x.beginPath(); for (let v = 0; v <= 512; v += 8) { const px = u0 + s * 115 * Math.sin(Math.PI * v / 512); if (v === 0) x.moveTo(px, v); else x.lineTo(px, v); } x.stroke(); }
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+      }
+      const ballMat = new THREE.MeshStandardMaterial({ map: ballTexture(), roughness: 0.8, metalness: 0.0 });
+      const ballHero = new THREE.Mesh(new THREE.SphereGeometry(2.4, 64, 48), ballMat); scene.add(ballHero);
+      const ballC = new THREE.Mesh(new THREE.SphereGeometry(0.12, 40, 28), ballMat); ballC.position.set(X1, 0.12, 0); scene.add(ballC);
+
+      // poussiere (le desert)
+      const dust = (() => { const r = mulberry32(12), n = 520, p = new Float32Array(n * 3);
+        for (let i = 0; i < n; i++) { const u = r() * 2 - 1, a = r() * Math.PI * 2, s = Math.sqrt(1 - u * u), d = 18 + r() * 190; p[i*3] = d*s*Math.cos(a); p[i*3+1] = d*u; p[i*3+2] = d*s*Math.sin(a); }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xaac4ff, size: 3, sizeAttenuation: false, transparent: true, opacity: 0.8, depthWrite: false })); scene.add(pts); return pts; })();
+
+      // ---------- monde 1 : le couloir de 26 m ----------
+      const corridor = new THREE.Group(); corridor.position.set(X1, 0, 0); scene.add(corridor);
+      { const pts = [];
+        for (let x = -3; x <= 3; x++) pts.push(x, 0, 4, x, 0, -36);
+        for (let z = 4; z >= -36; z--) pts.push(-3, 0, z, 3, 0, z);
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(pts), 3));
+        corridor.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x3d63b0, transparent: true, opacity: 0.75 })));
+        const m5 = []; for (let z = 0; z >= -35; z -= 5) m5.push(-3, 0.01, z, 3, 0.01, z);
+        const g5 = new THREE.BufferGeometry(); g5.setAttribute("position", new THREE.BufferAttribute(new Float32Array(m5), 3));
+        corridor.add(new THREE.LineSegments(g5, new THREE.LineBasicMaterial({ color: 0xbfd4ff })));
+        const beacon = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 4, 8), new THREE.MeshBasicMaterial({ color: 0x66b8ff, transparent: true, opacity: 0.9 })); beacon.position.set(0, 2, -25.8); corridor.add(beacon);
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(0.4, 0.03, 8, 40), new THREE.MeshBasicMaterial({ color: 0x66b8ff })); ring.rotation.x = Math.PI / 2; ring.position.set(0, 0.02, -25.8); corridor.add(ring);
+        const eg = new THREE.Sprite(new THREE.SpriteMaterial({ map: G.blue, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true })); eg.scale.setScalar(1.6); eg.position.set(0, 0.12, -25.8); corridor.add(eg); }
+
+      // ---------- monde 2 : tete d'epingle + Lune (unite = mm) ----------
+      const macro = new THREE.Group(); scene.add(macro);
+      { const needle = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 14, 12), new THREE.MeshStandardMaterial({ color: 0xc9d3e6, roughness: 0.35, metalness: 0.9 })); needle.position.set(X2, -8.0, 0); macro.add(needle);
+        const moon = new THREE.Mesh(new THREE.SphereGeometry(0.3, 28, 20), new THREE.MeshStandardMaterial({ color: 0xc4c9d6, roughness: 1 })); moon.position.set(X2 + 66, 0, 0); macro.add(moon);
+        const dash = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(X2 + 1.4, 0, 0), new THREE.Vector3(X2 + 65.6, 0, 0)]), new THREE.LineBasicMaterial({ color: 0x8fb4ff, transparent: true, opacity: 0.8 })); macro.add(dash);
+        const mg = new THREE.Sprite(new THREE.SpriteMaterial({ map: G.gray, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, sizeAttenuation: false })); mg.scale.setScalar(0.05); mg.position.set(X2 + 66, 0, 0); macro.add(mg); }
+
+      // ---------- monde 3 : la ligne des distances (unite = m) ----------
+      const DIST = { ball: 0, mer: 10, ter: 25.8, mar: 39.3, jup: 134.3, sat: 246.1, nep: 775.9, voyD: 4467.7, proxS: 6.93e6 };
+      const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(X3, 0, 0), new THREE.Vector3(X3 + 7.2e6, 0, 0)]), new THREE.LineBasicMaterial({ color: 0x8fb4ff, transparent: true, opacity: 0.8 })); scene.add(line);
+      const markers = [["ball", G.orange, 0.07], ["mer", G.gray, 0.045], ["ter", G.blue, 0.05], ["mar", G.red, 0.045], ["jup", G.orange, 0.06], ["sat", G.tan, 0.055], ["nep", G.cyan, 0.05], ["voyD", G.yellow, 0.06], ["proxS", G.red, 0.12]].map(([k, tex, sc]) => { const s = mkSprite(tex, sc, false); s.position.set(X3 + DIST[k], 0, 0); s.userData.k = k; return s; });
+      const oort = (() => { const rnd = mulberry32(17), n = 8000, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), c = new THREE.Color();
+        for (let i = 0; i < n; i++) { const u = rnd() * 2 - 1, a = rnd() * Math.PI * 2, s = Math.sqrt(1 - u * u), r = 5.16e4 + (1.29e6 - 5.16e4) * Math.pow(rnd(), 1.6);
+          pos[i*3] = r*s*Math.cos(a); pos[i*3+1] = r*u; pos[i*3+2] = r*s*Math.sin(a); c.setHSL(0.58 + rnd() * 0.08, 0.5, 0.55 + rnd() * 0.3); col[i*3] = c.r; col[i*3+1] = c.g; col[i*3+2] = c.b; }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("color", new THREE.BufferAttribute(col, 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ size: 2.6, sizeAttenuation: false, vertexColors: true, transparent: true, opacity: 1, blending: THREE.AdditiveBlending, depthWrite: false })); pts.position.set(X3, 0, 0); scene.add(pts); return pts; })();
+
+      // ---------- plans (camera) ----------
+      // kf : [dt, camX, camY, camZ, lookX, lookY, lookZ] ; near/far par plan
+      const Lc = (cx, D) => [X3 + cx, 0.15 * D, D, X3 + cx, 0, 0];
+      const AB = (a, b, kf, show, near, far) => ({ a, b, kf, show, near, far });
+      const SHOTS = [
+        AB(0, 4.1,     [[0, 2.6, 1.6, 9.2, 0, 0.9, 0], [4.1, 1.9, 1.2, 7.8, 0, 0.9, 0]], "H", 0.05, 600),
+        AB(4.1, 9.4,   [[0, X1 + 0.3, 0.8, 2.4, X1, 0.3, -26], [5.3, X1 + 0.4, 1.3, -13, X1, 0.2, -26]], "C", 0.05, 400),
+        AB(9.4, 19.0,  [[0, X2 + 3.4, 0.9, 5.8, X2, -0.2, 0], [3.4, X2 + 4.5, 1.0, 7.0, X2, -0.2, 0], [5.2, X2 + 10, 3, 24, X2 + 5, -1, 0], [9.6, X2 + 33, 15, 95, X2 + 33, 0, 0]], "M", 0.01, 600),
+        AB(19.0, 36.5, [[0, ...Lc(15, 48)], [1.9, ...Lc(22, 75)], [4.2, ...Lc(70, 190)], [11.2, ...Lc(125, 350)], [13.8, ...Lc(400, 1050)], [17.5, ...Lc(420, 1150)]], "L", 0.5, 1e5),
+        AB(36.5, 46.4, [[0, ...Lc(420, 1150)], [3.4, ...Lc(2300, 6500)], [9.9, ...Lc(2250, 6000)]], "L", 0.5, 1e5),
+        AB(46.4, 60.4, [[0, X3 + 9e5, 1.2e6, 3.2e6, X3, 0, 0], [3.6, X3 - 6e5, 9e5, 3.3e6, X3, 0, 0], [7.2, X3 + 3.5e6, 1.5e6, 9.5e6, X3 + 3.4e6, 0, 0], [14.0, X3 + 3.5e6, 1.2e6, 9.2e6, X3 + 3.4e6, 0, 0]], "LO", 1e3, 6e7),
+        AB(60.4, 66.9, [[0, 2.2, 0.6, 8, 0, 0, 0], [6.5, 40, 20, 160, 0, 0, 0]], "H", 0.05, 600),
+        AB(66.9, 82.1, [[0, 40, 20, 160, 0, 0, 0], [10, 36, 18, 150, 0, 0, 0], [13.5, 30, 15, 110, 0, 0, 0], [15.2, 2.6, 1.6, 9.2, 0, 0.9, 0]], "H", 0.05, 600),
+      ];
+
+      const proj = new THREE.Vector3();
+      const glowCtx = document.getElementById("glow").getContext("2d");
+      const bloomCv = document.getElementById("bloom"), bloomCtx = bloomCv.getContext("2d");
+      const grainCv = document.getElementById("grain"), grainCtx = grainCv.getContext("2d"), grainImg = grainCtx.createImageData(260, 258);
+      const mbCv = document.getElementById("mb"), mbCtx = mbCv.getContext("2d");
+      const ease = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+      const sv = (obj, on) => { obj.visible = !!on; };
+
+      function fovAt(t) {
+        let f = 42;
+        for (const c of window.CUTS) {
+          if (t >= c - 0.22 && t < c) f = Math.max(f, lerp(42, 78, ease((t - (c - 0.22)) / 0.22)));
+          else if (t >= c && t < c + 0.3) f = Math.max(f, lerp(78, 42, ease((t - c) / 0.3)));
+        }
+        for (const p of window.PUNCH) { if (t >= p && t < p + 0.45) f -= 7 * Math.sin(Math.PI * clamp01((t - p) / 0.45)); }
+        return f;
+      }
+      function blurShutter(t) {
+        for (const c of window.CUTS) if (t >= c - 0.22 && t < c + 0.3) return 0.07;
+        for (const p of window.PUNCH) if (t >= p && t < p + 0.45) return 0.03;
+        return 0;
+      }
+
+      const tip = {};
+      function applyState(t) {
+        const shot = SHOTS.find((s) => t >= s.a && t < s.b) || SHOTS[SHOTS.length - 1];
+        const show = (c) => shot.show.indexOf(c) >= 0;
+        const Hh = show("H"), Cc = show("C"), M = show("M"), Ll = show("L"), O = show("O");
+        sv(ballHero, Hh); sv(dust, Hh); sv(corridor, Cc); sv(ballC, Cc); sv(earthHead, M); sv(macro, M);
+        sv(line, Ll); markers.forEach((m) => sv(m, Ll && (O || m.userData.k !== "proxS"))); sv(oort, O);
+        sv(stars, !Ll);
+
+        // balle : rotation periodique
+        ballHero.rotation.set(0.35, 0.3 + 0.9 * Math.sin((2 * Math.PI * t) / LOOP * 2), 0.1 * Math.sin((2 * Math.PI * t) / LOOP * 3));
+        ballHero.position.y = 0.08 * Math.sin((2 * Math.PI * t) / LOOP * 4);
+        earthHead.rotation.y = 1.4 + 0.5 * t;
+        oort.rotation.y = 0.04 * t;
+
+        // ancres des pastilles
+        tip.ball = new THREE.Vector3(0, 0, 0); tip.earthPin = new THREE.Vector3(X1, 1.4, -25.8);
+        tip.pinhead = new THREE.Vector3(X2, 0, 0); tip.moon = new THREE.Vector3(X2 + 66, 0, 0); tip.midEM = new THREE.Vector3(X2 + 33, 0, 0);
+        for (const k of ["mer", "mar", "jup", "sat", "nep", "voyD", "proxS"]) tip[k] = new THREE.Vector3(X3 + DIST[k], 0, 0);
+        tip.oortE = new THREE.Vector3(X3 + 2.2e5, 1.0e6, 3e5);
+
+        // camera
+        const lt = t - shot.a, kf = shot.kf; let i = 0; while (i < kf.length - 2 && lt > kf[i + 1][0]) i++;
+        const Ak = kf[i], Bk = kf[i + 1], k = smooth((lt - Ak[0]) / (Bk[0] - Ak[0]));
+        const c = []; for (let j = 1; j < 7; j++) c.push(lerp(Ak[j], Bk[j], k));
+        const cp = new THREE.Vector3(c[0], c[1], c[2]), lk = new THREE.Vector3(c[3], c[4], c[5]);
+        let dirty = false;
+        if (camera.near !== shot.near || camera.far !== shot.far) { camera.near = shot.near; camera.far = shot.far; dirty = true; }
+        camera.up.set(0, 1, 0); camera.position.copy(cp); camera.lookAt(lk);
+        camera.rotateX(0.0035 * Math.sin(t * 1.1)); camera.rotateY(0.0035 * Math.sin(t * 0.83 + 1)); camera.rotateZ(0.002 * Math.sin(t * 0.6));
+        const fv = fovAt(t); if (Math.abs(camera.fov - fv) > 1e-4) { camera.fov = fv; dirty = true; }
+        if (dirty) camera.updateProjectionMatrix();
+        camera.updateMatrixWorld(true);
+        stars.position.copy(cp);
+      }
+
+      function renderAt(t) {
+        const sh = blurShutter(t);
+        if (sh > 0) {
+          const n = 4;
+          for (let s = 0; s < n; s++) { applyState(t - sh * (1 - s / (n - 1))); renderer.render(scene, camera); mbCtx.globalAlpha = 1 / (s + 1); mbCtx.drawImage(canvas, 0, 0); }
+          mbCtx.globalAlpha = 1; mbCv.style.opacity = "1";
+        } else { applyState(t); renderer.render(scene, camera); mbCv.style.opacity = "0"; }
+        const src = sh > 0 ? mbCv : canvas;
+        glowCtx.clearRect(0, 0, 180, 104); glowCtx.drawImage(src, 0, 440, 1040, 590, 0, 0, 180, 104);
+        bloomCtx.clearRect(0, 0, 275, 272); bloomCtx.filter = "contrast(3.2) brightness(0.9) saturate(1.2)"; bloomCtx.drawImage(src, 0, 0, 275, 272); bloomCtx.filter = "none";
+        { const rnd = mulberry32(Math.floor(t * 60) + 7), d = grainImg.data; for (let i = 0; i < d.length; i += 4) { const v = 128 + (rnd() - 0.5) * 150; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; } grainCtx.putImageData(grainImg, 0, 0); }
+        updatePills(t);
+      }
+
+      // ---------- pastilles attachees aux objets ----------
+      function counterText(p, t) {
+        const c = p.cnt; const k = smooth((t - c.t0) / (c.t1 - c.t0)); const v = lerp(c.from, c.to, k);
+        const s = c.raw ? String(Math.round(v)) : (c.dec ? v.toFixed(c.dec).replace(".", ",") : fmtInt(v));
+        return (c.pre || "") + s + (c.suf || "");
+      }
+      function updatePills(t) {
+        for (const p of window.PILLS) {
+          if (t < p.t0 - 0.05 || t > p.t1 + 0.05) continue;
+          const pw = document.getElementById("pw-" + p.id), pl = document.getElementById("pl-" + p.id);
+          if (p.cnt) { const s = counterText(p, t); if (pl.textContent !== s) pl.textContent = s; }
+          if (p.anc.k === "scr") { pw.style.left = p.anc.x + "px"; pw.style.top = p.anc.y + "px"; continue; }
+          const v = tip[p.anc.k]; if (!v) continue;
+          proj.copy(v).project(camera);
+          const ax = (proj.x * 0.5 + 0.5) * W, ay = (-proj.y * 0.5 + 0.5) * H;
+          const hw = (pw.offsetWidth || 300) / 2 + 18, cx = Math.min(W - hw, Math.max(hw, ax + p.off[0])), cy = Math.min(H - 110, Math.max(110, ay + p.off[1]));
+          pw.style.left = cx + "px"; pw.style.top = cy + "px";
+          const ld = document.getElementById("ld-" + p.id), ad = document.getElementById("ad-" + p.id);
+          const dx = cx - ax, dy = cy - ay, len = Math.max(0, Math.hypot(dx, dy) - 36);
+          ld.style.left = ax + "px"; ld.style.top = ay + "px"; ld.style.width = len + "px"; ld.style.transform = "rotate(" + Math.atan2(dy, dx) + "rad)";
+          ad.style.left = ax + "px"; ad.style.top = ay + "px";
+        }
+      }
+
+      const ready = Promise.all([
+        loadTex("assets/tex/earth_day.jpg").then((t) => { earthUniforms.dayMap.value = t; }),
+        loadTex("assets/tex/earth_night.png").then((t) => { earthUniforms.nightMap.value = t; }),
+      ]);
+      window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["stage"] = ready.then(() => { renderAt(0); window.__hf.ready = true; });
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      window.__renderAt = renderAt;
+      window.__dbg = { renderer, camera, scene, THREE };
+    </script>
+  </body>
+</html>
