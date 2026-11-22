@@ -1,0 +1,140 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "shots": [
+  {
+   "start": 0,
+   "end": 5,
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.12,
+    "fx": 0.5,
+    "fy": 0.42
+   },
+   "bg": {
+    "stars": 1,
+    "nebula": [
+     [
+      384,
+      853,
+      900,
+      "#5b2a86",
+      0.18
+     ],
+     [
+      1632,
+      1877,
+      800,
+      "#1a6f8f",
+      0.16
+     ]
+    ]
+   },
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 960,
+     "y": 1365,
+     "r": 380
+    },
+    {
+     "type": "astronaut",
+     "x": 384,
+     "y": 1911,
+     "s": 220,
+     "rot": 0.5,
+     "spin": 0.15
+    },
+    {
+     "type": "you",
+     "x": 384,
+     "y": 1877,
+     "lx": 653,
+     "ly": 2253,
+     "t0": 0.4
+    },
+    {
+     "type": "title",
+     "text": "BLACK HOLE",
+     "sub": "WHAT WOULD KILL YOU FIRST?",
+     "t0": 0.1
+    },
+    {
+     "type": "caption",
+     "text": "YOU JUMP IN. *FOR YOU*: SECONDS.",
+     "t0": 1.2,
+     "dur": 3.4,
+     "y": 0.84,
+     "size": 110
+    }
+   ]
+  },
+  {
+   "start": 5,
+   "end": 10,
+   "trans": "whip",
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.5,
+    "fy": 0.45
+   },
+   "bg": {
+    "stars": 0.7
+   },
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 960,
+     "y": 1229,
+     "r": 300
+    },
+    {
+     "type": "astronaut",
+     "x": 960,
+     "y": 1980,
+     "s": 300,
+     "rot": 1.2,
+     "spin": 0.4
+    },
+    {
+     "type": "chapter",
+     "n": "KILLER #1",
+     "text": "SPAGHETTIFICATION",
+     "t0": 0.1,
+     "dur": 1.1
+    },
+    {
+     "type": "counter",
+     "label": "STRETCH",
+     "from": 0,
+     "to": 100,
+     "unit": "%",
+     "x": 0.5,
+     "y": 0.7,
+     "t1": 2.5,
+     "t0": 1.4
+    },
+    {
+     "type": "label",
+     "text": "SMALL BLACK HOLE: TORN APART BEFORE THE EDGE",
+     "x": 0.5,
+     "y": 0.78,
+     "size": 46,
+     "t0": 2,
+     "underline": true
+    },
+    {
+     "type": "stamp",
+     "text": "STRETCHED",
+     "x": 0.5,
+     "y": 0.55,
+     "rot": -0.12,
+     "size": 120,
+     "t0": 3.2
+    }
+   ]
+  }
+ ]
+}

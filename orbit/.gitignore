@@ -1,0 +1,4 @@
+node_modules/
+bin/
+*.mp4
+!examples/*.mp4
