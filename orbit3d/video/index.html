@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf"); font-weight: 400; }
+      :root { --y: #FFC93C; --r: #FF3B30; --g: #4CFF8A; --ink: #F3F5FA; --sub: #8E97B0; --navy: #05070f; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Inter", sans-serif; background: var(--navy); }
+      #bg { position: absolute; inset: 0;
+        background:
+          radial-gradient(900px 900px at 18% 24%, rgba(110, 50, 160, .30), transparent 70%),
+          radial-gradient(1000px 1000px at 88% 62%, rgba(20, 110, 140, .26), transparent 70%),
+          linear-gradient(#05070f, #0a1024 60%, #070a18); }
+      #gl { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+      #mb { position: absolute; inset: 0; width: 1080px; height: 1920px; opacity: 0; }
+      #vig { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 52%, rgba(0,0,8,.62) 100%); pointer-events: none; }
+      #grain { position: absolute; inset: 0; width: 1080px; height: 1920px; mix-blend-mode: overlay; opacity: .12; pointer-events: none; }
+      #ovh { position: absolute; inset: 0; }
+      .ov { position: absolute; }
+      /* titre */
+      .ov-title { left: 72px; top: 210px; }
+      .ov-title .tt { font-family: "Anton"; font-size: 132px; line-height: 1; color: var(--ink); letter-spacing: .01em; text-shadow: 0 6px 30px rgba(0,0,0,.6); }
+      .ov-title .tu { width: 130px; height: 11px; background: var(--y); margin: 12px 0 14px; }
+      .ov-title .ts { font-weight: 800; font-size: 34px; letter-spacing: .06em; color: var(--sub); text-transform: uppercase; }
+      /* legende */
+      .ov-caption { left: 0; right: 0; top: 78%; text-align: center; padding: 0 30px; }
+      .ov-caption .ci { display: inline-block; font-family: "Anton"; font-size: 118px; line-height: 1.04; color: var(--ink); text-shadow: 0 6px 28px rgba(0,0,0,.75); letter-spacing: .01em; }
+      /* chapitre */
+      .ov-chapter { inset: 0; }
+      .ov-chapter .chc { position: absolute; left: 50%; top: 50%; width: 3500px; height: 3500px; border-radius: 50%; background: var(--y); transform: translate(-50%, -50%) scale(0); }
+      .ov-chapter .cht { position: absolute; left: 50%; top: 50%; width: 960px; text-align: center; opacity: 0; transform: translate(-50%, -50%); }
+      .ov-chapter .chn { font-weight: 900; font-size: 44px; letter-spacing: .22em; color: #05070f; margin-bottom: 18px; }
+      .ov-chapter .chx { font-family: "Anton"; font-size: 112px; line-height: 1.02; color: #05070f; }
+      /* tampon */
+      .ov-stamp { left: 50%; top: 50%; }
+      .ov-stamp .si { font-family: "Anton"; font-size: 132px; letter-spacing: .05em; padding: 14px 44px; border: 11px solid; border-radius: 10px; background: rgba(5, 8, 15, .28); white-space: nowrap; text-shadow: 0 4px 20px rgba(0,0,0,.5); }
+      /* etiquette */
+      .ov-label { left: 50%; top: 70%; transform: translateX(-50%); width: 980px; text-align: center; }
+      .ov-label .li { font-weight: 900; font-size: 58px; line-height: 1.12; letter-spacing: .02em; text-shadow: 0 4px 22px rgba(0,0,0,.8); }
+      .ov-label .lu { height: 9px; background: var(--r); margin: 14px auto 0; width: 0; border-radius: 5px; }
+      /* compteur */
+      .ov-counter { transform: translate(-50%, -50%); background: rgba(10, 14, 28, .82); border: 2px solid rgba(255,255,255,.16); border-radius: 30px; padding: 22px 54px 14px; text-align: center; box-shadow: 0 12px 50px rgba(0,0,0,.5); }
+      .ov-counter .cl { font-weight: 800; font-size: 30px; letter-spacing: .16em; color: var(--sub); }
+      .ov-counter .cv { font-family: "Anton"; line-height: 1.05; }
+      .ov-counter .cn { font-size: 170px; color: var(--ink); }
+      .ov-counter .cu { font-size: 70px; color: var(--sub); margin-left: 14px; }
+      /* fleche YOU */
+      .ov-you { inset: 0; }
+      .ov-you .ys { position: absolute; left: 0; top: 0; overflow: visible; filter: drop-shadow(0 5px 10px rgba(0,0,0,.55)); }
+      .ov-you .yt { position: absolute; font-family: "Anton"; font-size: 150px; color: var(--r); text-shadow: 6px 7px 0 rgba(0,0,0,.5); }
+      .ov-flash { background: #fff; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="16" data-fps="30" data-width="1080" data-height="1920">
+      <div id="bg"></div>
+      <canvas id="gl" width="1080" height="1920"></canvas>
+      <canvas id="mb" width="1080" height="1920"></canvas>
+      <div id="vig"></div>
+      <canvas id="grain" width="270" height="480"></canvas>
+      <div id="ovh"></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+
+    <script type="importmap">{ "imports": { "three": "./lib/three/three.module.min.js", "three/addons/": "./lib/three/addons/" } }</script>
+    <script type="module">
+      import * as THREE from "three";
+      import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+      import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+      import { createOverlays } from "./assets/overlays.js";
+
+      const W = 1080, H = 1920;
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const ease = smooth;
+
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("gl"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.setClearColor(0x000000, 0);
+      const canvas = renderer.domElement;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 2000);
+
+      // ---------- trou noir : horizon, anneau de photons, disque, halo ----------
+      const bh = new THREE.Group(); scene.add(bh);
+      const horizon = new THREE.Mesh(new THREE.SphereGeometry(3, 64, 48), new THREE.MeshBasicMaterial({ color: 0x000000 })); bh.add(horizon);
+      const diskMat = new THREE.ShaderMaterial({
+        uniforms: { t: { value: 0 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+        vertexShader: `varying vec3 vP; void main(){ vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+        fragmentShader: `uniform float t; varying vec3 vP;
+          void main(){ float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-4.0)/9.0,0.,1.);
+            vec3 col=mix(vec3(1.0,0.96,0.78),vec3(1.0,0.56,0.14),smoothstep(0.0,0.45,k)); col=mix(col,vec3(0.55,0.13,0.05),smoothstep(0.45,1.0,k));
+            float streak=0.62+0.38*sin(a*13.0 - t*2.2/(0.35+k) + k*26.0); float dop=0.55+0.45*cos(a-0.7);
+            float alpha=(1.0-smoothstep(0.62,1.0,k))*smoothstep(0.0,0.06,k)*streak*dop;
+            gl_FragColor=vec4(col*alpha*1.5,alpha); }`,
+      });
+      const disk = new THREE.Mesh(new THREE.RingGeometry(4, 13, 180, 1), diskMat); disk.rotation.set(1.12, 0, 0.1); bh.add(disk);
+      const haloMat = new THREE.ShaderMaterial({
+        transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+        vertexShader: `varying vec3 vP; void main(){ vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+        fragmentShader: `varying vec3 vP; void main(){ float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-3.05)/4.6,0.,1.);
+            float al=pow(1.0-k,2.3)*(0.55+0.45*abs(sin(a))); vec3 col=mix(vec3(1.0,0.9,0.65),vec3(1.0,0.5,0.12),k); gl_FragColor=vec4(col*al*1.4,al); }`,
+      });
+      const halo = new THREE.Mesh(new THREE.RingGeometry(3.04, 7.8, 128, 1), haloMat); bh.add(halo);
+      const photon = new THREE.Mesh(new THREE.TorusGeometry(3.14, 0.07, 10, 160), new THREE.MeshBasicMaterial({ color: 0xffe2b0 })); bh.add(photon);
+      const glowTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d"); const g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
+        g.addColorStop(0, "rgba(255,170,80,.55)"); g.addColorStop(0.35, "rgba(255,130,40,.18)"); g.addColorStop(1, "rgba(255,110,30,0)"); x.fillStyle = g; x.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })();
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true })); glow.scale.setScalar(70); glow.position.z = -2; bh.add(glow);
+
+      // ---------- etoiles ----------
+      const stars = (() => { const r = mulberry32(99), n = 1400, p = new Float32Array(n * 3);
+        for (let i = 0; i < n; i++) { const u = r() * 2 - 1, a = r() * 6.2832, s = Math.sqrt(1 - u * u), d = 300 + r() * 80; p[i*3] = d*s*Math.cos(a); p[i*3+1] = d*u; p[i*3+2] = d*s*Math.sin(a); }
+        const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(p, 3));
+        const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xdbe6ff, size: 2.4, sizeAttenuation: false, transparent: true, opacity: 0.85, depthWrite: false })); scene.add(pts); return pts; })();
+
+      // ---------- lumieres + astronaute NASA ("YOU") ----------
+      scene.add(new THREE.HemisphereLight(0x9bb0ff, 0x2a1a10, 1.5));
+      const key = new THREE.DirectionalLight(0xffb070, 2.6); key.position.set(0, 0, 0); scene.add(key);   // eclaire par le disque
+      const rim = new THREE.DirectionalLight(0x7aa2ff, 1.2); rim.position.set(-20, 30, 30); scene.add(rim);
+      const grad = new THREE.DataTexture(new Uint8Array([85, 150, 215, 255]), 4, 1, THREE.RedFormat); grad.minFilter = grad.magFilter = THREE.NearestFilter; grad.needsUpdate = true;
+      const astro = new THREE.Group(), astroBody = new THREE.Group(); astro.add(astroBody); scene.add(astro);
+      const draco = new DRACOLoader(); draco.setDecoderPath("./lib/three/draco/"); const gltf = new GLTFLoader(); gltf.setDRACOLoader(draco);
+      const ready = gltf.loadAsync("assets/models/astronaut.glb").then((m) => {
+        const root = m.scene; root.traverse((o) => { if (!o.isMesh) return; const mk = (mm) => new THREE.MeshToonMaterial({ color: mm.color ? mm.color.clone() : 0xffffff, map: mm.map || null, gradientMap: grad }); o.material = Array.isArray(o.material) ? o.material.map(mk) : mk(o.material); });
+        const box = new THREE.Box3().setFromObject(root), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3()); root.position.sub(c);
+        const g = new THREE.Group(); g.add(root); g.scale.setScalar(2.2 / Math.max(size.x, size.y, size.z)); astroBody.add(g);
+      });
+
+      // ---------- scene : plans, astronaute, overlays ----------
+      const CUTS = [4.8, 10.4];
+      const SHOTS = [
+        { a: 0,    b: 4.8,  kf: [[0, 0, 4, 52, 0, -3, 0], [4.8, 0, 3, 44, 0, -3, 0]] },
+        { a: 4.8,  b: 10.4, kf: [[0, 0, 5, 30, 0, -1, 0], [5.6, 0, 3, 22, 0, -1, 0]] },
+        { a: 10.4, b: 16.1, kf: [[0, 0, 4, 46, 0, -1, 0], [5.7, 0, 2, 20, 0, -0.5, 0]] },
+      ];
+      const items = [
+        { type: "title", t0: 0.1, dur: 4.2, text: "TROU NOIR", sub: "QUE SE PASSE-T-IL SI TU TOMBES ?" },
+        { type: "you", t0: 0.5, dur: 3.9, target: "astro", lx: 0.52, ly: 0.72, text: "TOI" },
+        { type: "caption", t0: 1.3, dur: 3.0, text: "TU TOMBES. *POUR TOI* : QUELQUES SECONDES.", y: 0.79 },
+        { type: "chapter", t0: 4.2, dur: 1.1, n: "DANGER N°1", text: "SPAGHETTIFICATION" },
+        { type: "counter", t0: 6.0, dur: 4.2, label: "ÉTIREMENT", from: 0, to: 100, unit: "%", x: 0.76, y: 0.20, run: 2.6, redAbove: 80 },
+        { type: "label", t0: 6.5, dur: 3.7, text: "PETIT TROU NOIR : DÉCHIRÉ AVANT L'HORIZON", x: 0.5, y: 0.80 },
+        { type: "stamp", t0: 9.1, dur: 1.2, text: "ÉTIRÉ", x: 0.5, y: 0.52, tone: "r" },
+        { type: "flash", t0: 10.4, dur: 0.25, a: 0.8 },
+        { type: "caption", t0: 11.8, dur: 2.8, text: "TROU NOIR GÉANT : *TU NE SENS RIEN*", y: 0.79 },
+        { type: "label", t0: 12.4, dur: 2.2, text: "ÉTIREMENT À L'HORIZON : ≈ 0", x: 0.5, y: 0.70, tone: "y" },
+        { type: "stamp", t0: 14.2, dur: 1.7, text: "AUCUN SIGNE", x: 0.5, y: 0.42, tone: "g" },
+      ];
+      const ov = createOverlays(document.getElementById("ovh"), W, H, items);
+
+      const grainCv = document.getElementById("grain"), grainCtx = grainCv.getContext("2d"), grainImg = grainCtx.createImageData(270, 480);
+      const mbCv = document.getElementById("mb"), mbCtx = mbCv.getContext("2d");
+      const proj = new THREE.Vector3(), astroPos = new THREE.Vector3();
+
+      function astroState(t) {
+        // retourne position, rotation z, etirement
+        if (t < 4.8) { const k = t / 4.8; return { p: [lerp(-3.6, -2.8, k), lerp(-2.6, -2.0, k), 22], rz: 0.5 + 0.3 * Math.sin(t * 0.8), sy: 1, sx: 1 }; }
+        if (t < 10.4) { const k = smooth((t - 4.8) / 5.6), p = [lerp(-3.4, -1.0, k), lerp(-5.2, -4.0, k), lerp(11, 4.0, k)];
+          const ang = Math.atan2(0 - p[1], 0 - p[0]); const s = smooth((t - 6.0) / 3.2); return { p, rz: ang + Math.PI / 2, sy: 1 + 3.4 * s, sx: 1 - 0.55 * s }; }
+        const k = (t - 10.4) / 5.7; return { p: [lerp(-3.2, -1.4, k), lerp(-3.2, -2.4, k), 12], rz: 0.4 + 0.5 * Math.sin(t * 0.9), sy: 1, sx: 1 };
+      }
+      function fovAt(t) { let f = 42; for (const c of CUTS) { if (t >= c - 0.22 && t < c) f = Math.max(f, lerp(42, 76, ease((t - (c - 0.22)) / 0.22))); else if (t >= c && t < c + 0.3) f = Math.max(f, lerp(76, 42, ease((t - c) / 0.3))); } return f; }
+      function blurShutter(t) { for (const c of CUTS) if (t >= c - 0.22 && t < c + 0.3) return 0.07; return 0; }
+
+      function applyState(t) {
+        const shot = SHOTS.find((s) => t >= s.a && t < s.b) || SHOTS[SHOTS.length - 1];
+        diskMat.uniforms.t.value = t; bh.rotation.y = 0.04 * Math.sin(t * 0.3);
+        const st = astroState(t); astro.position.set(st.p[0], st.p[1], st.p[2]); astroBody.rotation.set(0, 0.6 * Math.sin(t * 0.7), st.rz); astroBody.scale.set(st.sx, st.sy, st.sx);
+        astro.rotation.set(0, 0, 0);
+        const lt = t - shot.a, kf = shot.kf; let i = 0; while (i < kf.length - 2 && lt > kf[i + 1][0]) i++;
+        const A = kf[i], B = kf[i + 1], k = smooth((lt - A[0]) / (B[0] - A[0])), c = []; for (let j = 1; j < 7; j++) c.push(lerp(A[j], B[j], k));
+        const cp = new THREE.Vector3(c[0], c[1], c[2]), lk = new THREE.Vector3(c[3], c[4], c[5]);
+        camera.position.copy(cp); camera.up.set(0, 1, 0); camera.lookAt(lk);
+        camera.rotateX(0.004 * Math.sin(t * 1.1)); camera.rotateY(0.004 * Math.sin(t * 0.83 + 1)); camera.rotateZ(0.0025 * Math.sin(t * 0.6));
+        const fv = fovAt(t); if (Math.abs(camera.fov - fv) > 1e-4) { camera.fov = fv; camera.updateProjectionMatrix(); }
+        camera.updateMatrixWorld(true);
+        halo.quaternion.copy(camera.quaternion); photon.quaternion.copy(camera.quaternion); glow.position.set(0, 0, 0);
+        stars.position.copy(cp);
+        astroPos.copy(astro.position);
+      }
+      function renderAt(t) {
+        const sh = blurShutter(t);
+        if (sh > 0) { const n = 4; for (let s = 0; s < n; s++) { applyState(t - sh * (1 - s / (n - 1))); renderer.render(scene, camera); mbCtx.globalAlpha = 1 / (s + 1); mbCtx.drawImage(canvas, 0, 0); } mbCtx.globalAlpha = 1; mbCv.style.opacity = "1"; canvas.style.opacity = "0"; }
+        else { applyState(t); renderer.render(scene, camera); mbCv.style.opacity = "0"; canvas.style.opacity = "1"; }
+        { const rnd = mulberry32(Math.floor(t * 30) + 7), d = grainImg.data; for (let i = 0; i < d.length; i += 4) { const v = 128 + (rnd() - 0.5) * 150; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; } grainCtx.putImageData(grainImg, 0, 0); }
+        const fade = Math.min(clamp01(t / 0.35), 1 - clamp01((t - 15.4) / 0.6)); document.getElementById("root").style.setProperty("--fade", fade);
+        ov.update(t, { project: (name) => { if (name === "astro") { proj.copy(astroPos).project(camera); return [(proj.x * 0.5 + 0.5) * W, (-proj.y * 0.5 + 0.5) * H]; } return [W / 2, H / 2]; } });
+        document.getElementById("root").style.filter = fade < 1 ? `brightness(${fade})` : "none";
+      }
+      window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["stage"] = ready.then(() => { renderAt(0); window.__hf.ready = true; });
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      window.__renderAt = renderAt;
+    </script>
+  </body>
+</html>
