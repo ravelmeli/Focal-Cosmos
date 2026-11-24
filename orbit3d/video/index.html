@@ -97,20 +97,26 @@
         uniforms: { t: { value: 0 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
         vertexShader: `varying vec3 vP; void main(){ vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
         fragmentShader: `uniform float t; varying vec3 vP;
-          void main(){ float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-4.0)/9.0,0.,1.);
-            vec3 col=mix(vec3(1.0,0.96,0.78),vec3(1.0,0.56,0.14),smoothstep(0.0,0.45,k)); col=mix(col,vec3(0.55,0.13,0.05),smoothstep(0.45,1.0,k));
-            float streak=0.62+0.38*sin(a*13.0 - t*2.2/(0.35+k) + k*26.0); float dop=0.55+0.45*cos(a-0.7);
-            float alpha=(1.0-smoothstep(0.62,1.0,k))*smoothstep(0.0,0.06,k)*streak*dop;
-            gl_FragColor=vec4(col*alpha*1.5,alpha); }`,
+          void main(){
+            float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-3.5)/10.5,0.,1.);
+            float hot=pow(1.0-k,1.7);
+            vec3 col=mix(vec3(1.0,0.86,0.58),vec3(1.0,0.58,0.16),smoothstep(0.0,0.30,k));
+            col=mix(col,vec3(0.62,0.16,0.06),smoothstep(0.30,1.0,k));
+            float swirl=0.90+0.10*sin(a*5.0+k*9.0-t*1.3/(0.45+k));
+            float dop=0.42+0.58*(0.5+0.5*cos(a-0.35));
+            float alpha=smoothstep(0.0,0.025,k)*(1.0-smoothstep(0.5,1.0,k))*swirl*dop*(0.5+1.0*hot);
+            gl_FragColor=vec4(col*alpha*1.3,alpha);
+          }`,
       });
-      const disk = new THREE.Mesh(new THREE.RingGeometry(4, 13, 180, 1), diskMat); disk.rotation.set(1.12, 0, 0.1); bh.add(disk);
+      const disk = new THREE.Mesh(new THREE.RingGeometry(3.5, 14, 200, 1), diskMat); disk.rotation.set(-1.27, 0, -0.1); bh.add(disk);
+      // arcs lumineux (lentille gravitationnelle) au-dessus et au-dessous du trou : face a la camera
       const haloMat = new THREE.ShaderMaterial({
         transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
         vertexShader: `varying vec3 vP; void main(){ vP=position; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
-        fragmentShader: `varying vec3 vP; void main(){ float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-3.05)/4.6,0.,1.);
-            float al=pow(1.0-k,2.3)*(0.55+0.45*abs(sin(a))); vec3 col=mix(vec3(1.0,0.9,0.65),vec3(1.0,0.5,0.12),k); gl_FragColor=vec4(col*al*1.4,al); }`,
+        fragmentShader: `varying vec3 vP; void main(){ float r=length(vP.xy); float a=atan(vP.y,vP.x); float k=clamp((r-3.05)/3.4,0.,1.);
+            float arcs=pow(abs(sin(a)),1.4); float al=pow(1.0-k,2.0)*(0.25+0.95*arcs); vec3 col=mix(vec3(1.0,0.93,0.72),vec3(1.0,0.52,0.14),k); gl_FragColor=vec4(col*al*1.5,al); }`,
       });
-      const halo = new THREE.Mesh(new THREE.RingGeometry(3.04, 7.8, 128, 1), haloMat); bh.add(halo);
+      const halo = new THREE.Mesh(new THREE.RingGeometry(3.04, 6.6, 160, 1), haloMat); bh.add(halo);
       const photon = new THREE.Mesh(new THREE.TorusGeometry(3.14, 0.07, 10, 160), new THREE.MeshBasicMaterial({ color: 0xffe2b0 })); bh.add(photon);
       const glowTex = (() => { const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d"); const g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
         g.addColorStop(0, "rgba(255,170,80,.55)"); g.addColorStop(0.35, "rgba(255,130,40,.18)"); g.addColorStop(1, "rgba(255,110,30,0)"); x.fillStyle = g; x.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })();
