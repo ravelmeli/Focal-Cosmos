@@ -1,0 +1,619 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 5.7,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 640,
+     "y": 1180,
+     "r": 560,
+     "light": 2.6,
+     "spin": 0.04
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 800,
+     "s": 70,
+     "vx": 8,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 352,
+     "y": 770,
+     "lx": 200,
+     "ly": 560,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "JUPITER",
+     "sub": "ON PEUT S'Y POSER ?",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.3,
+     "dur": 1.3
+    },
+    {
+     "type": "label",
+     "text": "si grosse qu'on peut s'y poser ?",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 1.4,
+     "dur": 1.9
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.66,
+     "y": 0.3,
+     "rot": -0.1,
+     "size": 170,
+     "t0": 3.36,
+     "dur": 1.6
+    },
+    {
+     "type": "label",
+     "text": "elle n'a pas de sol",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.15,
+     "tone": "red",
+     "underline": true,
+     "t0": 4.2,
+     "dur": 1.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.08,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 5.7,
+   "end": 8.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 540,
+     "y": 1650,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 720,
+     "s": 150,
+     "spin": 0.9,
+     "vy": 30
+    },
+    {
+     "type": "label",
+     "text": "qu'est-ce qui te tuerait",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 0.02
+    },
+    {
+     "type": "big",
+     "text": "EN PREMIER ?",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 0.82
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fy": 0.4
+   }
+  },
+  {
+   "start": 8.0,
+   "end": 20.7,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 540,
+     "y": 2000,
+     "r": 1000,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 1250,
+     "s": 200,
+     "spin": 0.3,
+     "rot": 0.3
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "LES RADIATIONS",
+     "dur": 0.9,
+     "t0": 0.06
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA13257.jpg",
+     "credit": "NASA/JPL · Juno",
+     "tag": "JUNO · LE COFFRE EN TITANE (SALLE BLANCHE)",
+     "x": 0.5,
+     "y": 0.33,
+     "w": 900,
+     "h": 697,
+     "t0": 4.7,
+     "dur": 6.0,
+     "zoom": 0.08
+    },
+    {
+     "type": "pill",
+     "text": "MURS : ≈ 1 CM DE TITANE",
+     "tone": "red",
+     "size": 40,
+     "x": 0.06,
+     "y": 0.58,
+     "t0": 8.2
+    },
+    {
+     "type": "stamp",
+     "text": "TOI : PAS DE COFFRE",
+     "x": 0.5,
+     "y": 0.7,
+     "rot": -0.07,
+     "size": 80,
+     "t0": 10.6,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 20.7,
+   "end": 31.5,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#e8c9a0",
+      "#b9784a"
+     ],
+     "cols": [
+      "#f1dcc0",
+      "#d9a374",
+      "#b9784a"
+     ],
+     "speed": 900,
+     "alpha": 0.9
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 1100,
+     "s": 200,
+     "spin": 0.6,
+     "rot": -0.4,
+     "lamp": 0
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LES VENTS",
+     "dur": 0.9,
+     "t0": 0.02
+    },
+    {
+     "type": "tag",
+     "text": "SONDE GALILEO · 1995",
+     "x": 0.05,
+     "y": 0.12,
+     "t0": 2.2
+    },
+    {
+     "type": "pill",
+     "text": "PLUS FORT QUE PRÉVU",
+     "tone": "red",
+     "size": 42,
+     "x": 0.06,
+     "y": 0.2,
+     "t0": 4.94
+    },
+    {
+     "type": "counter",
+     "label": "VENT MESURÉ",
+     "from": 0,
+     "to": 500,
+     "unit": "km/h",
+     "x": 0.06,
+     "y": 0.3,
+     "t0": 6.5,
+     "t1": 1.5
+    },
+    {
+     "type": "label",
+     "text": "pas plus faible en profondeur",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.62,
+     "tone": "yellow",
+     "t0": 8.74,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08,
+    "shake": 3
+   }
+  },
+  {
+   "start": 31.5,
+   "end": 41.7,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#8a4a24",
+      "#3a1a0a"
+     ],
+     "cols": [
+      "#b9784a",
+      "#8a4a24",
+      "#5a2e14"
+     ],
+     "speed": 450,
+     "alpha": 0.85
+    },
+    {
+     "type": "astronaut",
+     "x": 800,
+     "y": 1500,
+     "s": 190,
+     "spin": 0.25,
+     "rot": 0.2,
+     "lamp": 0.6
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "PRESSION ET CHALEUR",
+     "dur": 0.9,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "là où Galileo a cessé d'émettre",
+     "size": 42,
+     "x": 0.5,
+     "y": 0.12,
+     "t0": 3.28,
+     "dur": 3.5
+    },
+    {
+     "type": "gauge",
+     "label": "PRESSION (TERRE = 1×)",
+     "to": 23,
+     "max": 30,
+     "unit": "×",
+     "x": 0.5,
+     "y": 0.3,
+     "r": 200,
+     "t0": 5.0,
+     "t1": 1.4
+    },
+    {
+     "type": "thermo",
+     "to": 152,
+     "from": 20,
+     "max": 200,
+     "label": "TEMPÉRATURE",
+     "x": 0.12,
+     "y": 0.72,
+     "t0": 7.8,
+     "t1": 1.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.04,
+    "zoomTo": 1.0,
+    "shake": 2
+   }
+  },
+  {
+   "start": 41.7,
+   "end": 50.5,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#3a1a0a",
+      "#150805"
+     ],
+     "cols": [
+      "#6a3a1a",
+      "#4a2410",
+      "#2a1208"
+     ],
+     "speed": 200,
+     "alpha": 0.9
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 1000,
+     "s": 220,
+     "spin": 0.2,
+     "rot": 0.2,
+     "lamp": 0.7
+    },
+    {
+     "type": "stamp",
+     "text": "PAS DE SOL",
+     "x": 0.5,
+     "y": 0.15,
+     "rot": -0.07,
+     "size": 130,
+     "t0": 1.3,
+     "dur": 3.0
+    },
+    {
+     "type": "label",
+     "text": "gaz → hydrogène liquide",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.3,
+     "t0": 2.5,
+     "dur": 3.3
+    },
+    {
+     "type": "label",
+     "text": "sans frontière nette",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.36,
+     "tone": "yellow",
+     "t0": 4.84,
+     "dur": 1.5
+    },
+    {
+     "type": "big",
+     "text": "TU T'ENFONCES",
+     "size": 120,
+     "x": 0.5,
+     "y": 0.72,
+     "tone": "yellow",
+     "t0": 7.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 50.5,
+   "end": 56.6,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 540,
+     "y": 2000,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA01259.jpg",
+     "credit": "NASA/JPL · Hubble",
+     "tag": "SITE D'ENTRÉE DE GALILEO · HUBBLE · 1995",
+     "x": 0.5,
+     "y": 0.3,
+     "w": 940,
+     "h": 542,
+     "t0": 0.24,
+     "dur": 5.7,
+     "zoom": 0.05
+    },
+    {
+     "type": "timer",
+     "label": "GALILEO A TENU",
+     "to": 3480,
+     "x": 0.06,
+     "y": 0.55,
+     "t0": 0.7,
+     "t1": 1.0
+    },
+    {
+     "type": "label",
+     "text": "une sonde qui n'en est jamais revenue",
+     "size": 42,
+     "x": 0.5,
+     "y": 0.8,
+     "tone": "yellow",
+     "t0": 4.08,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 56.6,
+   "end": 65.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 540,
+     "y": 2000,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 300,
+     "y": 1350,
+     "s": 170,
+     "spin": 0.3,
+     "rot": 0.3
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.9,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 0,
+     "items": [
+      {
+       "text": "TE POSER",
+       "at": 1.52,
+       "out": 3.1
+      },
+      {
+       "text": "RÉSISTER AU VENT",
+       "at": 3.24,
+       "out": 5.2
+      }
+     ]
+    },
+    {
+     "type": "stick",
+     "x": 0.78,
+     "y": 0.82,
+     "s": 200,
+     "pose": "panic",
+     "label": "TOI",
+     "t0": 1.5
+    },
+    {
+     "type": "stamp",
+     "text": "RADIATIONS D'ABORD",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.55,
+     "rot": -0.07,
+     "size": 80,
+     "t0": 6.32
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 65.0,
+   "end": 73.35,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "jupiter",
+     "seed": 3,
+     "x": 640,
+     "y": 1180,
+     "r": 560,
+     "light": 2.6,
+     "spin": 0.04
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 800,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "label",
+     "text": "pas un endroit où se poser",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.16,
+     "dur": 2.3
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 2.68,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 4.76,
+     "dur": 1.0
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 5.78
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.62
+   },
+   "trans": "fade"
+  }
+ ]
+}
