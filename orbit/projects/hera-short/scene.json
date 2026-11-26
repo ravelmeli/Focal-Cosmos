@@ -1,0 +1,620 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 6.4,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 740,
+     "y": 1400,
+     "r": 380,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 930,
+     "y": 720,
+     "r": 120,
+     "light": 2.6,
+     "spin": 0.3
+    },
+    {
+     "type": "astronaut",
+     "x": 420,
+     "y": 1250,
+     "s": 70,
+     "vx": 6,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 440,
+     "y": 1220,
+     "lx": 250,
+     "ly": 1000,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "ASTÉROÏDE",
+     "sub": "ET SI ÇA ARRIVAIT ?",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.2,
+     "dur": 1.1
+    },
+    {
+     "type": "label",
+     "text": "un astéroïde fonce vers la Terre",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 1.4,
+     "dur": 1.7
+    },
+    {
+     "type": "label",
+     "text": "la NASA fait un test",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 3.28,
+     "dur": 1.6
+    },
+    {
+     "type": "big",
+     "text": "LE PERCUTER",
+     "size": 130,
+     "x": 0.5,
+     "y": 0.22,
+     "tone": "yellow",
+     "t0": 5.04,
+     "dur": 1.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.08,
+    "fx": 0.6
+   }
+  },
+  {
+   "start": 6.4,
+   "end": 14.2,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 800,
+     "y": 1000,
+     "r": 170,
+     "light": -2.4,
+     "spin": 0.1
+    },
+    {
+     "type": "rocket",
+     "x": 100,
+     "y": 1000,
+     "s": 110,
+     "rot": 0,
+     "vx": 150,
+     "vy": 0
+    },
+    {
+     "type": "tag",
+     "text": "DART · NASA · 2022",
+     "x": 0.05,
+     "y": 0.12,
+     "t0": 0.15
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA25329.jpg",
+     "credit": "NASA/JPL · illustration",
+     "tag": "ILLUSTRATION · DART ET DIMORPHOS",
+     "x": 0.5,
+     "y": 0.34,
+     "w": 960,
+     "h": 540,
+     "t0": 1.8,
+     "dur": 2.4,
+     "zoom": 0.08
+    },
+    {
+     "type": "counter",
+     "label": "VITESSE DU VAISSEAU",
+     "from": 0,
+     "to": 20000,
+     "unit": "km/h",
+     "x": 0.06,
+     "y": 0.62,
+     "t0": 3.78,
+     "t1": 1.5
+    },
+    {
+     "type": "flash",
+     "t0": 5.5,
+     "dur": 0.4,
+     "a": 0.8
+    },
+    {
+     "type": "stamp",
+     "text": "IMPACT",
+     "x": 0.5,
+     "y": 0.8,
+     "rot": -0.07,
+     "size": 140,
+     "t0": 5.6
+    },
+    {
+     "type": "label",
+     "text": "elle ne menaçait pas la Terre",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "green",
+     "t0": 6.2,
+     "dur": 1.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 14.2,
+   "end": 26.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 560,
+     "y": 1300,
+     "r": 330,
+     "light": -2.4,
+     "spin": 0.02
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 11,
+     "x": 880,
+     "y": 700,
+     "r": 105,
+     "light": -2.4,
+     "spin": 0.2
+    },
+    {
+     "type": "counter",
+     "label": "SON TOUR RACCOURCI DE",
+     "from": 0,
+     "to": 33,
+     "unit": "min",
+     "x": 0.06,
+     "y": 0.1,
+     "t0": 1.1,
+     "t1": 2.3
+    },
+    {
+     "type": "balance",
+     "left": "PRÉVU : 7 MIN",
+     "right": "RÉEL : 33 MIN",
+     "tilt": 0.35,
+     "x": 0.5,
+     "y": 0.45,
+     "t0": 5.4
+    },
+    {
+     "type": "label",
+     "text": "les débris ont poussé",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.65,
+     "t0": 8.88,
+     "dur": 2.5
+    },
+    {
+     "type": "stamp",
+     "text": "COUP DE POUCE",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.76,
+     "rot": -0.07,
+     "size": 100,
+     "t0": 9.86
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 26.0,
+   "end": 36.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 720,
+     "y": 1300,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.02
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 11,
+     "x": 330,
+     "y": 1100,
+     "r": 90,
+     "light": -2.4,
+     "spin": 0.2
+    },
+    {
+     "type": "rocket",
+     "x": 150,
+     "y": 600,
+     "s": 110,
+     "rot": 0.6,
+     "vx": 60,
+     "vy": 50
+    },
+    {
+     "type": "label",
+     "text": "personne n'a vu le résultat de près",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.13,
+     "t0": 0.24,
+     "dur": 2.4
+    },
+    {
+     "type": "tag",
+     "text": "HERA · ESA · DÉBUT NOVEMBRE 2026",
+     "x": 0.05,
+     "y": 0.2,
+     "t0": 2.48
+    },
+    {
+     "type": "stamp",
+     "text": "ARRIVÉE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.42,
+     "rot": -0.08,
+     "size": 120,
+     "t0": 5.72,
+     "dur": 1.2
+    },
+    {
+     "type": "big",
+     "text": "25 NOV.",
+     "size": 200,
+     "x": 0.5,
+     "y": 0.4,
+     "tone": "yellow",
+     "t0": 7.06,
+     "sub": "PREMIÈRES IMAGES DE PRÈS",
+     "dur": 3.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08
+   }
+  },
+  {
+   "start": 36.4,
+   "end": 46.8,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 540,
+     "y": 1700,
+     "r": 800,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "chapter",
+     "n": "CE QU'ELLE A TROUVÉ",
+     "text": "HERA",
+     "dur": 0.9
+    },
+    {
+     "type": "pill",
+     "text": "CRATÈRE GRAND COMME UN STADE",
+     "tone": "red",
+     "size": 40,
+     "x": 0.06,
+     "y": 0.15,
+     "t0": 1.28
+    },
+    {
+     "type": "icons",
+     "count": 100,
+     "cols": 10,
+     "icon": "dot",
+     "size": 56,
+     "label": "ROCHERS",
+     "caption": "DES CENTAINES",
+     "x": 0.5,
+     "y": 0.27,
+     "t0": 3.08,
+     "dur": 3.0
+    },
+    {
+     "type": "label",
+     "text": "gros comme une machine à laver",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.63,
+     "t0": 4.44,
+     "dur": 1.9
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 11,
+     "x": 540,
+     "y": 1100,
+     "r": 140,
+     "light": -2.4,
+     "spin": 1.4,
+     "t0": 6.44
+    },
+    {
+     "type": "label",
+     "text": "semble tourner de façon chaotique",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.78,
+     "tone": "yellow",
+     "t0": 6.96,
+     "dur": 3.0
+    },
+    {
+     "type": "stamp",
+     "text": "À CONFIRMER",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.9,
+     "rot": 0.06,
+     "size": 70,
+     "t0": 9.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 46.8,
+   "end": 55.2,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 780,
+     "y": 1500,
+     "r": 400,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 220,
+     "y": 620,
+     "r": 110,
+     "light": 2.6,
+     "spin": 0.3
+    },
+    {
+     "type": "label",
+     "text": "et si un vrai astéroïde fonçait ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.13,
+     "tone": "yellow",
+     "t0": 0.04,
+     "dur": 3.4
+    },
+    {
+     "type": "stamp",
+     "text": "ON PEUT LE DÉVIER",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.35,
+     "rot": -0.07,
+     "size": 80,
+     "t0": 3.76
+    },
+    {
+     "type": "label",
+     "text": "à condition de le voir arriver assez tôt",
+     "size": 42,
+     "x": 0.5,
+     "y": 0.55,
+     "tone": "red",
+     "underline": true,
+     "t0": 5.92
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.07
+   }
+  },
+  {
+   "start": 55.2,
+   "end": 61.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 720,
+     "y": 1300,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 260,
+     "y": 800,
+     "s": 120,
+     "rot": 0.6,
+     "vx": 30,
+     "vy": 40
+    },
+    {
+     "type": "pill",
+     "text": "DÉCEMBRE · HERA SE RAPPROCHE",
+     "size": 38,
+     "x": 0.06,
+     "y": 0.15,
+     "t0": 1.06
+    },
+    {
+     "type": "pill",
+     "text": "JANVIER · 2 MINI-SATELLITES",
+     "size": 38,
+     "tone": "red",
+     "x": 0.06,
+     "y": 0.25,
+     "t0": 3.62
+    },
+    {
+     "type": "rocket",
+     "x": 380,
+     "y": 980,
+     "s": 50,
+     "rot": 1.0,
+     "vx": 30,
+     "vy": 25,
+     "t0": 4.36
+    },
+    {
+     "type": "rocket",
+     "x": 460,
+     "y": 880,
+     "s": 50,
+     "rot": 0.8,
+     "vx": 40,
+     "vy": 30,
+     "t0": 4.82
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.07
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 61.4,
+   "end": 67.63,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 740,
+     "y": 1400,
+     "r": 380,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 930,
+     "y": 720,
+     "r": 120,
+     "light": 2.6,
+     "spin": 0.3
+    },
+    {
+     "type": "astronaut",
+     "x": 420,
+     "y": 1250,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 0.18,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 2.34,
+     "dur": 1.2
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 3.56
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.1,
+    "zoomTo": 1.0,
+    "fx": 0.6
+   },
+   "trans": "fade"
+  }
+ ]
+}
