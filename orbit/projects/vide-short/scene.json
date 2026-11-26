@@ -1,0 +1,727 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 5.1,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": 8,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 352,
+     "y": 830,
+     "lx": 200,
+     "ly": 600,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "L'ESPACE",
+     "sub": "SANS COMBINAISON",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.3,
+     "dur": 0.85
+    },
+    {
+     "type": "label",
+     "text": "ton corps explose ?",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 1.1,
+     "dur": 1.9
+    },
+    {
+     "type": "label",
+     "text": "il gèle en une seconde ?",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 3.1,
+     "dur": 1.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 5.1,
+   "end": 9.6,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 1650,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 720,
+     "s": 150,
+     "spin": 0.9,
+     "vy": 30
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.5,
+     "y": 0.3,
+     "rot": -0.1,
+     "size": 190,
+     "t0": 0,
+     "dur": 1.0
+    },
+    {
+     "type": "label",
+     "text": "combien de temps tiendrais-tu",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 1.04
+    },
+    {
+     "type": "big",
+     "text": "SANS COMBINAISON ?",
+     "size": 100,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 2.88
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fy": 0.4
+   }
+  },
+  {
+   "start": 9.6,
+   "end": 22.2,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2050,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 900,
+     "s": 230,
+     "spin": 0.35,
+     "rot": 0.4
+    },
+    {
+     "type": "label",
+     "text": "éjecté d'un sas",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.1,
+     "dur": 1.8
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "LA PRESSION",
+     "dur": 0.9,
+     "t0": 1.9
+    },
+    {
+     "type": "counter",
+     "label": "PRESSION AUTOUR DE TOI",
+     "from": 1,
+     "to": 0,
+     "decimals": 2,
+     "unit": "atm",
+     "x": 0.06,
+     "y": 0.12,
+     "t0": 4.2,
+     "t1": 2.0
+    },
+    {
+     "type": "label",
+     "text": "l'eau veut se vaporiser",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.3,
+     "tone": "yellow",
+     "t0": 5.06,
+     "dur": 3.0
+    },
+    {
+     "type": "stamp",
+     "text": "LA PEAU TIENT",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.62,
+     "rot": -0.07,
+     "size": 90,
+     "t0": 9.54,
+     "dur": 3.0
+    },
+    {
+     "type": "big",
+     "text": "TU GONFLES",
+     "size": 130,
+     "x": 0.5,
+     "y": 0.76,
+     "tone": "yellow",
+     "t0": 11.3,
+     "sub": "TU N'EXPLOSES PAS"
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08
+   }
+  },
+  {
+   "start": 22.2,
+   "end": 28.9,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2100,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 800,
+     "s": 230,
+     "spin": -0.3,
+     "rot": -0.3
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LE FROID",
+     "dur": 0.9,
+     "t0": 0
+    },
+    {
+     "type": "label",
+     "text": "la chaleur s'évacue lentement",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 2.52,
+     "dur": 3.5
+    },
+    {
+     "type": "loading",
+     "text": "REFROIDISSEMENT…",
+     "to": 0.12,
+     "t1": 3.5,
+     "tone": "red",
+     "x": 0.5,
+     "y": 0.6,
+     "t0": 2.7,
+     "dur": 3.8
+    },
+    {
+     "type": "stamp",
+     "text": "PAS D'UN COUP",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.72,
+     "rot": 0.06,
+     "size": 90,
+     "t0": 4.94
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.07
+   }
+  },
+  {
+   "start": 28.9,
+   "end": 37.7,
+   "els": [
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 1350,
+     "s": 230,
+     "spin": 0.3,
+     "rot": 0.4
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "L'OXYGÈNE",
+     "dur": 0.9,
+     "t0": 0
+    },
+    {
+     "type": "label",
+     "text": "le vrai tueur",
+     "size": 70,
+     "x": 0.5,
+     "y": 0.12,
+     "tone": "red",
+     "underline": true,
+     "t0": 2.58,
+     "dur": 3.0
+    },
+    {
+     "type": "xray",
+     "part": "brain",
+     "label": "CERVEAU",
+     "title": "PLUS D'AIR",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 220,
+     "t0": 4.38
+    },
+    {
+     "type": "gauge",
+     "label": "TEMPS AVANT PERTE DE CONSCIENCE",
+     "to": 15,
+     "max": 15,
+     "unit": " s",
+     "x": 0.5,
+     "y": 0.8,
+     "r": 190,
+     "t0": 6.1,
+     "t1": 1.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 37.7,
+   "end": 48.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2000,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "un technicien de la NASA",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.1,
+     "dur": 3.0
+    },
+    {
+     "type": "evidence",
+     "src": "media/jsc2022e045246.jpg",
+     "credit": "NASA/JSC · Radislav Sinyak",
+     "tag": "CHAMBRE À VIDE NASA · IMAGE D'ILLUSTRATION",
+     "x": 0.5,
+     "y": 0.4,
+     "w": 940,
+     "h": 640,
+     "t0": 0.7,
+     "dur": 6.2,
+     "zoom": 0.1
+    },
+    {
+     "type": "counter",
+     "label": "RESTÉ CONSCIENT",
+     "from": 0,
+     "to": 14,
+     "unit": "s",
+     "x": 0.06,
+     "y": 0.62,
+     "t0": 4.0,
+     "t1": 1.4
+    },
+    {
+     "type": "stamp",
+     "text": "RÉCUPÉRÉ",
+     "tone": "green",
+     "x": 0.6,
+     "y": 0.8,
+     "rot": -0.08,
+     "size": 110,
+     "t0": 6.9
+    },
+    {
+     "type": "label",
+     "text": "aucune séquelle apparente",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "green",
+     "t0": 8.54,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 48.4,
+   "end": 57.5,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 1900,
+     "r": 1000,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 1000,
+     "s": 200,
+     "spin": 0.4,
+     "rot": 0.3
+    },
+    {
+     "type": "label",
+     "text": "combien de temps en tout ?",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.13,
+     "tone": "yellow",
+     "t0": 0.1,
+     "dur": 2.0
+    },
+    {
+     "type": "timer",
+     "label": "LIMITE DES EXPERTS",
+     "to": 120,
+     "x": 0.07,
+     "y": 0.22,
+     "t0": 3.24,
+     "t1": 1.0,
+     "dur": 5.0
+    },
+    {
+     "type": "label",
+     "text": "tests sur des chiens",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.4,
+     "t0": 5.2,
+     "dur": 3.3
+    },
+    {
+     "type": "counter",
+     "label": "EXPOSITION",
+     "from": 0,
+     "to": 90,
+     "unit": "s",
+     "x": 0.06,
+     "y": 0.46,
+     "t0": 6.3,
+     "t1": 1.3,
+     "dur": 2.9
+    },
+    {
+     "type": "stamp",
+     "text": "PAS MORTEL",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.74,
+     "rot": -0.07,
+     "size": 100,
+     "t0": 7.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 57.5,
+   "end": 69.9,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2000,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "astronaut",
+     "x": 300,
+     "y": 1350,
+     "s": 170,
+     "spin": 0.3,
+     "rot": 0.3
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.9,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 0,
+     "items": [
+      {
+       "text": "CRIER À L'AIDE",
+       "at": 1.78,
+       "out": 4.4
+      },
+      {
+       "text": "ATTENDRE QU'ON TE RATTRAPE",
+       "at": 5.34,
+       "out": 8.0
+      }
+     ]
+    },
+    {
+     "type": "label",
+     "text": "sans air, aucun son",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.52,
+     "tone": "yellow",
+     "t0": 3.1,
+     "dur": 2.4
+    },
+    {
+     "type": "stick",
+     "x": 0.78,
+     "y": 0.82,
+     "s": 200,
+     "pose": "panic",
+     "label": "TOI",
+     "t0": 1.8
+    },
+    {
+     "type": "stamp",
+     "text": "MANQUE D'AIR",
+     "x": 0.5,
+     "y": 0.6,
+     "rot": -0.07,
+     "size": 100,
+     "t0": 11.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 69.9,
+   "end": 75.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 1500,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 650,
+     "s": 170,
+     "spin": 0.3,
+     "rot": 0.2
+    },
+    {
+     "type": "big",
+     "text": "MAIS…",
+     "size": 200,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 0,
+     "dur": 1.2
+    },
+    {
+     "type": "label",
+     "text": "remis vite sous pression",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.64,
+     "dur": 2.8
+    },
+    {
+     "type": "stamp",
+     "text": "ÇA SE SOIGNE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.07,
+     "size": 100,
+     "t0": 2.7,
+     "dur": 2.6
+    },
+    {
+     "type": "counter",
+     "label": "TEMPS DISPONIBLE",
+     "from": 15,
+     "to": 0,
+     "unit": "s",
+     "x": 0.06,
+     "y": 0.12,
+     "t0": 3.58,
+     "t1": 1.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 75.4,
+   "end": 86.54,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "label",
+     "text": "ni l'explosion, ni le froid",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.05,
+     "dur": 3.2
+    },
+    {
+     "type": "label",
+     "text": "c'est l'air qui manque",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "red",
+     "underline": true,
+     "t0": 3.0,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 5.16,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 7.36
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 8.64
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.62
+   },
+   "trans": "fade"
+  }
+ ]
+}
