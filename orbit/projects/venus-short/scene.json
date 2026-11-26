@@ -1,0 +1,769 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 2.4,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "venus",
+     "seed": 4,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": 8,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 352,
+     "y": 830,
+     "lx": 200,
+     "ly": 600,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "VÉNUS",
+     "sub": "LA JUMELLE DE LA TERRE ?",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.9,
+     "dur": 1.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 2.4,
+   "end": 6.0,
+   "els": [
+    {
+     "type": "lineup",
+     "y": 0.55,
+     "gap": 20,
+     "items": [
+      {
+       "kind": "venus",
+       "seed": 4,
+       "r": 240,
+       "label": "VÉNUS",
+       "note": "12 104 km",
+       "at": 0.7
+      },
+      {
+       "kind": "earth",
+       "r": 250,
+       "label": "TERRE",
+       "note": "12 742 km",
+       "at": 1.46
+      }
+     ]
+    },
+    {
+     "type": "label",
+     "text": "12 104 km ≈ 12 742 km",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.66,
+     "t0": 1.5,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "presque notre taille",
+     "size": 70,
+     "x": 0.5,
+     "y": 0.2,
+     "t0": 2.26,
+     "dur": 1.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 6.0,
+   "end": 10.7,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "venus",
+     "seed": 4,
+     "x": 540,
+     "y": 1650,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 720,
+     "s": 150,
+     "spin": 0.9,
+     "vy": 30
+    },
+    {
+     "type": "stamp",
+     "text": "PIÈGE",
+     "x": 0.5,
+     "y": 0.3,
+     "rot": -0.1,
+     "size": 130,
+     "t0": 1.3,
+     "dur": 1.2
+    },
+    {
+     "type": "label",
+     "text": "qu'est-ce qui te tuerait",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 2.46
+    },
+    {
+     "type": "big",
+     "text": "EN PREMIER ?",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 3.34
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fy": 0.4
+   }
+  },
+  {
+   "start": 10.7,
+   "end": 22.2,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#ecca86",
+      "#b98a3e"
+     ],
+     "cols": [
+      "#f2dca4",
+      "#dab36a",
+      "#b8893e"
+     ],
+     "speed": 700,
+     "rain": "#e8f27a"
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 1000,
+     "s": 200,
+     "spin": 0.5,
+     "rot": -0.4,
+     "lamp": 0
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "NUAGES D'ACIDE",
+     "dur": 0.9
+    },
+    {
+     "type": "counter",
+     "label": "ALTITUDE",
+     "from": 70,
+     "to": 45,
+     "unit": "km",
+     "x": 0.06,
+     "y": 0.12,
+     "t0": 2.2,
+     "t1": 1.2
+    },
+    {
+     "type": "pill",
+     "text": "ACIDE SULFURIQUE",
+     "tone": "red",
+     "size": 42,
+     "x": 0.06,
+     "y": 0.3,
+     "t0": 5.7
+    },
+    {
+     "type": "label",
+     "text": "comme une batterie de voiture",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.62,
+     "t0": 7.06,
+     "dur": 1.8
+    },
+    {
+     "type": "loading",
+     "text": "PARAPLUIE : FONTE…",
+     "to": 1,
+     "t1": 1.2,
+     "tone": "red",
+     "x": 0.5,
+     "y": 0.72,
+     "t0": 8.94,
+     "dur": 2.4
+    },
+    {
+     "type": "stamp",
+     "text": "FONDU",
+     "x": 0.5,
+     "y": 0.56,
+     "rot": 0.1,
+     "size": 130,
+     "t0": 10.3,
+     "dur": 1.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.1,
+    "shake": 3
+   }
+  },
+  {
+   "start": 22.2,
+   "end": 30.0,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "venus",
+     "heat": 2.4,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 1330,
+     "s": 190,
+     "rot": 0.6,
+     "lamp": 0.4
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LA CHALEUR",
+     "dur": 0.9
+    },
+    {
+     "type": "thermo",
+     "from": 20,
+     "to": 470,
+     "max": 500,
+     "label": "TEMPÉRATURE AU SOL",
+     "x": 0.13,
+     "y": 0.56,
+     "t0": 0.5,
+     "t1": 1.5
+    },
+    {
+     "type": "pill",
+     "text": "PLUS CHAUD QUE MERCURE",
+     "tone": "red",
+     "size": 38,
+     "x": 0.06,
+     "y": 0.15,
+     "t0": 2.4
+    },
+    {
+     "type": "label",
+     "text": "le plomb fond à 327 °C",
+     "tone": "yellow",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.66,
+     "t0": 3.16,
+     "dur": 2.2
+    },
+    {
+     "type": "melt",
+     "x": 0.5,
+     "y": 0.79,
+     "t0": 5.4
+    },
+    {
+     "type": "stamp",
+     "text": "FLAQUE",
+     "x": 0.5,
+     "y": 0.55,
+     "rot": -0.1,
+     "size": 120,
+     "t0": 6.7
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.07,
+    "fy": 0.6
+   }
+  },
+  {
+   "start": 30.0,
+   "end": 37.0,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#b06a22",
+      "#4a2208"
+     ],
+     "cols": [
+      "#c98a40",
+      "#a2621f",
+      "#7a4212"
+     ],
+     "speed": 380,
+     "alpha": 0.85
+    },
+    {
+     "type": "astronaut",
+     "x": 250,
+     "y": 1500,
+     "s": 170,
+     "spin": 0.25,
+     "rot": 0.2,
+     "lamp": 0.6
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "LA PRESSION",
+     "dur": 0.9
+    },
+    {
+     "type": "gauge",
+     "label": "PRESSION (TERRE = 1×)",
+     "to": 90,
+     "max": 100,
+     "unit": "×",
+     "x": 0.5,
+     "y": 0.33,
+     "r": 220,
+     "t0": 1.3,
+     "t1": 1.0
+    },
+    {
+     "type": "depth",
+     "label": "MÊME PRESSION À 900 M SOUS L'EAU",
+     "max": 1000,
+     "to": 900,
+     "x": 0.36,
+     "y": 0.5,
+     "t0": 3.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.04,
+    "zoomTo": 1.0,
+    "shake": 2
+   }
+  },
+  {
+   "start": 37.0,
+   "end": 49.2,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "venus",
+     "heat": 2.6,
+     "rocks": true
+    },
+    {
+     "type": "probe",
+     "x": 640,
+     "y": 1330,
+     "s": 330,
+     "drop": 2.4,
+     "t0": 2.4,
+     "dead": 7.5,
+     "cook": 7
+    },
+    {
+     "type": "tag",
+     "text": "VENERA 13 · 1ER MARS 1982 · VÉNUS",
+     "x": 0.05,
+     "y": 0.12,
+     "t0": 3.6
+    },
+    {
+     "type": "timer",
+     "label": "CONÇUE POUR TENIR",
+     "to": 1920,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 5.3,
+     "t1": 1.1,
+     "dur": 11
+    },
+    {
+     "type": "timer",
+     "label": "A RÉELLEMENT TENU",
+     "to": 7620,
+     "x": 0.07,
+     "y": 0.33,
+     "t0": 7.38,
+     "t1": 1.6,
+     "dead": 2.5,
+     "dur": 10.5
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA00271.jpg",
+     "credit": "NASA/JPL · radar Magellan",
+     "tag": "SOL DE VÉNUS VU PAR RADAR NASA",
+     "x": 0.5,
+     "y": 0.66,
+     "w": 700,
+     "h": 700,
+     "t0": 9.7,
+     "dur": 2.4,
+     "zoom": 0.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08,
+    "fy": 0.78
+   }
+  },
+  {
+   "start": 49.2,
+   "end": 60.4,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "venus",
+     "heat": 2.0,
+     "rocks": true,
+     "cols": [
+      "#3a1a0a",
+      "#a24e18",
+      "#e0904a",
+      "#8a3e14",
+      "#62280c",
+      "#3a1606"
+     ]
+    },
+    {
+     "type": "astronaut",
+     "x": 300,
+     "y": 1500,
+     "s": 170,
+     "rot": 0.3,
+     "lamp": 0.4
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.9,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 0,
+     "items": [
+      {
+       "text": "PARACHUTE",
+       "at": 1.54,
+       "out": 3.3
+      },
+      {
+       "text": "COMBINAISON",
+       "at": 4.0,
+       "out": 5.7
+      }
+     ]
+    },
+    {
+     "type": "stick",
+     "x": 0.78,
+     "y": 0.8,
+     "s": 200,
+     "pose": "panic",
+     "label": "TOI",
+     "t0": 1.5
+    },
+    {
+     "type": "stamp",
+     "text": "1ER : ACIDE",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.45,
+     "rot": 0.06,
+     "size": 100,
+     "t0": 7.5,
+     "dur": 1.5
+    },
+    {
+     "type": "stamp",
+     "text": "LE PLUS VIOLENT : LE SOL",
+     "x": 0.5,
+     "y": 0.56,
+     "rot": -0.07,
+     "size": 70,
+     "t0": 9.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 60.4,
+   "end": 62.4,
+   "els": [
+    {
+     "type": "big",
+     "text": "MAIS…",
+     "size": 300,
+     "tone": "yellow",
+     "t0": 0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.1
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 62.4,
+   "end": 66.9,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#fbe6b6",
+      "#e9c27a"
+     ],
+     "cols": [
+      "#fff1cf",
+      "#f2d79a",
+      "#e0b56c"
+     ],
+     "speed": 60,
+     "alpha": 0.95
+    },
+    {
+     "type": "astronaut",
+     "x": 740,
+     "y": 1050,
+     "s": 200,
+     "rot": 0.1,
+     "lamp": 0
+    },
+    {
+     "type": "counter",
+     "label": "ALTITUDE",
+     "from": 50,
+     "to": 50,
+     "unit": "km",
+     "x": 0.06,
+     "y": 0.12,
+     "t0": 0.2,
+     "t1": 0.5
+    },
+    {
+     "type": "gauge",
+     "label": "PRESSION (TERRE = 1×)",
+     "from": 90,
+     "to": 1,
+     "max": 100,
+     "unit": "×",
+     "x": 0.5,
+     "y": 0.38,
+     "r": 200,
+     "t0": 0.52,
+     "t1": 1.0
+    },
+    {
+     "type": "big",
+     "text": "30 À 70 °C",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.6,
+     "t0": 2.4,
+     "tone": "yellow"
+    },
+    {
+     "type": "stamp",
+     "text": "COMME SUR TERRE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.73,
+     "rot": -0.08,
+     "size": 90,
+     "t0": 3.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 66.9,
+   "end": 70.1,
+   "els": [
+    {
+     "type": "descent",
+     "sky": [
+      "#fbe6b6",
+      "#e9c27a"
+     ],
+     "cols": [
+      "#fff1cf",
+      "#f2d79a",
+      "#e0b56c"
+     ],
+     "speed": 50,
+     "alpha": 0.95
+    },
+    {
+     "type": "airship",
+     "x": 540,
+     "y": 780,
+     "s": 260
+    },
+    {
+     "type": "pill",
+     "text": "ÉTUDE NASA · PROJET HAVOC",
+     "size": 40,
+     "x": 0.06,
+     "y": 0.13,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "concept, jamais construit",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.68,
+     "tone": "red",
+     "t0": 1.6,
+     "underline": true
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.1,
+    "zoomTo": 1.0,
+    "panFrom": 40,
+    "panTo": -40
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 70.1,
+   "end": 81.34,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "venus",
+     "seed": 4,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "caption",
+     "text": "la *jumelle* de la Terre",
+     "y": 0.27,
+     "size": 90,
+     "t0": 0.1,
+     "dur": 2.3
+    },
+    {
+     "type": "label",
+     "text": "à 50 km d'altitude seulement",
+     "tone": "yellow",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.38,
+     "t0": 2.6,
+     "dur": 2.2
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.18,
+     "tone": "yellow",
+     "t0": 5.2,
+     "dur": 2.2
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 7.38
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 8.64
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.62
+   },
+   "trans": "fade"
+  }
+ ]
+}

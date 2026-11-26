@@ -2,7 +2,7 @@
 // The scene comes from window.SCENE (injected by render.mjs) = { width, height, fps, shots:[{start,end,cam,bg,els:[...]}] }.
 // World elements are drawn inside the camera (zoom/pan); overlays are fixed on screen. Every element's t0 is relative to its shot.
 (() => {
-const S = window.SCENE, W = S.width || 1920, H = S.height || 1080, K = Math.min(W / 1920, H / 1080);
+const S = window.SCENE, W = S.width || 1920, H = S.height || 1080, K = S.k ?? Math.min(W / 1920, H / 1080);
 const cv = document.getElementById('c'); cv.width = W; cv.height = H;
 const c = cv.getContext('2d');
 const TAU = Math.PI * 2;
@@ -220,7 +220,7 @@ const O = {};
 O.caption = (e, t) => { const d = e.dur ?? 2, a = seg(t, 0, .15) * (1 - seg(t, d - .18, d)); if (a <= 0) return; c.globalAlpha = a; c.save();
   const y = (e.y ?? .87) * H, s = .86 + .14 * back(seg(t, 0, .28)); c.translate(W / 2, y); c.scale(s, s); rich(e.text.toUpperCase(), 0, 0, e.size || 74); c.restore(); c.globalAlpha = 1; };
 O.title = (e, t) => { const d = e.dur ?? 3, a = eo(seg(t, 0, .4)) * (1 - seg(t, d - .3, d)); if (a <= 0) return; c.globalAlpha = a;
-  const x = 90 * K + (1 - a) * -40 * K, y = 120 * K; c.font = A(120); c.fillStyle = T.ink; c.textBaseline = 'alphabetic'; c.fillText(e.text, x, y + 50 * K);
+  const x = (e.tx ?? 90) * K + (1 - a) * -40 * K, y = (e.ty ?? 120) * K; c.font = A(120); c.fillStyle = T.ink; c.textBaseline = 'alphabetic'; c.fillText(e.text, x, y + 50 * K);
   c.fillStyle = T.y; c.fillRect(x, y + 70 * K, 120 * K * a, 6 * K); c.font = F(700, 26); c.fillStyle = T.sub; c.fillText(e.sub || '', x, y + 112 * K); c.globalAlpha = 1; };
 O.tag = (e, t) => { const a = eo(seg(t, 0, .3)); if (a <= 0) return; c.globalAlpha = a; c.font = F(800, 22); const w = c.measureText(e.text).width + 40 * K;
   const x = (e.x ?? .03) * W, y = (e.y ?? .04) * H; c.fillStyle = T.panel; c.beginPath(); c.roundRect(x, y, w, 46 * K, 23 * K); c.fill(); c.fillStyle = T.y; c.beginPath(); c.arc(x + 20 * K, y + 23 * K, 6 * K, 0, TAU); c.fill();
@@ -345,14 +345,14 @@ O.loading = (e, t) => { const a = fadeIO(e, t, .2); if (a <= 0) return; const [x
   c.save(); c.globalAlpha = a; panel(x - w / 2, y - h / 2, w, h); c.font = F(900, 22); c.fillStyle = T.ink; c.textBaseline = 'middle'; c.fillText((e.text || 'LOADING…').toUpperCase(), x - w / 2 + 30 * K, y - 18 * K);
   c.fillStyle = 'rgba(255,255,255,.12)'; c.beginPath(); c.roundRect(x - w / 2 + 30 * K, y + 14 * K, w - 60 * K, 14 * K, 7 * K); c.fill(); c.fillStyle = e.tone === 'red' ? T.r : T.cyan; c.beginPath(); c.roundRect(x - w / 2 + 30 * K, y + 14 * K, (w - 60 * K) * p, 14 * K, 7 * K); c.fill(); c.restore(); };
 // options: the survival-game list. items:[{text, at, out}] — the item lights up at `at` and is struck through at `out`
-O.options = (e, t) => { const a = fadeIO(e, t); if (a <= 0) return; const [x, y] = PX(e), items = e.items || []; c.save(); c.globalAlpha = a;
-  c.font = F(900, 30); c.fillStyle = T.ink; c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillText((e.title || 'YOUR OPTIONS').toUpperCase(), x, y);
-  items.forEach((it, i) => { const iy = y + (64 + i * 58) * K, on = t >= (it.at ?? i), out = it.out != null && t >= it.out, act = on && !out; if (t < (it.at ?? i) - .6 && !e.showAll) return;
-    c.font = F(800, 28); const txt = `${i + 1}. ${it.text.toUpperCase()}`, tw = c.measureText(txt).width;
-    if (act) { c.strokeStyle = T.r; c.lineWidth = 3 * K; c.beginPath(); c.roundRect(x - 18 * K, iy - 26 * K, tw + 36 * K, 52 * K, 10 * K); c.stroke(); c.fillStyle = 'rgba(255,59,48,.14)'; c.fill(); }
+O.options = (e, t) => { const a = fadeIO(e, t); if (a <= 0) return; const [x, y] = PX(e), q = e.sc ?? 1, items = e.items || []; c.save(); c.globalAlpha = a;
+  c.font = F(900, 30 * q); c.fillStyle = T.ink; c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillText((e.title || 'YOUR OPTIONS').toUpperCase(), x, y);
+  items.forEach((it, i) => { const iy = y + (64 + i * 58) * q * K, on = t >= (it.at ?? i), out = it.out != null && t >= it.out, act = on && !out; if (t < (it.at ?? i) - .6 && !e.showAll) return;
+    c.font = F(800, 28 * q); const txt = `${i + 1}. ${it.text.toUpperCase()}`, tw = c.measureText(txt).width;
+    if (act) { c.strokeStyle = T.r; c.lineWidth = 3 * K; c.beginPath(); c.roundRect(x - 18 * K, iy - 26 * q * K, tw + 36 * K, 52 * q * K, 10 * K); c.stroke(); c.fillStyle = 'rgba(255,59,48,.14)'; c.fill(); }
     c.fillStyle = out ? 'rgba(243,245,250,.35)' : on ? T.ink : 'rgba(243,245,250,.45)'; c.fillText(txt, x, iy);
     if (out) { const p = eo(seg(t, it.out, it.out + .3)); c.fillStyle = T.r; c.fillRect(x - 6 * K, iy - 2 * K, (tw + 12 * K) * p, 4 * K); } });
-  if (e.verdict && t >= e.verdict.at) { const p = eo(seg(t, e.verdict.at, e.verdict.at + .3)); c.globalAlpha = a * p; c.font = A(64); c.fillStyle = T.r; c.fillText(e.verdict.text.toUpperCase(), x, y + (90 + items.length * 58) * K); }
+  if (e.verdict && t >= e.verdict.at) { const p = eo(seg(t, e.verdict.at, e.verdict.at + .3)); c.globalAlpha = a * p; c.font = A(64); c.fillStyle = T.r; c.fillText(e.verdict.text.toUpperCase(), x, y + (90 + items.length * 58) * q * K); }
   c.restore(); };
 // panels: split screen frames with titles; put other elements inside each panel
 O.panels = (e, t) => { const a = fadeIO(e, t, .2); if (a <= 0) return; const n = (e.titles || []).length || 2, pw = W / n; c.save(); c.globalAlpha = a;
