@@ -1,0 +1,612 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 5.2,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": 8,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 352,
+     "y": 830,
+     "lx": 200,
+     "ly": 600,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "MARS",
+     "sub": "UNE TERRE ROUGE ?",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.2,
+     "dur": 1.2
+    },
+    {
+     "type": "label",
+     "text": "un désert rouge",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 1.58,
+     "dur": 1.5
+    },
+    {
+     "type": "label",
+     "text": "marcher en t-shirt ?",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 3.1,
+     "dur": 1.3
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.66,
+     "y": 0.3,
+     "rot": -0.1,
+     "size": 170,
+     "t0": 4.36,
+     "dur": 0.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 5.2,
+   "end": 7.5,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 540,
+     "y": 1650,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 720,
+     "s": 150,
+     "spin": 0.9,
+     "vy": 30
+    },
+    {
+     "type": "label",
+     "text": "qu'est-ce qui te tuerait",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 0.05
+    },
+    {
+     "type": "big",
+     "text": "EN PREMIER ?",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 0.86
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fy": 0.4
+   }
+  },
+  {
+   "start": 7.5,
+   "end": 18.1,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "mars",
+     "heat": 0.8,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 800,
+     "y": 1450,
+     "s": 190,
+     "rot": -0.3,
+     "lamp": 0
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "L'AIR",
+     "dur": 0.9,
+     "t0": 0.08
+    },
+    {
+     "type": "pie",
+     "title": "L'AIR DE MARS",
+     "slices": [
+      {
+       "v": 95.3,
+       "label": "GAZ CARBONIQUE",
+       "col": "#FF3B30"
+      },
+      {
+       "v": 4.7,
+       "label": "AUTRES",
+       "col": "#6FE3FF"
+      }
+     ],
+     "stat": {
+      "label": "GAZ CARBONIQUE",
+      "big": "95 %",
+      "small": ""
+     },
+     "r": 300,
+     "x": 0.36,
+     "y": 0.35,
+     "t0": 2.5,
+     "dur": 2.2
+    },
+    {
+     "type": "gauge",
+     "label": "PRESSION (TERRE = 100 %)",
+     "from": 100,
+     "to": 1,
+     "max": 100,
+     "unit": " %",
+     "x": 0.5,
+     "y": 0.4,
+     "r": 200,
+     "t0": 4.6,
+     "t1": 1.4,
+     "dur": 3.2
+    },
+    {
+     "type": "xray",
+     "part": "lungs",
+     "label": "POUMONS",
+     "title": "RESPIRE",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 220,
+     "t0": 8.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 18.1,
+   "end": 25.4,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "mars",
+     "heat": 0.8,
+     "rocks": true
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LE FROID",
+     "dur": 0.9,
+     "t0": 0.02
+    },
+    {
+     "type": "thermo",
+     "from": 20,
+     "to": -60,
+     "min": -100,
+     "max": 40,
+     "label": "TEMPÉRATURE MOYENNE",
+     "x": 0.15,
+     "y": 0.5,
+     "t0": 2.2,
+     "t1": 1.6
+    },
+    {
+     "type": "stick",
+     "x": 0.74,
+     "y": 0.78,
+     "s": 220,
+     "pose": "panic",
+     "label": "T-SHIRT",
+     "t0": 5.2
+    },
+    {
+     "type": "stamp",
+     "text": "AUCUNE CHANCE",
+     "x": 0.5,
+     "y": 0.18,
+     "rot": -0.07,
+     "size": 90,
+     "t0": 5.88
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 25.4,
+   "end": 38.7,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 540,
+     "y": 1900,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 1400,
+     "s": 200,
+     "spin": 0.3,
+     "rot": 0.3
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "LES RADIATIONS",
+     "dur": 0.9,
+     "t0": 0
+    },
+    {
+     "type": "counter",
+     "label": "RADIATION EN SURFACE",
+     "from": 0,
+     "to": 0.64,
+     "decimals": 2,
+     "unit": "mSv / jour",
+     "x": 0.06,
+     "y": 0.1,
+     "t0": 2.74,
+     "t1": 1.6
+    },
+    {
+     "type": "pill",
+     "text": "180 J · ALLER",
+     "size": 44,
+     "x": 0.08,
+     "y": 0.26,
+     "t0": 7.1
+    },
+    {
+     "type": "pill",
+     "text": "500 J · SUR PLACE",
+     "size": 44,
+     "x": 0.08,
+     "y": 0.33,
+     "t0": 8.4
+    },
+    {
+     "type": "pill",
+     "text": "180 J · RETOUR",
+     "size": 44,
+     "x": 0.08,
+     "y": 0.4,
+     "t0": 9.8
+    },
+    {
+     "type": "big",
+     "text": "≈ 1 SIEVERT",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.53,
+     "tone": "red",
+     "t0": 11.74
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 38.7,
+   "end": 50.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 540,
+     "y": 2000,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "on s'y prépare",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.12,
+     "tone": "green",
+     "t0": 0.1,
+     "dur": 1.5
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA24542.jpg",
+     "credit": "NASA/JPL-Caltech · Perseverance",
+     "tag": "ROVER PERSEVERANCE · MARS",
+     "x": 0.5,
+     "y": 0.34,
+     "w": 940,
+     "h": 690,
+     "t0": 1.6,
+     "dur": 4.3,
+     "zoom": 0.08
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA24203.jpg",
+     "credit": "NASA/JPL-Caltech · MOXIE",
+     "tag": "MOXIE · FABRIQUE DE L'OXYGÈNE",
+     "x": 0.5,
+     "y": 0.34,
+     "w": 900,
+     "h": 675,
+     "t0": 6.0,
+     "dur": 5.5,
+     "zoom": 0.08
+    },
+    {
+     "type": "counter",
+     "label": "OXYGÈNE FABRIQUÉ",
+     "from": 0,
+     "to": 122,
+     "unit": "g",
+     "x": 0.06,
+     "y": 0.66,
+     "t0": 7.3,
+     "t1": 1.0
+    },
+    {
+     "type": "label",
+     "text": "un petit chien pendant 10 h",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.82,
+     "tone": "yellow",
+     "t0": 9.5,
+     "dur": 2.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 50.4,
+   "end": 59.8,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "mars",
+     "heat": 0.8,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 300,
+     "y": 1500,
+     "s": 170,
+     "rot": 0.3,
+     "lamp": 0.3
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.9,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 0,
+     "items": [
+      {
+       "text": "RESPIRER L'AIR",
+       "at": 1.32,
+       "out": 4.0
+      },
+      {
+       "text": "SORTIR EN T-SHIRT",
+       "at": 4.74,
+       "out": 6.6
+      }
+     ]
+    },
+    {
+     "type": "stick",
+     "x": 0.78,
+     "y": 0.82,
+     "s": 200,
+     "pose": "panic",
+     "label": "TOI",
+     "t0": 1.4
+    },
+    {
+     "type": "stamp",
+     "text": "L'AIR EN PREMIER",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.07,
+     "size": 90,
+     "t0": 8.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 59.8,
+   "end": 62.8,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 540,
+     "y": 1500,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 650,
+     "s": 170,
+     "spin": 0.3,
+     "rot": 0.2
+    },
+    {
+     "type": "label",
+     "text": "le gaz qui te tue",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.15,
+     "tone": "red",
+     "t0": 0.3,
+     "dur": 1.8
+    },
+    {
+     "type": "stamp",
+     "text": "L'OXYGÈNE DE DEMAIN",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.3,
+     "rot": -0.07,
+     "size": 80,
+     "t0": 1.84
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 62.8,
+   "end": 70.22,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 30
+    },
+    {
+     "type": "planet",
+     "kind": "mars",
+     "seed": 5,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "label",
+     "text": "mars n'est pas une terre rouge",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 0.06,
+     "dur": 1.9
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 2.08,
+     "dur": 2.0
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 4.2,
+     "dur": 0.8
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 5.02
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.62
+   },
+   "trans": "fade"
+  }
+ ]
+}
