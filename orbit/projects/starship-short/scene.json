@@ -1,0 +1,602 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 7.6,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 640,
+     "y": 1500,
+     "r": 600,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 700,
+     "s": 260,
+     "rot": 0,
+     "vx": 0,
+     "vy": 40
+    },
+    {
+     "type": "title",
+     "text": "STARSHIP",
+     "sub": "REVIENT D'ORBITE",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.3,
+     "dur": 1.4
+    },
+    {
+     "type": "label",
+     "text": "une fusée revient de l'espace",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 1.9,
+     "dur": 1.9
+    },
+    {
+     "type": "label",
+     "text": "dans les bras d'une tour",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 3.5,
+     "dur": 1.8
+    },
+    {
+     "type": "big",
+     "text": "14 NOV.",
+     "size": 200,
+     "x": 0.5,
+     "y": 0.22,
+     "tone": "yellow",
+     "t0": 5.48,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.08
+   }
+  },
+  {
+   "start": 7.6,
+   "end": 15.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2050,
+     "r": 800,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 950,
+     "s": 420,
+     "rot": 0,
+     "vx": 0,
+     "vy": 0
+    },
+    {
+     "type": "tag",
+     "text": "STARSHIP · SPACEX",
+     "x": 0.05,
+     "y": 0.12,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "la plus grande fusée jamais construite",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.2,
+     "t0": 1.56,
+     "dur": 1.9
+    },
+    {
+     "type": "tag",
+     "text": "DÉCOLLAGE · 13 NOVEMBRE",
+     "x": 0.05,
+     "y": 0.26,
+     "t0": 4.58
+    },
+    {
+     "type": "counter",
+     "label": "NUMÉRO DU VOL",
+     "from": 0,
+     "to": 15,
+     "unit": "",
+     "x": 0.06,
+     "y": 0.32,
+     "t0": 5.9,
+     "t1": 0.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 15.0,
+   "end": 26.9,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 1900,
+     "r": 1000,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "tag",
+     "text": "VAISSEAU · SHIP 42",
+     "x": 0.05,
+     "y": 0.06,
+     "t0": 0.2
+    },
+    {
+     "type": "counter",
+     "label": "SATELLITES STARLINK",
+     "from": 0,
+     "to": 26,
+     "unit": "",
+     "x": 0.06,
+     "y": 0.1,
+     "t0": 2.1,
+     "t1": 1.0
+    },
+    {
+     "type": "counter",
+     "label": "ALTITUDE",
+     "from": 0,
+     "to": 275,
+     "unit": "km",
+     "x": 0.06,
+     "y": 0.19,
+     "t0": 4.4,
+     "t1": 1.2
+    },
+    {
+     "type": "evidence",
+     "src": "media/11_14_24_fuel_depot.jpg",
+     "credit": "NASA/MSFC · image courtesy SpaceX",
+     "tag": "ILLUSTRATION · STARSHIP EN ORBITE (CONCEPT)",
+     "x": 0.5,
+     "y": 0.56,
+     "w": 940,
+     "h": 492,
+     "t0": 3.5,
+     "dur": 4.0,
+     "zoom": 0.08
+    },
+    {
+     "type": "counter",
+     "label": "TOURS DE LA TERRE",
+     "from": 0,
+     "to": 14,
+     "unit": "",
+     "x": 0.06,
+     "y": 0.28,
+     "t0": 8.1,
+     "t1": 1.0
+    },
+    {
+     "type": "timer",
+     "label": "DURÉE EN ORBITE",
+     "to": 81000,
+     "x": 0.06,
+     "y": 0.37,
+     "t0": 9.8,
+     "t1": 1.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 26.9,
+   "end": 39.2,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2150,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 700,
+     "s": 330,
+     "rot": 1.45,
+     "vx": 20,
+     "vy": 0,
+     "dur": 4.8
+    },
+    {
+     "type": "label",
+     "text": "sorti des nuages à l'horizontale",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.13,
+     "t0": 0.94,
+     "dur": 2.0
+    },
+    {
+     "type": "pill",
+     "text": "3 MOTEURS RALLUMÉS",
+     "tone": "red",
+     "size": 42,
+     "x": 0.06,
+     "y": 0.2,
+     "t0": 3.4,
+     "dur": 4.0
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 1000,
+     "s": 330,
+     "rot": 0,
+     "vx": 0,
+     "vy": 10,
+     "t0": 4.84
+    },
+    {
+     "type": "label",
+     "text": "il se redresse",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.13,
+     "tone": "yellow",
+     "t0": 4.84,
+     "dur": 1.6
+    },
+    {
+     "type": "you",
+     "x": 540,
+     "y": 1180,
+     "lx": 540,
+     "ly": 1500,
+     "text": "LES BRAS DE LA TOUR",
+     "t0": 6.3,
+     "dur": 3.0
+    },
+    {
+     "type": "flash",
+     "t0": 7.76,
+     "dur": 0.4,
+     "a": 0.7
+    },
+    {
+     "type": "stamp",
+     "text": "ATTRAPÉ",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.22,
+     "rot": -0.08,
+     "size": 150,
+     "t0": 7.8,
+     "dur": 1.4
+    },
+    {
+     "type": "big",
+     "text": "1RE FOIS",
+     "size": 190,
+     "x": 0.5,
+     "y": 0.31,
+     "tone": "yellow",
+     "t0": 8.76,
+     "sub": "UN ÉTAGE SUPÉRIEUR RATTRAPÉ"
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 39.2,
+   "end": 46.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2100,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 1050,
+     "s": 300,
+     "rot": 0,
+     "vx": 0,
+     "vy": 0
+    },
+    {
+     "type": "label",
+     "text": "pourquoi c'est important ?",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.12,
+     "t0": 0.1,
+     "dur": 1.2
+    },
+    {
+     "type": "big",
+     "text": "RÉUTILISABLE",
+     "size": 130,
+     "x": 0.5,
+     "y": 0.24,
+     "tone": "yellow",
+     "t0": 1.34,
+     "dur": 2.3
+    },
+    {
+     "type": "label",
+     "text": "le pari de SpaceX",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.36,
+     "t0": 3.72,
+     "dur": 3.0
+    },
+    {
+     "type": "pill",
+     "text": "OBJECTIF : BAISSER LE PRIX D'UN VOL",
+     "tone": "red",
+     "size": 38,
+     "x": 0.06,
+     "y": 0.44,
+     "t0": 5.22
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 46.0,
+   "end": 55.5,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 540,
+     "y": 2050,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 500,
+     "s": 240,
+     "rot": 0,
+     "vx": 0,
+     "vy": 70
+    },
+    {
+     "type": "stamp",
+     "text": "PAS PARFAIT",
+     "x": 0.5,
+     "y": 0.15,
+     "rot": -0.07,
+     "size": 110,
+     "t0": 0.3,
+     "dur": 3.0
+    },
+    {
+     "type": "label",
+     "text": "le propulseur, lui, pas rattrapé",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.3,
+     "t0": 2.0,
+     "dur": 2.5
+    },
+    {
+     "type": "loading",
+     "text": "CAPTURE DU PROPULSEUR…",
+     "to": 0.6,
+     "t1": 1.0,
+     "tone": "red",
+     "x": 0.5,
+     "y": 0.5,
+     "t0": 4.58,
+     "dur": 2.6
+    },
+    {
+     "type": "stamp",
+     "text": "ANNULÉE",
+     "x": 0.5,
+     "y": 0.62,
+     "rot": 0.08,
+     "size": 110,
+     "t0": 5.9
+    },
+    {
+     "type": "label",
+     "text": "point de secours : en mer",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.78,
+     "tone": "yellow",
+     "t0": 7.3,
+     "dur": 2.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 55.5,
+   "end": 62.9,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 540,
+     "y": 2000,
+     "r": 1000,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "et la Lune ?",
+     "size": 66,
+     "x": 0.5,
+     "y": 0.1,
+     "tone": "yellow",
+     "t0": 0.1,
+     "dur": 1.2
+    },
+    {
+     "type": "evidence",
+     "src": "media/11_03_24_artemis_3_on_surface.jpg",
+     "credit": "NASA/MSFC · image courtesy SpaceX",
+     "tag": "ILLUSTRATION · STARSHIP HLS SUR LA LUNE (CONCEPT)",
+     "x": 0.5,
+     "y": 0.38,
+     "w": 940,
+     "h": 525,
+     "t0": 1.23,
+     "dur": 6.0,
+     "zoom": 0.08
+    },
+    {
+     "type": "pill",
+     "text": "NASA · ARTEMIS · ALLUNISSAGE",
+     "size": 40,
+     "x": 0.06,
+     "y": 0.64,
+     "t0": 2.5
+    },
+    {
+     "type": "stamp",
+     "text": "PROCHAINE ÉTAPE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.78,
+     "rot": -0.07,
+     "size": 90,
+     "t0": 6.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   },
+   "trans": "fade"
+  },
+  {
+   "start": 62.9,
+   "end": 68.97,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1750,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 640,
+     "y": 1500,
+     "r": 600,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "rocket",
+     "x": 540,
+     "y": 700,
+     "s": 260,
+     "rot": 0,
+     "vx": 0,
+     "vy": 40
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 0.06,
+     "dur": 2.2
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 2.38,
+     "dur": 1.1
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 3.54
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.1,
+    "zoomTo": 1.0
+   },
+   "trans": "fade"
+  }
+ ]
+}
