@@ -1,0 +1,680 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "k": 1,
+ "shots": [
+  {
+   "start": 0,
+   "end": 6.3,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": 8,
+     "rot": 0.35
+    },
+    {
+     "type": "you",
+     "x": 352,
+     "y": 830,
+     "lx": 200,
+     "ly": 600,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "MERCURE",
+     "sub": "LA PLUS PROCHE DU SOLEIL",
+     "tx": 80,
+     "ty": 330,
+     "t0": 0.6,
+     "dur": 2.6
+    },
+    {
+     "type": "label",
+     "text": "donc la plus chaude ?",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.15,
+     "t0": 2.54,
+     "dur": 1.9
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.64,
+     "y": 0.3,
+     "rot": -0.1,
+     "size": 170,
+     "t0": 3.56
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 6.3,
+   "end": 8.8,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 540,
+     "y": 1650,
+     "r": 900,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 540,
+     "y": 720,
+     "s": 150,
+     "spin": 0.9,
+     "vy": 30
+    },
+    {
+     "type": "label",
+     "text": "qu'est-ce qui te tuerait",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 0.06
+    },
+    {
+     "type": "big",
+     "text": "EN PREMIER ?",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "t0": 0.98
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fy": 0.4
+   }
+  },
+  {
+   "start": 8.8,
+   "end": 16.7,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "moon",
+     "cols": [
+      "#1a1410",
+      "#8c7a66",
+      "#d9c4a4",
+      "#6e5b48",
+      "#4a3c2e",
+      "#26201a"
+     ],
+     "heat": 2.0,
+     "rocks": true
+    },
+    {
+     "type": "sun",
+     "x": 760,
+     "y": 330,
+     "r": 230,
+     "surface": true
+    },
+    {
+     "type": "astronaut",
+     "x": 380,
+     "y": 1560,
+     "s": 190,
+     "rot": 0.5,
+     "lamp": 0
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "LE JOUR",
+     "dur": 0.9
+    },
+    {
+     "type": "thermo",
+     "from": 20,
+     "to": 430,
+     "max": 500,
+     "label": "JOUR",
+     "x": 0.12,
+     "y": 0.5,
+     "t0": 2.1,
+     "t1": 1.3
+    },
+    {
+     "type": "balance",
+     "left": "MERCURE 430°",
+     "right": "VÉNUS 470°",
+     "tilt": 0.3,
+     "x": 0.66,
+     "y": 0.6,
+     "t0": 4.62
+    },
+    {
+     "type": "stamp",
+     "text": "THERMOMÈTRE HS",
+     "x": 0.5,
+     "y": 0.22,
+     "rot": -0.07,
+     "size": 80,
+     "t0": 6.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.07,
+    "fy": 0.6
+   }
+  },
+  {
+   "start": 16.7,
+   "end": 26.0,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "moon",
+     "heat": 0,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 800,
+     "y": 1400,
+     "s": 190,
+     "rot": -0.3,
+     "lamp": 0.6,
+     "flip": true
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LA NUIT",
+     "dur": 0.9
+    },
+    {
+     "type": "label",
+     "text": "pas d'atmosphère",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.17,
+     "t0": 2.14,
+     "dur": 2.8
+    },
+    {
+     "type": "thermo",
+     "from": 430,
+     "to": -180,
+     "min": -200,
+     "max": 500,
+     "label": "NUIT",
+     "x": 0.3,
+     "y": 0.62,
+     "t0": 4.2,
+     "t1": 1.4,
+     "dur": 2.4
+    },
+    {
+     "type": "panels",
+     "titles": [
+      "FOUR",
+      "CONGÉLATEUR"
+     ],
+     "bg": [
+      "#8a2e10",
+      "#0a2a4a"
+     ],
+     "stagger": 0.3,
+     "t0": 6.6,
+     "dur": 2.6
+    },
+    {
+     "type": "big",
+     "text": "430 °C",
+     "size": 110,
+     "x": 0.25,
+     "y": 0.5,
+     "t0": 6.84,
+     "tone": "red",
+     "dur": 2.4
+    },
+    {
+     "type": "big",
+     "text": "-180 °C",
+     "size": 110,
+     "x": 0.75,
+     "y": 0.5,
+     "t0": 7.34,
+     "dur": 1.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 26.0,
+   "end": 32.0,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "moon",
+     "cols": [
+      "#1a1410",
+      "#8c7a66",
+      "#d9c4a4",
+      "#6e5b48",
+      "#4a3c2e",
+      "#26201a"
+     ],
+     "heat": 0,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 1400,
+     "s": 190,
+     "rot": -0.3,
+     "lamp": 0
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "L'AIR",
+     "dur": 0.9
+    },
+    {
+     "type": "label",
+     "text": "presque pas d'air",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.1,
+     "t0": 2.14,
+     "tone": "red",
+     "underline": true
+    },
+    {
+     "type": "xray",
+     "part": "lungs",
+     "label": "POUMONS",
+     "title": "RESPIRE",
+     "x": 0.5,
+     "y": 0.56,
+     "s": 220,
+     "t0": 2.86
+    },
+    {
+     "type": "stamp",
+     "text": "PAS D'AIR",
+     "x": 0.5,
+     "y": 0.8,
+     "rot": 0.06,
+     "size": 110,
+     "t0": 5.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 32.0,
+   "end": 42.0,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 640,
+     "y": 1250,
+     "r": 480,
+     "light": 2.6,
+     "spin": 0.15
+    },
+    {
+     "type": "counter",
+     "label": "ANNÉE DE MERCURE",
+     "from": 0,
+     "to": 88,
+     "unit": "jours",
+     "x": 0.06,
+     "y": 0.12,
+     "t0": 1.4,
+     "t1": 1.5
+    },
+    {
+     "type": "counter",
+     "label": "D'UN LEVER DE SOLEIL AU SUIVANT",
+     "from": 0,
+     "to": 176,
+     "unit": "jours",
+     "x": 0.06,
+     "y": 0.27,
+     "t0": 3.8,
+     "t1": 1.7,
+     "col": "#FFC93C"
+    },
+    {
+     "type": "big",
+     "text": "1 JOUR = 2 ANS",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.5,
+     "tone": "yellow",
+     "t0": 7.28,
+     "dur": 2.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08,
+    "fx": 0.62
+   }
+  },
+  {
+   "start": 42.0,
+   "end": 50.3,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 760,
+     "y": 1150,
+     "r": 400,
+     "light": -2.4,
+     "spin": 0.05
+    },
+    {
+     "type": "rocket",
+     "x": 250,
+     "y": 700,
+     "s": 120,
+     "rot": 0.5,
+     "vx": 70,
+     "vy": 55
+    },
+    {
+     "type": "tag",
+     "text": "BEPICOLOMBO · 21 NOVEMBRE 2026 · ESA/JAXA",
+     "x": 0.05,
+     "y": 0.12,
+     "t0": 1.58
+    },
+    {
+     "type": "stamp",
+     "text": "EN ORBITE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.3,
+     "rot": -0.08,
+     "size": 120,
+     "t0": 3.66
+    },
+    {
+     "type": "big",
+     "text": "8 ANS",
+     "size": 220,
+     "x": 0.5,
+     "y": 0.6,
+     "tone": "yellow",
+     "t0": 5.0,
+     "sub": "DE VOYAGE",
+     "dur": 2.0
+    },
+    {
+     "type": "pill",
+     "text": "BUG LOGICIEL",
+     "tone": "red",
+     "size": 44,
+     "x": 0.06,
+     "y": 0.8,
+     "t0": 6.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.1,
+    "fx": 0.7
+   }
+  },
+  {
+   "start": 50.3,
+   "end": 61.3,
+   "els": [
+    {
+     "type": "surface",
+     "kind": "moon",
+     "cols": [
+      "#1a1410",
+      "#8c7a66",
+      "#d9c4a4",
+      "#6e5b48",
+      "#4a3c2e",
+      "#26201a"
+     ],
+     "heat": 1.2,
+     "rocks": true
+    },
+    {
+     "type": "astronaut",
+     "x": 300,
+     "y": 1500,
+     "s": 170,
+     "rot": 0.3,
+     "lamp": 0.3
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.9,
+     "x": 0.07,
+     "y": 0.2,
+     "t0": 0,
+     "items": [
+      {
+       "text": "PARASOL",
+       "at": 1.58,
+       "out": 3.9
+      },
+      {
+       "text": "COURIR VERS LA NUIT",
+       "at": 4.56,
+       "out": 6.7
+      }
+     ]
+    },
+    {
+     "type": "stick",
+     "x": 0.78,
+     "y": 0.8,
+     "s": 200,
+     "pose": "panic",
+     "label": "TOI",
+     "t0": 1.6
+    },
+    {
+     "type": "stamp",
+     "text": "LE CONTRASTE",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.07,
+     "size": 100,
+     "t0": 9.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 61.3,
+   "end": 70.4,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 540,
+     "y": 1900,
+     "r": 1000,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "regarde les pôles",
+     "size": 70,
+     "x": 0.5,
+     "y": 0.15,
+     "tone": "yellow",
+     "t0": 0.18,
+     "dur": 3.2
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA19416.jpg",
+     "credit": "NASA/JPL · MESSENGER",
+     "tag": "CRATÈRES POLAIRES, JAMAIS AU SOLEIL",
+     "x": 0.5,
+     "y": 0.5,
+     "w": 900,
+     "h": 500,
+     "t0": 1.46,
+     "dur": 2.3,
+     "zoom": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA19411.jpg",
+     "credit": "NASA/JPL · MESSENGER",
+     "tag": "GLACE D'EAU (EN JAUNE)",
+     "x": 0.5,
+     "y": 0.5,
+     "w": 980,
+     "h": 560,
+     "t0": 3.78,
+     "dur": 4.3,
+     "zoom": 0.12
+    },
+    {
+     "type": "stamp",
+     "text": "GLACE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.8,
+     "rot": 0.06,
+     "size": 130,
+     "t0": 5.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06
+   }
+  },
+  {
+   "start": 70.4,
+   "end": 75.8,
+   "els": [
+    {
+     "type": "sun",
+     "x": 60,
+     "y": 1700,
+     "r": 40
+    },
+    {
+     "type": "planet",
+     "kind": "mercury",
+     "seed": 3,
+     "x": 640,
+     "y": 1180,
+     "r": 520,
+     "light": 2.6,
+     "spin": 0.03
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 860,
+     "s": 70,
+     "vx": -6,
+     "rot": 0.35
+    },
+    {
+     "type": "label",
+     "text": "sur quelle planète veux-tu mourir ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 0.12,
+     "dur": 1.8
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 62,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "t0": 2.0
+    },
+    {
+     "type": "big",
+     "text": "ABONNE-TOI",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.29,
+     "tone": "red",
+     "t0": 3.22
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.62
+   },
+   "trans": "fade"
+  }
+ ]
+}

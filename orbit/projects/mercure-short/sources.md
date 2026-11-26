@@ -13,4 +13,4 @@
 ## Notes
 - Aucune hypothèse présentée comme un fait. "Presque pas d'air" plutôt que "pas d'air".
 - Chiffres de température variables selon les sources : dits "jusqu'à".
-- Images : radar/MESSENGER NASA à ajouter si besoin (réseau bloqué : liens à fournir). Crédit : NASA/Johns Hopkins APL/Carnegie Institution (MESSENGER). BepiColombo est ESA/JAXA : non utilisable sans licence, donc dessinée par le moteur.
+- Images utilisées : PIA19416 (Shadows in the South) et PIA19411 (Water Ice on Mercury), crédit NASA/JPL, téléchargées via scripts/nasa.py. BepiColombo est ESA/JAXA : non utilisée, représentée par une fusée dessinée par le moteur.
