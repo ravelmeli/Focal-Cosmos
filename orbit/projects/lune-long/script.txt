@@ -6,7 +6,7 @@ Mais d'abord, une règle. Retiens cette phrase : aller sur la Lune n'est pas la 
 
 Première question : pourquoi y retourner ? On y est déjà allés, non ? Oui. Douze humains ont marché sur la Lune, entre mille neuf cent soixante-neuf et mille neuf cent soixante-douze. Mais c'étaient des visites de quelques jours, à l'équateur lunaire. Cette fois, l'objectif est différent. Il s'agit de rester. Et pour rester, il faut un endroit précis : le pôle Sud de la Lune.
 
-Pourquoi le pôle Sud ? À cause de l'eau. Dans les cratères du pôle, certaines zones ne reçoivent jamais la lumière du Soleil. En deux mille neuf, la mission LCROSS de la NASA a envoyé un étage de fusée s'écraser dans l'un d'eux, le cratère Cabeus. Le nuage de matière soulevé contenait de l'eau. Selon la NASA, ces cratères ne dépassent jamais environ moins cent soixante-treize degrés. C'est tellement froid que la glace d'eau peut y rester piégée pendant très longtemps.
+Pourquoi le pôle Sud ? À cause de l'eau. Dans les cratères du pôle, certaines zones ne reçoivent jamais la lumière du Soleil. En deux mille neuf, la mission LCROSS de la NASA a envoyé un étage de fusée s'écraser dans l'un d'eux, le cratère Cabeus. Le nuage de matière soulevé contenait de l'eau. Selon la NASA, la température n'y dépasse jamais environ moins cent soixante-treize degrés. C'est tellement froid que la glace d'eau peut y rester piégée pendant très longtemps.
 
 Et il y a un deuxième avantage. Sur certaines crêtes proches, le Soleil éclaire presque en permanence. De la glace d'un côté, de la lumière de l'autre. Pour une future base, c'est un emplacement de rêve. Le cratère Shackleton, en particulier, est le site que la NASA a mis en avant.
 
@@ -40,7 +40,7 @@ Mais le propulseur n'a pas été rattrapé. Ses vérifications ont annulé la ca
 
 Cinquième question : et la base ? Parce que la NASA ne veut plus faire que des visites. Elle a lancé un programme qu'elle appelle Moon Base, une base lunaire. Elle sera construite par étapes, en trois phases. La première est surtout robotique, avec des atterrisseurs qui livrent du matériel.
 
-Les premières missions sont déjà nommées. Moon Base un, c'est l'atterrisseur Blue Moon Mark un de Blue Origin, baptisé Endurance. Il est visé pour l'automne deux mille vingt-six au plus tôt, vers une crête proche du cratère Shackleton. Moon Base deux, c'est l'atterrisseur Griffin de l'entreprise Astrobotic, lancé par une Falcon Heavy de SpaceX.
+Les premières missions sont déjà nommées. Moon Base un, c'est l'atterrisseur Blue Moon Mark un de Blue Origin, baptisé Endurance. Il est visé pour l'automne deux mille vingt-six au plus tôt, une date qui a pu glisser, vers une crête proche du cratère Shackleton. Moon Base deux, c'est l'atterrisseur Griffin de l'entreprise Astrobotic, lancé par une Falcon Heavy de SpaceX.
 
 Depuis deux mille dix-huit, la NASA a confié quatorze missions à cinq entreprises, avec son programme de livraisons commerciales vers la Lune. Elle prépare aussi une mission appelée MoonFall, qui enverra quatre petits drones à propulsion survoler la région du pôle Sud.
 
