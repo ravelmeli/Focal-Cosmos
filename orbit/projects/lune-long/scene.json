@@ -1,0 +1,2354 @@
+{
+ "width": 1920,
+ "height": 1080,
+ "fps": 30,
+ "shots": [
+  {
+   "start": 0,
+   "end": 3.2,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1300,
+     "y": 560,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 760,
+     "y": 860,
+     "r": 60,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 600,
+     "y": 640,
+     "s": 70,
+     "vx": 15,
+     "rot": 0.3
+    },
+    {
+     "type": "title",
+     "text": "LA LUNE",
+     "sub": "OÙ EN EST-ON, FIN 2026 ?",
+     "dur": 2.7,
+     "t0": 0.3
+    },
+    {
+     "type": "label",
+     "text": "cette année, l'humanité y est retournée ?",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "dur": 2.6,
+     "t0": 0.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.65
+   }
+  },
+  {
+   "start": 3.2,
+   "end": 12.0,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1300,
+     "y": 560,
+     "r": 280,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 330,
+     "y": 300,
+     "r": 70,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.5,
+     "y": 0.25,
+     "rot": -0.08,
+     "size": 170,
+     "dur": 2.4,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "enfin, pas tout à fait",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.88,
+     "tone": "yellow",
+     "dur": 2.0,
+     "t0": 1.0
+    },
+    {
+     "type": "pill",
+     "text": "RECORD DE DISTANCE · VIEUX DE 56 ANS",
+     "size": 40,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.55,
+     "t0": 4.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 12.0,
+   "end": 21.6,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1350,
+     "y": 560,
+     "r": 320,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "stamp",
+     "text": "PERSONNE SUR LE SOL LUNAIRE",
+     "x": 0.35,
+     "y": 0.25,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 3.2,
+     "t0": 0.0
+    },
+    {
+     "type": "big",
+     "text": "DÉCEMBRE 1972",
+     "size": 130,
+     "x": 0.35,
+     "y": 0.5,
+     "tone": "yellow",
+     "dur": 4.2,
+     "t0": 3.4
+    },
+    {
+     "type": "counter",
+     "label": "DEPUIS",
+     "from": 0,
+     "to": 54,
+     "unit": "ans",
+     "x": 0.04,
+     "y": 0.7,
+     "t1": 1.0,
+     "t0": 7.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 21.6,
+   "end": 39.7,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 600,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 300,
+     "y": 260,
+     "r": 60,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "label",
+     "text": "alors, voici la vraie question",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.4
+    },
+    {
+     "type": "big",
+     "text": "OÙ EN EST-ON ?",
+     "size": 120,
+     "x": 0.4,
+     "y": 0.22,
+     "dur": 3.4,
+     "t0": 1.9
+    },
+    {
+     "type": "options",
+     "title": "AU PROGRAMME",
+     "sc": 1.4,
+     "x": 0.05,
+     "y": 0.38,
+     "items": [
+      {
+       "text": "CE QUI S'EST PASSÉ EN 2026",
+       "at": 5.199999999999999
+      },
+      {
+       "text": "CE QUI A CHANGÉ DANS LES PLANS",
+       "at": 7.099999999999998
+      },
+      {
+       "text": "QUAND ON Y MARCHE",
+       "at": 8.599999999999998
+      },
+      {
+       "text": "CE QUI PEUT TOUT FAIRE DÉRAILLER",
+       "at": 15.399999999999999
+      }
+     ],
+     "t0": 4.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 39.7,
+   "end": 48.8,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 260,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "UNE RÈGLE À RETENIR",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.12,
+     "tone": "yellow",
+     "dur": 7,
+     "t0": 0.1
+    },
+    {
+     "type": "big",
+     "text": "ALLER SUR LA LUNE",
+     "size": 100,
+     "x": 0.4,
+     "y": 0.4,
+     "dur": 6,
+     "t0": 2.6
+    },
+    {
+     "type": "label",
+     "text": "N'EST PAS LA MÊME CHOSE QUE",
+     "size": 54,
+     "x": 0.4,
+     "y": 0.58,
+     "dur": 5,
+     "t0": 3.5
+    },
+    {
+     "type": "big",
+     "text": "SE POSER SUR LA LUNE",
+     "size": 100,
+     "x": 0.4,
+     "y": 0.75,
+     "tone": "yellow",
+     "dur": 4.5,
+     "t0": 4.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 48.8,
+   "end": 68.9,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1450,
+     "y": 600,
+     "r": 280,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "pourquoi y retourner ?",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.6
+    },
+    {
+     "type": "counter",
+     "label": "HUMAINS SUR LA LUNE",
+     "from": 0,
+     "to": 12,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.2,
+     "t1": 1.0,
+     "t0": 3.6
+    },
+    {
+     "type": "label",
+     "text": "1969 – 1972",
+     "size": 54,
+     "x": 0.17,
+     "y": 0.42,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 5.0
+    },
+    {
+     "type": "pill",
+     "text": "DES VISITES DE QUELQUES JOURS · À L'ÉQUATEUR",
+     "size": 38,
+     "x": 0.04,
+     "y": 0.55,
+     "t0": 7.9
+    },
+    {
+     "type": "big",
+     "text": "RESTER",
+     "size": 170,
+     "x": 0.3,
+     "y": 0.78,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 13.6
+    },
+    {
+     "type": "stamp",
+     "text": "PÔLE SUD",
+     "x": 0.3,
+     "y": 0.3,
+     "rot": -0.07,
+     "size": 110,
+     "dur": 2.2,
+     "t0": 18.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 68.9,
+   "end": 91.8,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1450,
+     "y": 1000,
+     "r": 520,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "À CAUSE DE L'EAU",
+     "size": 70,
+     "x": 0.4,
+     "y": 0.1,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "des zones qui ne voient jamais le Soleil",
+     "size": 46,
+     "x": 0.4,
+     "y": 0.2,
+     "dur": 3.6,
+     "t0": 2.3
+    },
+    {
+     "type": "tag",
+     "text": "LCROSS · NASA · 2009 · CRATÈRE CABEUS",
+     "x": 0.04,
+     "y": 0.3,
+     "t0": 6.0
+    },
+    {
+     "type": "pill",
+     "text": "UN ÉTAGE DE FUSÉE S'Y ÉCRASE",
+     "size": 38,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.38,
+     "t0": 8.1
+    },
+    {
+     "type": "stamp",
+     "text": "DE L'EAU",
+     "tone": "green",
+     "x": 0.3,
+     "y": 0.55,
+     "rot": -0.07,
+     "size": 120,
+     "dur": 3.5,
+     "t0": 11.7
+    },
+    {
+     "type": "thermo",
+     "from": 20,
+     "to": -173,
+     "min": -200,
+     "max": 40,
+     "label": "CRATÈRES POLAIRES",
+     "x": 0.62,
+     "y": 0.78,
+     "t1": 1.6,
+     "t0": 13.8
+    },
+    {
+     "type": "label",
+     "text": "la glace d'eau y reste piégée",
+     "size": 46,
+     "x": 0.4,
+     "y": 0.92,
+     "tone": "yellow",
+     "dur": 3.4,
+     "t0": 18.7
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 91.8,
+   "end": 107.35,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1400,
+     "y": 1000,
+     "r": 520,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "sun",
+     "x": 1850,
+     "y": 120,
+     "r": 60
+    },
+    {
+     "type": "label",
+     "text": "un deuxième avantage",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.1,
+     "tone": "yellow",
+     "dur": 2,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "des crêtes presque toujours éclairées",
+     "size": 50,
+     "x": 0.4,
+     "y": 0.22,
+     "dur": 3.4,
+     "t0": 1.5
+    },
+    {
+     "type": "pill",
+     "text": "GLACE D'UN CÔTÉ · LUMIÈRE DE L'AUTRE",
+     "size": 42,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.42,
+     "t0": 5.15
+    },
+    {
+     "type": "tag",
+     "text": "LE CRATÈRE SHACKLETON · LE SITE MIS EN AVANT PAR LA NASA",
+     "x": 0.04,
+     "y": 0.55,
+     "t0": 11.15
+    },
+    {
+     "type": "stamp",
+     "text": "EMPLACEMENT DE RÊVE",
+     "tone": "green",
+     "x": 0.35,
+     "y": 0.75,
+     "rot": -0.06,
+     "size": 90,
+     "dur": 3,
+     "t0": 12.35
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 107.35,
+   "end": 125.45,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 1000,
+     "r": 400,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "que s'est-il passé en avril ?",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2.8,
+     "t0": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/launch.jpg",
+     "credit": "NASA/MAF · Michael DeMocker",
+     "tag": "ARTEMIS II · DÉCOLLAGE · 1ER AVRIL 2026",
+     "x": 0.62,
+     "y": 0.5,
+     "w": 1000,
+     "h": 667,
+     "dur": 12.0,
+     "zoom": 0.08,
+     "t0": 5.7
+    },
+    {
+     "type": "counter",
+     "label": "ASTRONAUTES À BORD",
+     "from": 0,
+     "to": 4,
+     "unit": "",
+     "x": 0.03,
+     "y": 0.2,
+     "t1": 1.0,
+     "t0": 6.2
+    },
+    {
+     "type": "tag",
+     "text": "CAPSULE ORION · « INTEGRITY »",
+     "x": 0.03,
+     "y": 0.4,
+     "t0": 10.8
+    },
+    {
+     "type": "pill",
+     "text": "1ER VOL HABITÉ AUTOUR DE LA LUNE DEPUIS 1972",
+     "size": 34,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.5,
+     "t0": 13.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 125.45,
+   "end": 141.35,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 1000,
+     "r": 400,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "la capsule s'éloigne de la Terre",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.07,
+     "dur": 2.8,
+     "t0": 0.1
+    },
+    {
+     "type": "tag",
+     "text": "6 AVRIL · DERRIÈRE LA LUNE",
+     "x": 0.03,
+     "y": 0.15,
+     "t0": 3.3
+    },
+    {
+     "type": "evidence",
+     "src": "media/moon_flyby.jpg",
+     "credit": "NASA/JSC",
+     "tag": "ARTEMIS II · FACE VISIBLE ET FACE CACHÉE",
+     "x": 0.64,
+     "y": 0.5,
+     "w": 1000,
+     "h": 667,
+     "dur": 11.5,
+     "zoom": 0.08,
+     "t0": 3.8
+    },
+    {
+     "type": "counter",
+     "label": "DISTANCE DE LA SURFACE",
+     "from": 0,
+     "to": 4067,
+     "unit": "miles",
+     "x": 0.03,
+     "y": 0.28,
+     "t1": 2.0,
+     "t0": 6.2
+    },
+    {
+     "type": "pill",
+     "text": "≈ 6 500 KM",
+     "size": 44,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.5,
+     "t0": 10.2
+    },
+    {
+     "type": "label",
+     "text": "3 H À PHOTOGRAPHIER",
+     "size": 44,
+     "x": 0.17,
+     "y": 0.68,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 12.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 141.35,
+   "end": 158.45,
+   "els": [
+    {
+     "type": "evidence",
+     "src": "media/eclipse.jpg",
+     "credit": "NASA/JSC",
+     "tag": "ARTEMIS II · ÉCLIPSE VUE DEPUIS ORION",
+     "x": 0.6,
+     "y": 0.5,
+     "w": 880,
+     "h": 660,
+     "dur": 16.5,
+     "zoom": 0.06,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "UN MOMENT TRÈS PARTICULIER",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.3
+    },
+    {
+     "type": "timer",
+     "label": "SANS CONTACT AVEC LA TERRE",
+     "to": 2400,
+     "x": 0.03,
+     "y": 0.2,
+     "t1": 3.2,
+     "t0": 2.8
+    },
+    {
+     "type": "label",
+     "text": "40 MIN DE SILENCE RADIO",
+     "size": 40,
+     "x": 0.2,
+     "y": 0.55,
+     "tone": "red",
+     "dur": 4.4,
+     "t0": 7.8
+    },
+    {
+     "type": "stamp",
+     "text": "SIGNAL RETROUVÉ",
+     "tone": "green",
+     "x": 0.18,
+     "y": 0.8,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 3.6,
+     "t0": 13.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 158.45,
+   "end": 183.85,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1600,
+     "y": 1000,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "LE PLUS IMPRESSIONNANT : LA DISTANCE",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.2
+    },
+    {
+     "type": "counter",
+     "label": "ARTEMIS II · DISTANCE DE LA TERRE",
+     "from": 0,
+     "to": 406771,
+     "unit": "km",
+     "x": 0.04,
+     "y": 0.2,
+     "t1": 3.2,
+     "t0": 4.2
+    },
+    {
+     "type": "tag",
+     "text": "ANCIEN RECORD · APOLLO 13 · AVRIL 1970",
+     "x": 0.04,
+     "y": 0.42,
+     "t0": 11.5
+    },
+    {
+     "type": "counter",
+     "label": "APOLLO 13",
+     "from": 0,
+     "to": 400000,
+     "unit": "km",
+     "x": 0.04,
+     "y": 0.5,
+     "t1": 2.0,
+     "t0": 16.2
+    },
+    {
+     "type": "pill",
+     "text": "+ DE 6 000 KM",
+     "size": 50,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.72,
+     "t0": 19.9
+    },
+    {
+     "type": "stamp",
+     "text": "RECORD DE 56 ANS BATTU",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.06,
+     "size": 100,
+     "dur": 3.2,
+     "t0": 22.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 183.85,
+   "end": 200.75,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 250,
+     "y": 540,
+     "r": 60,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1100,
+     "y": 540,
+     "r": 45,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "rocket",
+     "x": 1450,
+     "y": 540,
+     "s": 90,
+     "rot": 1.5,
+     "vx": 0,
+     "vy": 0
+    },
+    {
+     "type": "label",
+     "text": "DISTANCE MOYENNE TERRE – LUNE : ≈ 384 000 KM",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.15,
+     "dur": 5,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "LA CAPSULE : PLUS DE 20 000 KM AU-DELÀ",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.25,
+     "tone": "yellow",
+     "dur": 5,
+     "t0": 5.6
+    },
+    {
+     "type": "label",
+     "text": "là-bas, la Terre paraît toute petite",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.8,
+     "dur": 2.2,
+     "t0": 11.5
+    },
+    {
+     "type": "stamp",
+     "text": "AUCUN HUMAIN PLUS LOIN",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.55,
+     "rot": -0.06,
+     "size": 90,
+     "dur": 2.6,
+     "t0": 14.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 200.75,
+   "end": 211.95,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 300,
+     "y": 900,
+     "r": 200,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "evidence",
+     "src": "media/splash.jpg",
+     "credit": "NASA/KSC · Josh Valcarcel",
+     "tag": "ARTEMIS II · AMERRISSAGE · 10 AVRIL",
+     "x": 0.5,
+     "y": 0.5,
+     "w": 560,
+     "h": 747,
+     "dur": 10.5,
+     "zoom": 0.05,
+     "t0": 0.4
+    },
+    {
+     "type": "tag",
+     "text": "PACIFIQUE · AU LARGE DE SAN DIEGO",
+     "x": 0.04,
+     "y": 0.15,
+     "t0": 2.8
+    },
+    {
+     "type": "stamp",
+     "text": "MISSION RÉUSSIE",
+     "tone": "green",
+     "x": 0.8,
+     "y": 0.4,
+     "rot": 0.06,
+     "size": 90,
+     "dur": 4,
+     "t0": 6.0
+    },
+    {
+     "type": "counter",
+     "label": "DURÉE DU VOL",
+     "from": 0,
+     "to": 10,
+     "unit": "jours",
+     "x": 0.04,
+     "y": 0.6,
+     "t1": 1.2,
+     "t0": 7.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 211.95,
+   "end": 228.15,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1400,
+     "y": 560,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "C'EST ICI QUE LA RÈGLE S'APPLIQUE",
+     "size": 54,
+     "x": 0.4,
+     "y": 0.1,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.1
+    },
+    {
+     "type": "stamp",
+     "text": "PAS EN ORBITE LUNAIRE",
+     "x": 0.3,
+     "y": 0.3,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 2.6,
+     "t0": 3.8
+    },
+    {
+     "type": "stamp",
+     "text": "PAS POSÉE",
+     "x": 0.3,
+     "y": 0.5,
+     "rot": 0.06,
+     "size": 110,
+     "dur": 2.4,
+     "t0": 6.4
+    },
+    {
+     "type": "label",
+     "text": "UN TEST, AVEC DES HUMAINS À BORD",
+     "size": 46,
+     "x": 0.4,
+     "y": 0.7,
+     "dur": 3.4,
+     "t0": 9.2
+    },
+    {
+     "type": "big",
+     "text": "ON Y EST ALLÉS",
+     "size": 90,
+     "x": 0.4,
+     "y": 0.84,
+     "tone": "yellow",
+     "dur": 1.3,
+     "t0": 13.1
+    },
+    {
+     "type": "big",
+     "text": "ON NE S'Y EST PAS POSÉS",
+     "size": 70,
+     "x": 0.4,
+     "y": 0.84,
+     "tone": "red",
+     "dur": 1.8,
+     "t0": 14.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 228.15,
+   "end": 256.75,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "alors, quand se pose-t-on ?",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "et là, une surprise",
+     "size": 50,
+     "x": 0.4,
+     "y": 0.18,
+     "dur": 1.3,
+     "t0": 3.1
+    },
+    {
+     "type": "big",
+     "text": "27 FÉVRIER 2026",
+     "size": 110,
+     "x": 0.4,
+     "y": 0.35,
+     "tone": "yellow",
+     "dur": 4.2,
+     "t0": 4.8
+    },
+    {
+     "type": "stamp",
+     "text": "CHANGEMENT DE PLAN",
+     "x": 0.3,
+     "y": 0.55,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 4.5,
+     "t0": 8.9
+    },
+    {
+     "type": "label",
+     "text": "ARTEMIS III DEVAIT ÊTRE L'ALUNISSAGE",
+     "size": 44,
+     "x": 0.4,
+     "y": 0.7,
+     "dur": 4,
+     "t0": 9.8
+    },
+    {
+     "type": "pill",
+     "text": "LES CONSEILLERS DE SÉCURITÉ : RISQUES SUR L'ATTERRISSEUR",
+     "size": 36,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.78,
+     "t0": 15.6
+    },
+    {
+     "type": "big",
+     "text": "UN SAUT → DEUX MARCHES",
+     "size": 80,
+     "x": 0.4,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 25.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 256.75,
+   "end": 283.15,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 1450,
+     "y": 900,
+     "r": 330,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "rocket",
+     "x": 1000,
+     "y": 420,
+     "s": 100,
+     "rot": 0.7,
+     "vx": 30,
+     "vy": 20
+    },
+    {
+     "type": "rocket",
+     "x": 1250,
+     "y": 330,
+     "s": 160,
+     "rot": 0.5,
+     "vx": 20,
+     "vy": 10
+    },
+    {
+     "type": "tag",
+     "text": "MARCHE N°1 · ARTEMIS III · 2027 (MILIEU D'ANNÉE)",
+     "x": 0.03,
+     "y": 0.07,
+     "t0": 0.1
+    },
+    {
+     "type": "counter",
+     "label": "ASTRONAUTES",
+     "from": 0,
+     "to": 4,
+     "unit": "",
+     "x": 0.03,
+     "y": 0.18,
+     "t1": 1.0,
+     "t0": 6.2
+    },
+    {
+     "type": "stamp",
+     "text": "PAS VERS LA LUNE",
+     "x": 0.25,
+     "y": 0.42,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 3,
+     "t0": 7.4
+    },
+    {
+     "type": "label",
+     "text": "en orbite autour de la Terre",
+     "size": 46,
+     "x": 0.25,
+     "y": 0.55,
+     "dur": 2.6,
+     "t0": 8.6
+    },
+    {
+     "type": "pill",
+     "text": "STARSHIP (SPACEX)  +  BLUE MOON (BLUE ORIGIN)",
+     "size": 36,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.65,
+     "t0": 14.2
+    },
+    {
+     "type": "label",
+     "text": "personne n'entre dans le Starship d'essai",
+     "size": 40,
+     "x": 0.25,
+     "y": 0.78,
+     "dur": 3,
+     "t0": 18.8
+    },
+    {
+     "type": "loading",
+     "text": "PARKING SPATIAL : MANŒUVRE…",
+     "to": 0.8,
+     "t1": 2.6,
+     "tone": "red",
+     "x": 0.2,
+     "y": 0.9,
+     "t0": 22.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 283.15,
+   "end": 304.55,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "rocket",
+     "x": 1200,
+     "y": 300,
+     "s": 120,
+     "rot": 0.6,
+     "vx": 20,
+     "vy": 10
+    },
+    {
+     "type": "tag",
+     "text": "MARCHE N°2",
+     "x": 0.03,
+     "y": 0.07,
+     "t0": 0.1
+    },
+    {
+     "type": "pill",
+     "text": "ARTEMIS IV · DÉBUT 2028 · L'ALUNISSAGE",
+     "size": 46,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.22,
+     "t0": 2.2
+    },
+    {
+     "type": "pill",
+     "text": "ARTEMIS V · FIN 2028 · UN ALUNISSAGE PAR AN",
+     "size": 42,
+     "x": 0.03,
+     "y": 0.34,
+     "t0": 6.7
+    },
+    {
+     "type": "label",
+     "text": "PAS EN 2026 · PAS EN 2027",
+     "size": 54,
+     "x": 0.3,
+     "y": 0.6,
+     "dur": 4,
+     "t0": 13.1
+    },
+    {
+     "type": "stamp",
+     "text": "AU PLUS TÔT : DÉBUT 2028",
+     "tone": "yellow",
+     "x": 0.3,
+     "y": 0.78,
+     "rot": -0.06,
+     "size": 80,
+     "dur": 3.8,
+     "t0": 17.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 304.55,
+   "end": 333.25,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 1500,
+     "y": 1050,
+     "r": 420,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "label",
+     "text": "et Starship, où en est-il ?",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/hls_moon.jpg",
+     "credit": "NASA/MSFC · image courtesy SpaceX",
+     "tag": "ILLUSTRATION · STARSHIP HLS SUR LA LUNE (CONCEPT)",
+     "x": 0.28,
+     "y": 0.45,
+     "w": 780,
+     "h": 435,
+     "dur": 6.0,
+     "zoom": 0.06,
+     "t0": 2.9
+    },
+    {
+     "type": "label",
+     "text": "novembre : une étape spectaculaire",
+     "size": 44,
+     "x": 0.28,
+     "y": 0.75,
+     "dur": 3,
+     "t0": 6.9
+    },
+    {
+     "type": "counter",
+     "label": "VOL N°",
+     "from": 0,
+     "to": 15,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.08,
+     "t1": 0.8,
+     "t0": 10.4
+    },
+    {
+     "type": "counter",
+     "label": "SATELLITES STARLINK",
+     "from": 0,
+     "to": 26,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.22,
+     "t1": 1.0,
+     "t0": 14.2
+    },
+    {
+     "type": "counter",
+     "label": "TOURS DE LA TERRE",
+     "from": 0,
+     "to": 14,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.36,
+     "t1": 1.0,
+     "t0": 17.6
+    },
+    {
+     "type": "you",
+     "x": 1500,
+     "y": 620,
+     "lx": 1100,
+     "ly": 900,
+     "text": "LES BRAS DE LA TOUR",
+     "dur": 3.5,
+     "t0": 21.2
+    },
+    {
+     "type": "stamp",
+     "text": "ATTRAPÉ",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.35,
+     "rot": -0.07,
+     "size": 130,
+     "dur": 1.8,
+     "t0": 22.6
+    },
+    {
+     "type": "big",
+     "text": "1RE FOIS",
+     "size": 150,
+     "x": 0.5,
+     "y": 0.6,
+     "tone": "yellow",
+     "dur": 3.6,
+     "t0": 24.7
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 333.25,
+   "end": 351.35,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 1500,
+     "y": 1050,
+     "r": 420,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "stamp",
+     "text": "PROPULSEUR : PAS RATTRAPÉ",
+     "x": 0.35,
+     "y": 0.2,
+     "rot": -0.05,
+     "size": 80,
+     "dur": 3.5,
+     "t0": 0.1
+    },
+    {
+     "type": "loading",
+     "text": "CAPTURE DU PROPULSEUR…",
+     "to": 0.6,
+     "t1": 1.6,
+     "tone": "red",
+     "x": 0.3,
+     "y": 0.45,
+     "t0": 2.6
+    },
+    {
+     "type": "stamp",
+     "text": "ANNULÉE",
+     "x": 0.3,
+     "y": 0.58,
+     "rot": 0.06,
+     "size": 100,
+     "dur": 3.4,
+     "t0": 4.2
+    },
+    {
+     "type": "label",
+     "text": "point de secours : en mer",
+     "size": 46,
+     "x": 0.35,
+     "y": 0.75,
+     "dur": 2.5,
+     "t0": 5.2
+    },
+    {
+     "type": "label",
+     "text": "la question de fond reste ouverte",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 9.2
+    },
+    {
+     "type": "pill",
+     "text": "STARSHIP ET BLUE MOON : PRÊTS À TEMPS POUR ARTEMIS III ?",
+     "size": 40,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.88,
+     "t0": 10.0
+    },
+    {
+     "type": "stamp",
+     "text": "INCERTITUDE",
+     "tone": "yellow",
+     "x": 0.7,
+     "y": 0.5,
+     "rot": -0.06,
+     "size": 100,
+     "dur": 2.2,
+     "t0": 15.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 351.35,
+   "end": 388.05,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1600,
+     "y": 1000,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "et la base ?",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/moonbase.jpg",
+     "credit": "NASA/HQ · illustration",
+     "tag": "MOON BASE · ILLUSTRATION (NASA)",
+     "x": 0.6,
+     "y": 0.5,
+     "w": 1100,
+     "h": 619,
+     "dur": 31.0,
+     "zoom": 0.06,
+     "t0": 5.2
+    },
+    {
+     "type": "counter",
+     "label": "PHASES DE CONSTRUCTION",
+     "from": 0,
+     "to": 3,
+     "unit": "",
+     "x": 0.02,
+     "y": 0.2,
+     "t1": 0.8,
+     "t0": 8.7
+    },
+    {
+     "type": "label",
+     "text": "phase 1 : surtout robotique",
+     "size": 36,
+     "x": 0.14,
+     "y": 0.42,
+     "dur": 4,
+     "t0": 12.0
+    },
+    {
+     "type": "pill",
+     "text": "MOON BASE 1 · BLUE MOON Mk 1 « ENDURANCE »",
+     "size": 30,
+     "tone": "red",
+     "x": 0.02,
+     "y": 0.55,
+     "t0": 18.2
+    },
+    {
+     "type": "label",
+     "text": "AUTOMNE 2026 AU PLUS TÔT · PEUT GLISSER",
+     "size": 32,
+     "x": 0.14,
+     "y": 0.66,
+     "dur": 6,
+     "t0": 23.7
+    },
+    {
+     "type": "pill",
+     "text": "MOON BASE 2 · GRIFFIN · ASTROBOTIC",
+     "size": 30,
+     "x": 0.02,
+     "y": 0.74,
+     "t0": 30.2
+    },
+    {
+     "type": "label",
+     "text": "lancé par une Falcon Heavy",
+     "size": 34,
+     "x": 0.14,
+     "y": 0.82,
+     "dur": 3.5,
+     "t0": 32.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 388.05,
+   "end": 408.35,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1400,
+     "y": 1000,
+     "r": 520,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "counter",
+     "label": "MISSIONS CONFIÉES (DEPUIS 2018)",
+     "from": 0,
+     "to": 14,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.1,
+     "t1": 1.0,
+     "t0": 0.1
+    },
+    {
+     "type": "counter",
+     "label": "ENTREPRISES",
+     "from": 0,
+     "to": 5,
+     "unit": "",
+     "x": 0.04,
+     "y": 0.27,
+     "t1": 0.8,
+     "t0": 3.6
+    },
+    {
+     "type": "tag",
+     "text": "MOONFALL · 4 DRONES AU PÔLE SUD",
+     "x": 0.04,
+     "y": 0.46,
+     "t0": 7.2
+    },
+    {
+     "type": "tag",
+     "text": "JARED ISAACMAN · ADMINISTRATEUR DE LA NASA",
+     "x": 0.04,
+     "y": 0.58,
+     "t0": 13.8
+    },
+    {
+     "type": "big",
+     "text": "« MISSION PAR MISSION »",
+     "size": 100,
+     "x": 0.5,
+     "y": 0.78,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 17.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 408.35,
+   "end": 422.35,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "pill",
+     "text": "≈ 2029 : SÉJOURS D'ÉQUIPAGE PLUS LONGS",
+     "size": 44,
+     "x": 0.03,
+     "y": 0.2,
+     "t0": 0.1
+    },
+    {
+     "type": "pill",
+     "text": "≈ 2032 ET AU-DELÀ : BASE PERMANENTE",
+     "size": 44,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.32,
+     "t0": 4.3
+    },
+    {
+     "type": "label",
+     "text": "LES DATES CHANGENT D'UN DOCUMENT À L'AUTRE",
+     "size": 44,
+     "x": 0.4,
+     "y": 0.55,
+     "dur": 4.5,
+     "t0": 8.5
+    },
+    {
+     "type": "stamp",
+     "text": "INTENTIONS ≠ PROMESSES",
+     "tone": "yellow",
+     "x": 0.35,
+     "y": 0.75,
+     "rot": -0.05,
+     "size": 90,
+     "dur": 3,
+     "t0": 10.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 422.35,
+   "end": 444.95,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1600,
+     "y": 1000,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "avec quelle énergie ?",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 0.1
+    },
+    {
+     "type": "counter",
+     "label": "LA NUIT LUNAIRE DURE",
+     "from": 0,
+     "to": 14,
+     "unit": "jours terrestres",
+     "x": 0.03,
+     "y": 0.2,
+     "t1": 1.4,
+     "t0": 2.8
+    },
+    {
+     "type": "evidence",
+     "src": "media/fsp.jpg",
+     "credit": "NASA/GRC · Sara Lowthian-Hanna",
+     "tag": "ESSAIS POUR UN RÉACTEUR À FISSION · NASA/GRC",
+     "x": 0.62,
+     "y": 0.5,
+     "w": 860,
+     "h": 573,
+     "dur": 11.0,
+     "zoom": 0.05,
+     "t0": 10.7
+    },
+    {
+     "type": "counter",
+     "label": "RÉACTEUR LUNAIRE (APPEL DE 2025)",
+     "from": 0,
+     "to": 100,
+     "unit": "kW minimum",
+     "x": 0.03,
+     "y": 0.42,
+     "t1": 1.6,
+     "t0": 11.2
+    },
+    {
+     "type": "pill",
+     "text": "OBJECTIF ≈ 2030",
+     "size": 44,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.65,
+     "t0": 16.3
+    },
+    {
+     "type": "label",
+     "text": "un petit réacteur n'a pas besoin du Soleil",
+     "size": 36,
+     "x": 0.62,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 19.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 444.95,
+   "end": 473.25,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "qu'est-ce qui peut déraper ?",
+     "size": 60,
+     "x": 0.4,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.8,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "TROIS RISQUES · SANS RIEN INVENTER",
+     "size": 44,
+     "x": 0.4,
+     "y": 0.2,
+     "dur": 2.4,
+     "t0": 4.1
+    },
+    {
+     "type": "options",
+     "title": "CE QUI PEUT DÉRAPER",
+     "sc": 1.5,
+     "x": 0.04,
+     "y": 0.32,
+     "items": [
+      {
+       "text": "L'ATTERRISSEUR",
+       "at": 6.199999999999989
+      },
+      {
+       "text": "LES RETARDS",
+       "at": 11.699999999999989
+      },
+      {
+       "text": "LE RYTHME",
+       "at": 21.30000000000001
+      }
+     ],
+     "t0": 6.1
+    },
+    {
+     "type": "label",
+     "text": "il a déjà fait changer le plan",
+     "size": 40,
+     "x": 0.4,
+     "y": 0.72,
+     "dur": 3.8,
+     "t0": 7.6
+    },
+    {
+     "type": "label",
+     "text": "un calendrier coupé en deux : rarement bon signe",
+     "size": 40,
+     "x": 0.4,
+     "y": 0.72,
+     "dur": 3.4,
+     "t0": 17.3
+    },
+    {
+     "type": "label",
+     "text": "UN ALUNISSAGE PAR AN : TRÈS AMBITIEUX",
+     "size": 40,
+     "x": 0.4,
+     "y": 0.72,
+     "dur": 5,
+     "t0": 22.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 473.25,
+   "end": 488.15,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "ce qu'on ignore encore",
+     "size": 56,
+     "x": 0.4,
+     "y": 0.1,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 0.1
+    },
+    {
+     "type": "options",
+     "title": "À SURVEILLER L'AN PROCHAIN",
+     "sc": 1.5,
+     "x": 0.04,
+     "y": 0.3,
+     "items": [
+      {
+       "text": "LA DATE D'ARTEMIS III",
+       "at": 2.3999999999999773
+      },
+      {
+       "text": "L'ATTERRISSEUR D'ARTEMIS IV",
+       "at": 5.899999999999977
+      },
+      {
+       "text": "LE CALENDRIER DE MOON BASE",
+       "at": 9.899999999999977
+      }
+     ],
+     "t0": 2.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 488.15,
+   "end": 512.55,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "LE JEU DE LA SURVIE · VERSION CALENDRIER",
+     "size": 48,
+     "x": 0.4,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.1
+    },
+    {
+     "type": "options",
+     "title": "UN ATTERRISSAGE HABITÉ…",
+     "sc": 1.5,
+     "x": 0.04,
+     "y": 0.22,
+     "items": [
+      {
+       "text": "EN 2026",
+       "at": 2.8000000000000114,
+       "out": 6.0
+      },
+      {
+       "text": "EN 2027",
+       "at": 7.899999999999977,
+       "out": 10.100000000000023
+      },
+      {
+       "text": "DÉBUT 2028 · ARTEMIS IV",
+       "at": 12.199999999999989
+      }
+     ],
+     "t0": 2.5
+    },
+    {
+     "type": "stamp",
+     "text": "IMPOSSIBLE",
+     "x": 0.3,
+     "y": 0.7,
+     "rot": -0.06,
+     "size": 100,
+     "dur": 2,
+     "t0": 5.9
+    },
+    {
+     "type": "stamp",
+     "text": "IMPOSSIBLE",
+     "x": 0.3,
+     "y": 0.7,
+     "rot": 0.06,
+     "size": 100,
+     "dur": 2.3,
+     "t0": 9.9
+    },
+    {
+     "type": "stamp",
+     "text": "CIBLE OFFICIELLE",
+     "tone": "green",
+     "x": 0.3,
+     "y": 0.7,
+     "rot": -0.05,
+     "size": 90,
+     "dur": 3,
+     "t0": 15.7
+    },
+    {
+     "type": "stamp",
+     "text": "UNE FOURCHETTE · RISQUE DE GLISSER",
+     "tone": "yellow",
+     "x": 0.35,
+     "y": 0.85,
+     "rot": -0.04,
+     "size": 60,
+     "dur": 3,
+     "t0": 21.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 512.55,
+   "end": 534.75,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1500,
+     "y": 700,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "LA FRISE",
+     "size": 60,
+     "x": 0.4,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2,
+     "t0": 0.1
+    },
+    {
+     "type": "pill",
+     "text": "AVRIL 2026 · ARTEMIS II · SURVOL HABITÉ",
+     "size": 44,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.22,
+     "t0": 1.4
+    },
+    {
+     "type": "pill",
+     "text": "2027 · ARTEMIS III · AMARRAGE EN ORBITE TERRESTRE",
+     "size": 44,
+     "x": 0.03,
+     "y": 0.36,
+     "t0": 5.6
+    },
+    {
+     "type": "pill",
+     "text": "DÉBUT 2028 · ARTEMIS IV · 1ER ALUNISSAGE",
+     "size": 44,
+     "tone": "red",
+     "x": 0.03,
+     "y": 0.5,
+     "t0": 10.2
+    },
+    {
+     "type": "pill",
+     "text": "FIN 2028 · ARTEMIS V · UN ALUNISSAGE PAR AN",
+     "size": 44,
+     "x": 0.03,
+     "y": 0.64,
+     "t0": 17.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 534.75,
+   "end": 557.15,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1600,
+     "y": 1000,
+     "r": 300,
+     "light": -2.4,
+     "spin": 0.01
+    },
+    {
+     "type": "label",
+     "text": "RETOUR À LA RÈGLE DU DÉBUT",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/rollout.jpg",
+     "credit": "NASA/MSFC · Brandon Hancock",
+     "tag": "ARTEMIS II · SLS SUR LE PAS DE TIR · JANVIER 2026",
+     "x": 0.45,
+     "y": 0.45,
+     "w": 940,
+     "h": 538,
+     "dur": 10.0,
+     "zoom": 0.05,
+     "t0": 2.9
+    },
+    {
+     "type": "label",
+     "text": "ARTEMIS II : ON SAIT Y ALLER ET REVENIR",
+     "size": 40,
+     "x": 0.45,
+     "y": 0.8,
+     "dur": 3.6,
+     "t0": 6.0
+    },
+    {
+     "type": "label",
+     "text": "LA MARCHE LA PLUS DIFFICILE",
+     "size": 48,
+     "x": 0.45,
+     "y": 0.9,
+     "tone": "red",
+     "dur": 2.4,
+     "t0": 12.4
+    },
+    {
+     "type": "counter",
+     "label": "SANS HUMAIN SUR LE SOL LUNAIRE",
+     "from": 0,
+     "to": 54,
+     "unit": "ans",
+     "x": 0.66,
+     "y": 0.55,
+     "t1": 1.0,
+     "t0": 15.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 557.15,
+   "end": 566.05,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1350,
+     "y": 540,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 330,
+     "y": 300,
+     "r": 70,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "label",
+     "text": "la Lune n'est pas encore revenue dans les mains des humains",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.08,
+     "dur": 4,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "les pièces du puzzle bougent toutes en même temps",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 4.4,
+     "t0": 3.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 566.05,
+   "end": 575.75,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 1300,
+     "y": 600,
+     "r": 300,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 760,
+     "y": 900,
+     "r": 60,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "astronaut",
+     "x": 600,
+     "y": 700,
+     "s": 70,
+     "vx": -10,
+     "rot": 0.3
+    },
+    {
+     "type": "label",
+     "text": "quelle année pour le prochain pas ?",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 4,
+     "t0": 1.4
+    },
+    {
+     "type": "big",
+     "text": "2028 ? 2029 ? PLUS TARD ?",
+     "size": 100,
+     "x": 0.5,
+     "y": 0.22,
+     "dur": 3.3,
+     "t0": 5.3
+    },
+    {
+     "type": "label",
+     "text": "dis-le en commentaire",
+     "size": 60,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 8.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.1,
+    "zoomTo": 1.0,
+    "fx": 0.65
+   }
+  },
+  {
+   "start": 575.75,
+   "end": 580.37,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "moon",
+     "seed": 7,
+     "x": 900,
+     "y": 960,
+     "r": 120,
+     "light": -1.6,
+     "spin": 0.01
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 560,
+     "y": 940,
+     "r": 50,
+     "light": -1.6,
+     "spin": 0.02
+    },
+    {
+     "type": "endcard",
+     "text": "MERCI D'AVOIR REGARDÉ",
+     "ask": "QUELLE ANNÉE POUR LE PROCHAIN PAS ?",
+     "t0": 0.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.04
+   },
+   "trans": "fade"
+  }
+ ]
+}
