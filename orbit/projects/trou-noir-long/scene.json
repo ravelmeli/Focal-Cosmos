@@ -1,0 +1,2147 @@
+{
+ "width": 1920,
+ "height": 1080,
+ "fps": 30,
+ "shots": [
+  {
+   "start": 0,
+   "end": 3.1,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1280,
+     "y": 540,
+     "r": 210
+    },
+    {
+     "type": "astronaut",
+     "x": 520,
+     "y": 540,
+     "s": 70,
+     "vx": 18,
+     "rot": 0.3
+    },
+    {
+     "type": "you",
+     "x": 545,
+     "y": 520,
+     "lx": 380,
+     "ly": 330,
+     "text": "TOI",
+     "t0": 0.34
+    },
+    {
+     "type": "title",
+     "text": "TROUS NOIRS",
+     "sub": "QU'EST-CE QUI TE TUE EN PREMIER ?",
+     "dur": 2.7,
+     "t0": 0.3
+    },
+    {
+     "type": "label",
+     "text": "il avale tout ce qui passe ?",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "dur": 2.0,
+     "t0": 1.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1,
+    "zoomTo": 1.1,
+    "fx": 0.65
+   }
+  },
+  {
+   "start": 3.1,
+   "end": 8.6,
+   "els": [
+    {
+     "type": "sun",
+     "x": 520,
+     "y": 540,
+     "r": 170
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 1330,
+     "y": 540,
+     "r": 48,
+     "light": -1.6
+    },
+    {
+     "type": "stamp",
+     "text": "FAUX",
+     "x": 0.5,
+     "y": 0.2,
+     "rot": -0.08,
+     "size": 170,
+     "dur": 2.2,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "et si le Soleil devenait un trou noir ?",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.88,
+     "dur": 4.5,
+     "t0": 0.7
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 8.6,
+   "end": 12.8,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 520,
+     "y": 540,
+     "r": 52
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 1330,
+     "y": 540,
+     "r": 48,
+     "light": -1.6
+    },
+    {
+     "type": "label",
+     "text": "même masse = même orbite",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.88,
+     "tone": "yellow",
+     "dur": 3.6,
+     "t0": 0.4
+    },
+    {
+     "type": "pill",
+     "text": "LA TERRE NE BOUGE PAS",
+     "size": 38,
+     "tone": "red",
+     "x": 0.4,
+     "y": 0.12,
+     "t0": 1.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 12.8,
+   "end": 18.4,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1450,
+     "y": 540,
+     "r": 120
+    },
+    {
+     "type": "loading",
+     "text": "ASPIRATION DE LA TERRE…",
+     "to": 0.04,
+     "t1": 3.0,
+     "tone": "red",
+     "x": 0.3,
+     "y": 0.5,
+     "t0": 0.0
+    },
+    {
+     "type": "stamp",
+     "text": "PAS UN ASPIRATEUR",
+     "x": 0.3,
+     "y": 0.7,
+     "rot": -0.07,
+     "size": 90,
+     "t0": 1.5
+    },
+    {
+     "type": "label",
+     "text": "un endroit d'où rien ne ressort",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 2.5,
+     "t0": 2.7
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 18.4,
+   "end": 39.0,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1400,
+     "y": 540,
+     "r": 240
+    },
+    {
+     "type": "astronaut",
+     "x": 330,
+     "y": 880,
+     "s": 80,
+     "vx": 10,
+     "rot": 0.4
+    },
+    {
+     "type": "label",
+     "text": "si tu t'approchais d'un trou noir…",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.1,
+     "dur": 4.0,
+     "t0": 0.6
+    },
+    {
+     "type": "big",
+     "text": "LE PREMIER À TE TUER ?",
+     "size": 100,
+     "x": 0.5,
+     "y": 0.2,
+     "tone": "yellow",
+     "dur": 3.4,
+     "t0": 1.9
+    },
+    {
+     "type": "options",
+     "title": "CE QUI T'ATTEND",
+     "sc": 1.3,
+     "x": 0.06,
+     "y": 0.3,
+     "items": [
+      {
+       "text": "UNE CHALEUR EXTRÊME",
+       "at": 8.600000000000001
+      },
+      {
+       "text": "DES RAYONS X",
+       "at": 10.600000000000001
+      },
+      {
+       "text": "UN ÉTIREMENT DU CORPS",
+       "at": 12.0
+      },
+      {
+       "text": "UN TEMPS QUI S'ARRÊTE",
+       "at": 13.3
+      },
+      {
+       "text": "UN POINT DE NON-RETOUR",
+       "at": 14.600000000000001
+      }
+     ],
+     "showAll": false,
+     "dur": 12.6,
+     "t0": 8.0
+    },
+    {
+     "type": "big",
+     "text": "L'INTÉRIEUR ?",
+     "size": 120,
+     "x": 0.72,
+     "y": 0.8,
+     "tone": "yellow",
+     "dur": 4.6,
+     "t0": 15.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.06,
+    "fx": 0.7
+   }
+  },
+  {
+   "start": 39.0,
+   "end": 48.6,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1500,
+     "y": 540,
+     "r": 180
+    },
+    {
+     "type": "label",
+     "text": "UNE RÈGLE À RETENIR",
+     "size": 54,
+     "x": 0.36,
+     "y": 0.14,
+     "tone": "yellow",
+     "dur": 7,
+     "t0": 0.8
+    },
+    {
+     "type": "label",
+     "text": "LE DANGER N'EST PAS",
+     "size": 60,
+     "x": 0.36,
+     "y": 0.35,
+     "dur": 5,
+     "t0": 2.7
+    },
+    {
+     "type": "big",
+     "text": "L'ATTRACTION",
+     "size": 130,
+     "x": 0.36,
+     "y": 0.5,
+     "tone": "red",
+     "dur": 3.6,
+     "t0": 4.2
+    },
+    {
+     "type": "label",
+     "text": "C'EST",
+     "size": 60,
+     "x": 0.36,
+     "y": 0.67,
+     "dur": 2,
+     "t0": 6.0
+    },
+    {
+     "type": "big",
+     "text": "LA DISTANCE",
+     "size": 130,
+     "x": 0.36,
+     "y": 0.8,
+     "tone": "yellow",
+     "dur": 3.0,
+     "t0": 6.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 48.6,
+   "end": 62.6,
+   "els": [
+    {
+     "type": "sun",
+     "x": 560,
+     "y": 560,
+     "r": 250
+    },
+    {
+     "type": "blackhole",
+     "x": 1300,
+     "y": 560,
+     "r": 16
+    },
+    {
+     "type": "label",
+     "text": "quelle taille fait un trou noir ?",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 0.3
+    },
+    {
+     "type": "label",
+     "text": "LE SOLEIL",
+     "size": 44,
+     "x": 0.29,
+     "y": 0.92,
+     "dur": 6,
+     "t0": 5.9
+    },
+    {
+     "type": "label",
+     "text": "TROU NOIR DE MÊME MASSE",
+     "size": 44,
+     "x": 0.68,
+     "y": 0.67,
+     "tone": "red",
+     "dur": 6,
+     "t0": 6.4
+    },
+    {
+     "type": "counter",
+     "label": "RAYON DU TROU NOIR",
+     "from": 0,
+     "to": 3,
+     "unit": "km",
+     "x": 0.66,
+     "y": 0.3,
+     "t1": 1.6,
+     "t0": 8.4
+    },
+    {
+     "type": "label",
+     "text": "≈ UNE PETITE VILLE",
+     "size": 50,
+     "x": 0.68,
+     "y": 0.8,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 11.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 62.6,
+   "end": 68.1,
+   "els": [
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 560,
+     "y": 560,
+     "r": 240,
+     "light": -1.6
+    },
+    {
+     "type": "blackhole",
+     "x": 1300,
+     "y": 560,
+     "r": 9
+    },
+    {
+     "type": "counter",
+     "label": "RAYON DU TROU NOIR (TERRE)",
+     "from": 0,
+     "to": 9,
+     "unit": "mm",
+     "x": 0.62,
+     "y": 0.3,
+     "t1": 1.6,
+     "t0": 0.6
+    },
+    {
+     "type": "label",
+     "text": "≈ UNE BILLE",
+     "size": 60,
+     "x": 0.7,
+     "y": 0.7,
+     "tone": "yellow",
+     "dur": 2.0,
+     "t0": 3.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 68.1,
+   "end": 83.9,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1250,
+     "y": 540,
+     "r": 270
+    },
+    {
+     "type": "astronaut",
+     "x": 420,
+     "y": 540,
+     "s": 75,
+     "vx": 25,
+     "rot": 0.2
+    },
+    {
+     "type": "label",
+     "text": "L'HORIZON DES ÉVÉNEMENTS",
+     "size": 58,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.5,
+     "t0": 0.1
+    },
+    {
+     "type": "tag",
+     "text": "D'APRÈS LA NASA",
+     "x": 0.04,
+     "y": 0.16,
+     "t0": 2.7
+    },
+    {
+     "type": "pill",
+     "text": "RIEN NE S'ÉCHAPPE · PAS MÊME LA LUMIÈRE",
+     "size": 36,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.24,
+     "t0": 6.7
+    },
+    {
+     "type": "stamp",
+     "text": "POINT DE NON-RETOUR",
+     "x": 0.28,
+     "y": 0.6,
+     "rot": -0.07,
+     "size": 80,
+     "dur": 5,
+     "t0": 7.9
+    },
+    {
+     "type": "label",
+     "text": "tu peux le traverser sans rien sentir",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.92,
+     "dur": 3.4,
+     "t0": 11.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.08,
+    "fx": 0.6
+   }
+  },
+  {
+   "start": 83.9,
+   "end": 94.95,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1560,
+     "y": 540,
+     "r": 140
+    },
+    {
+     "type": "label",
+     "text": "où trouver un trou noir ?",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 2.8,
+     "t0": 0.0
+    },
+    {
+     "type": "meters",
+     "title": "MASSE (EN SOLEILS)",
+     "x": 0.36,
+     "y": 0.55,
+     "bars": [
+      {
+       "label": "PETITS",
+       "level": 0.18,
+       "note": "QUELQUES DIZAINES",
+       "at": 5.0
+      },
+      {
+       "label": "GÉANTS",
+       "level": 1.0,
+       "note": "MILLIONS À MILLIARDS",
+       "at": 7.599999999999994
+      }
+     ],
+     "dur": 8,
+     "t0": 3.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 94.95,
+   "end": 114.75,
+   "els": [
+    {
+     "type": "sun",
+     "x": 1180,
+     "y": 540,
+     "r": 90
+    },
+    {
+     "type": "blackhole",
+     "x": 860,
+     "y": 560,
+     "r": 46
+    },
+    {
+     "type": "tag",
+     "text": "GAIA BH1 · ESA · 2022",
+     "x": 0.04,
+     "y": 0.07,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "LE PLUS PROCHE QU'ON CONNAISSE",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 4,
+     "t0": 2.9
+    },
+    {
+     "type": "counter",
+     "label": "MASSE",
+     "from": 0,
+     "to": 10,
+     "unit": "× LE SOLEIL",
+     "x": 0.04,
+     "y": 0.18,
+     "t1": 1.4,
+     "t0": 6.8
+    },
+    {
+     "type": "counter",
+     "label": "DISTANCE",
+     "from": 0,
+     "to": 1560,
+     "unit": "années-lumière",
+     "x": 0.04,
+     "y": 0.35,
+     "t1": 2.2,
+     "t0": 9.0
+    },
+    {
+     "type": "stamp",
+     "text": "C'EST LOIN",
+     "tone": "green",
+     "x": 0.74,
+     "y": 0.25,
+     "rot": 0.07,
+     "size": 90,
+     "dur": 3,
+     "t0": 12.6
+    },
+    {
+     "type": "label",
+     "text": "il fait osciller son étoile",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.9,
+     "dur": 4.5,
+     "t0": 14.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 114.75,
+   "end": 127.25,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 300,
+     "y": 800,
+     "r": 60
+    },
+    {
+     "type": "label",
+     "text": "LE GÉANT DE NOTRE GALAXIE",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 0.1
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA16213.jpg",
+     "credit": "NASA/JPL-Caltech · NuSTAR",
+     "tag": "SAGITTARIUS A* · RAYONS X (NUSTAR)",
+     "x": 0.6,
+     "y": 0.52,
+     "w": 800,
+     "h": 600,
+     "dur": 9.0,
+     "zoom": 0.08,
+     "t0": 3.2
+    },
+    {
+     "type": "counter",
+     "label": "MASSE",
+     "from": 0,
+     "to": 4,
+     "unit": "millions de Soleils",
+     "x": 0.04,
+     "y": 0.3,
+     "t1": 1.6,
+     "t0": 3.6
+    },
+    {
+     "type": "counter",
+     "label": "DISTANCE",
+     "from": 0,
+     "to": 26000,
+     "unit": "années-lumière",
+     "x": 0.04,
+     "y": 0.5,
+     "t1": 2.2,
+     "t0": 5.8
+    },
+    {
+     "type": "stamp",
+     "text": "TRÈS LOIN",
+     "tone": "green",
+     "x": 0.18,
+     "y": 0.75,
+     "rot": -0.07,
+     "size": 80,
+     "dur": 2.4,
+     "t0": 10.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 127.25,
+   "end": 131.95,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1350,
+     "y": 540,
+     "r": 190
+    },
+    {
+     "type": "astronaut",
+     "x": 380,
+     "y": 540,
+     "s": 75,
+     "vx": 40,
+     "rot": 0.3
+    },
+    {
+     "type": "you",
+     "x": 405,
+     "y": 525,
+     "lx": 260,
+     "ly": 330,
+     "text": "TOI",
+     "t0": 0.3
+    },
+    {
+     "type": "label",
+     "text": "voici ce qui t'attend, dans l'ordre",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.9,
+     "dur": 2.0,
+     "t0": 2.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.12,
+    "fx": 0.7
+   }
+  },
+  {
+   "start": 131.95,
+   "end": 152.15,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1330,
+     "y": 540,
+     "r": 220
+    },
+    {
+     "type": "astronaut",
+     "x": 420,
+     "y": 760,
+     "s": 80,
+     "rot": 0.3,
+     "vx": 15
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 1",
+     "text": "LA CHALEUR",
+     "dur": 1.0,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "le trou noir est noir, pas ce qui l'entoure",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.08,
+     "dur": 3.5,
+     "t0": 2.5
+    },
+    {
+     "type": "label",
+     "text": "le gaz tourne, s'écrase, forme un disque",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 7.6
+    },
+    {
+     "type": "counter",
+     "label": "TEMPÉRATURE DU DISQUE",
+     "from": 0,
+     "to": 12,
+     "unit": "millions de °C",
+     "x": 0.04,
+     "y": 0.12,
+     "t1": 2.4,
+     "t0": 11.2
+    },
+    {
+     "type": "balance",
+     "left": "SURFACE DU SOLEIL",
+     "right": "DISQUE ×2000",
+     "tilt": 0.42,
+     "x": 0.2,
+     "y": 0.62,
+     "t0": 14.6
+    },
+    {
+     "type": "label",
+     "text": "il brille en rayons X",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.92,
+     "tone": "red",
+     "dur": 2.6,
+     "t0": 17.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 152.15,
+   "end": 166.65,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1330,
+     "y": 560,
+     "r": 200
+    },
+    {
+     "type": "astronaut",
+     "x": 1000,
+     "y": 880,
+     "s": 70,
+     "rot": 0.2
+    },
+    {
+     "type": "label",
+     "text": "et ce n'est pas tout",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.08,
+     "dur": 1.2,
+     "t0": 0.2
+    },
+    {
+     "type": "tag",
+     "text": "LA COURONNE",
+     "x": 0.04,
+     "y": 0.1,
+     "t0": 1.1
+    },
+    {
+     "type": "pill",
+     "text": "DES MILLIARDS DE DEGRÉS",
+     "size": 44,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.2,
+     "t0": 5.0
+    },
+    {
+     "type": "scan",
+     "text": "RAYONS X",
+     "dur": 5.5,
+     "t0": 7.8
+    },
+    {
+     "type": "stick",
+     "x": 0.2,
+     "y": 0.9,
+     "s": 300,
+     "pose": "panic",
+     "label": "TOI",
+     "dur": 4.2,
+     "t0": 10.1
+    },
+    {
+     "type": "stamp",
+     "text": "CUIT",
+     "x": 0.3,
+     "y": 0.45,
+     "rot": -0.1,
+     "size": 170,
+     "dur": 2.2,
+     "t0": 12.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 166.65,
+   "end": 178.15,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 300,
+     "y": 800,
+     "r": 50
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 2",
+     "text": "LES JETS",
+     "dur": 1.0,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "il ne se contente pas d'avaler : il recrache",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 4.0
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA13168.jpg",
+     "credit": "NASA/JPL · illustration",
+     "tag": "ILLUSTRATION · UN TROU NOIR ET SES JETS",
+     "x": 0.66,
+     "y": 0.52,
+     "w": 780,
+     "h": 624,
+     "dur": 6.2,
+     "zoom": 0.07,
+     "t0": 5.1
+    },
+    {
+     "type": "pill",
+     "text": "≈ LA VITESSE DE LA LUMIÈRE",
+     "size": 40,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.3,
+     "t0": 5.5
+    },
+    {
+     "type": "label",
+     "text": "DEUX FAISCEAUX OPPOSÉS",
+     "size": 44,
+     "x": 0.16,
+     "y": 0.6,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 8.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 178.15,
+   "end": 197.35,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 300,
+     "y": 800,
+     "r": 50
+    },
+    {
+     "type": "tag",
+     "text": "3C 273 · 1963 · LE PREMIER QUASAR",
+     "x": 0.04,
+     "y": 0.07,
+     "t0": 0.2
+    },
+    {
+     "type": "evidence",
+     "src": "media/PIA15414.jpg",
+     "credit": "NASA/JPL · illustration",
+     "tag": "ILLUSTRATION · UN QUASAR ET SON JET",
+     "x": 0.64,
+     "y": 0.52,
+     "w": 870,
+     "h": 580,
+     "dur": 10.0,
+     "zoom": 0.07,
+     "t0": 2.9
+    },
+    {
+     "type": "counter",
+     "label": "DISTANCE",
+     "from": 0,
+     "to": 2.5,
+     "decimals": 1,
+     "unit": "milliards d'a.l.",
+     "x": 0.04,
+     "y": 0.2,
+     "t1": 2.0,
+     "t0": 3.6
+    },
+    {
+     "type": "counter",
+     "label": "LONGUEUR DU JET (PLUS DE)",
+     "from": 0,
+     "to": 100000,
+     "unit": "a.l.",
+     "x": 0.04,
+     "y": 0.42,
+     "t1": 2.4,
+     "t0": 7.9
+    },
+    {
+     "type": "label",
+     "text": "la taille de notre galaxie",
+     "size": 46,
+     "x": 0.22,
+     "y": 0.7,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 10.6
+    },
+    {
+     "type": "pill",
+     "text": "PARMI LES OBJETS LES PLUS BRILLANTS",
+     "size": 38,
+     "x": 0.04,
+     "y": 0.8,
+     "t0": 13.2
+    },
+    {
+     "type": "stamp",
+     "text": "TERMINÉ",
+     "x": 0.18,
+     "y": 0.62,
+     "rot": -0.08,
+     "size": 120,
+     "dur": 3,
+     "t0": 16.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 197.35,
+   "end": 204.95,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 300,
+     "y": 800,
+     "r": 50
+    },
+    {
+     "type": "label",
+     "text": "tu as de la chance : tu arrives de côté",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 4,
+     "t0": 0.2
+    },
+    {
+     "type": "radar",
+     "label": "TON APPROCHE",
+     "x": 0.5,
+     "y": 0.55,
+     "r": 300,
+     "blips": [
+      {
+       "x": 0,
+       "y": -0.85,
+       "label": "JET",
+       "red": true
+      },
+      {
+       "x": 0,
+       "y": 0.85,
+       "label": "JET",
+       "red": true
+      },
+      {
+       "x": -0.75,
+       "y": 0,
+       "label": "TOI"
+      }
+     ],
+     "t0": 2.1
+    },
+    {
+     "type": "label",
+     "text": "tu approches calmement de l'horizon",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.93,
+     "dur": 2.2,
+     "t0": 5.4
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 204.95,
+   "end": 226.95,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1680,
+     "y": 540,
+     "r": 130
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 3",
+     "text": "LES MARÉES",
+     "dur": 1.0,
+     "t0": 0.0
+    },
+    {
+     "type": "stick",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 420,
+     "pose": "stand",
+     "label": "TOI",
+     "dur": 18,
+     "t0": 3.5
+    },
+    {
+     "type": "label",
+     "text": "TÊTE : PLUS LOIN, PLUS FAIBLE",
+     "size": 40,
+     "x": 0.5,
+     "y": 0.17,
+     "dur": 5,
+     "t0": 4.1
+    },
+    {
+     "type": "label",
+     "text": "PIEDS : PLUS PRÈS, PLUS FORT",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "red",
+     "dur": 5,
+     "t0": 7.6
+    },
+    {
+     "type": "pill",
+     "text": "C'EST LA FORCE DE MARÉE",
+     "size": 40,
+     "x": 0.55,
+     "y": 0.45,
+     "tone": "red",
+     "t0": 10.1
+    },
+    {
+     "type": "label",
+     "text": "comme la Lune sur l'océan",
+     "size": 44,
+     "x": 0.55,
+     "y": 0.55,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 12.6
+    },
+    {
+     "type": "label",
+     "text": "étiré vers le bas, comprimé sur les côtés",
+     "size": 44,
+     "x": 0.64,
+     "y": 0.72,
+     "dur": 3.5,
+     "t0": 18.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 226.95,
+   "end": 233.15,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1560,
+     "y": 540,
+     "r": 200
+    },
+    {
+     "type": "label",
+     "text": "Stephen Hawking a trouvé un mot",
+     "size": 48,
+     "x": 0.4,
+     "y": 0.1,
+     "dur": 2.1,
+     "t0": 0.2
+    },
+    {
+     "type": "big",
+     "text": "SPAGHETTIFICATION",
+     "size": 130,
+     "x": 0.42,
+     "y": 0.45,
+     "tone": "yellow",
+     "dur": 3.8,
+     "t0": 2.3
+    },
+    {
+     "type": "receipt",
+     "title": "COMMANDE",
+     "items": [
+      [
+       "TOI, ÉTIRÉ",
+       "×1"
+      ]
+     ],
+     "total": "SPAGHETTI",
+     "x": 0.82,
+     "y": 0.78,
+     "w": 330,
+     "rot": 0.04,
+     "t0": 3.9
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 233.15,
+   "end": 259.75,
+   "els": [
+    {
+     "type": "panels",
+     "titles": [
+      "PETIT TROU NOIR",
+      "TROU NOIR GÉANT"
+     ],
+     "bg": [
+      "#2a0f14",
+      "#0f1a2a"
+     ],
+     "stagger": 0.3,
+     "dur": 26.6,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "ÉTIRÉ AVANT L'HORIZON",
+     "size": 46,
+     "x": 0.25,
+     "y": 0.4,
+     "tone": "red",
+     "dur": 7,
+     "t0": 2.4
+    },
+    {
+     "type": "stamp",
+     "text": "DÉCHIRÉ",
+     "x": 0.25,
+     "y": 0.62,
+     "rot": -0.07,
+     "size": 110,
+     "dur": 14,
+     "t0": 8.4
+    },
+    {
+     "type": "label",
+     "text": "DOUX À L'HORIZON",
+     "size": 46,
+     "x": 0.75,
+     "y": 0.4,
+     "tone": "green",
+     "dur": 7,
+     "t0": 12.6
+    },
+    {
+     "type": "stamp",
+     "text": "RIEN SENTI",
+     "tone": "green",
+     "x": 0.75,
+     "y": 0.62,
+     "rot": 0.07,
+     "size": 110,
+     "dur": 11,
+     "t0": 15.6
+    },
+    {
+     "type": "pill",
+     "text": "PLUS MASSIF = GRAVITÉ PLUS DOUCE",
+     "size": 40,
+     "tone": "red",
+     "x": 0.3,
+     "y": 0.86,
+     "t0": 21.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 259.75,
+   "end": 277.15,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1400,
+     "y": 540,
+     "r": 240
+    },
+    {
+     "type": "astronaut",
+     "x": 760,
+     "y": 540,
+     "s": 75,
+     "rot": 0.2
+    },
+    {
+     "type": "chapter",
+     "n": "DANGER 4",
+     "text": "LE TEMPS",
+     "dur": 1.0,
+     "t0": 0.0
+    },
+    {
+     "type": "label",
+     "text": "près d'une forte gravité, le temps ralentit",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.08,
+     "dur": 3.6,
+     "t0": 4.5
+    },
+    {
+     "type": "label",
+     "text": "POUR TOI : RIEN D'ANORMAL",
+     "size": 44,
+     "x": 0.25,
+     "y": 0.85,
+     "tone": "green",
+     "dur": 2.4,
+     "t0": 8.9
+    },
+    {
+     "type": "label",
+     "text": "VU DE LOIN : TU RALENTIS",
+     "size": 50,
+     "x": 0.25,
+     "y": 0.85,
+     "tone": "yellow",
+     "dur": 2.8,
+     "t0": 11.3
+    },
+    {
+     "type": "stamp",
+     "text": "TU TE FIGES",
+     "tone": "yellow",
+     "x": 0.3,
+     "y": 0.3,
+     "rot": -0.07,
+     "size": 110,
+     "dur": 3,
+     "t0": 14.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 277.15,
+   "end": 291.55,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1400,
+     "y": 540,
+     "r": 240
+    },
+    {
+     "type": "tag",
+     "text": "SIMULATION · NASA",
+     "x": 0.04,
+     "y": 0.07,
+     "t0": 0.1
+    },
+    {
+     "type": "timer",
+     "label": "CAMÉRA · SON PROPRE TEMPS",
+     "to": 10800,
+     "x": 0.04,
+     "y": 0.15,
+     "t1": 4.0,
+     "t0": 2.0
+    },
+    {
+     "type": "label",
+     "text": "≈ 3 H · PRESQUE 2 TOURS EN CHEMIN",
+     "size": 42,
+     "x": 0.3,
+     "y": 0.55,
+     "dur": 3,
+     "t0": 5.1
+    },
+    {
+     "type": "label",
+     "text": "POUR L'OBSERVATEUR LOINTAIN : JAMAIS TOUT À FAIT",
+     "size": 40,
+     "x": 0.5,
+     "y": 0.92,
+     "tone": "red",
+     "dur": 3.2,
+     "t0": 7.5
+    },
+    {
+     "type": "stamp",
+     "text": "ÉTOILES GELÉES",
+     "tone": "yellow",
+     "x": 0.3,
+     "y": 0.5,
+     "rot": -0.07,
+     "size": 100,
+     "dur": 3.3,
+     "t0": 11.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 291.55,
+   "end": 323.55,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 260,
+     "y": 880,
+     "r": 50
+    },
+    {
+     "type": "label",
+     "text": "comment le sait-on, si personne n'y est allé ?",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "ON L'A VU",
+     "size": 70,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3.5,
+     "t0": 3.3
+    },
+    {
+     "type": "evidence",
+     "src": "media/eht_m87.jpg",
+     "credit": "EHT Collaboration (ESO, CC BY 4.0)",
+     "tag": "M87* · 10 AVRIL 2019 · PREMIÈRE IMAGE D'UN TROU NOIR",
+     "x": 0.6,
+     "y": 0.52,
+     "w": 1100,
+     "h": 641,
+     "dur": 27.5,
+     "zoom": 0.06,
+     "t0": 3.7
+    },
+    {
+     "type": "counter",
+     "label": "RADIOTÉLESCOPES",
+     "from": 0,
+     "to": 8,
+     "unit": "",
+     "x": 0.03,
+     "y": 0.2,
+     "t1": 1.0,
+     "t0": 12.6
+    },
+    {
+     "type": "label",
+     "text": "UN TÉLESCOPE GRAND COMME LA TERRE",
+     "size": 34,
+     "x": 0.14,
+     "y": 0.42,
+     "tone": "yellow",
+     "dur": 4,
+     "t0": 14.6
+    },
+    {
+     "type": "counter",
+     "label": "DISTANCE",
+     "from": 0,
+     "to": 55,
+     "unit": "millions d'a.l.",
+     "x": 0.03,
+     "y": 0.55,
+     "t1": 2.0,
+     "t0": 22.2
+    },
+    {
+     "type": "counter",
+     "label": "MASSE",
+     "from": 0,
+     "to": 6.5,
+     "decimals": 1,
+     "unit": "milliards de Soleils",
+     "x": 0.03,
+     "y": 0.72,
+     "t1": 2.0,
+     "t0": 24.7
+    },
+    {
+     "type": "label",
+     "text": "UN ANNEAU LUMINEUX AUTOUR D'UNE OMBRE NOIRE",
+     "size": 36,
+     "x": 0.6,
+     "y": 0.93,
+     "dur": 3.6,
+     "t0": 28.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 323.55,
+   "end": 330.85,
+   "els": [
+    {
+     "type": "evidence",
+     "src": "media/eht_sgra.jpg",
+     "credit": "EHT Collaboration (ESO, CC BY 4.0)",
+     "tag": "SAGITTARIUS A* · 2022 · LE TROU NOIR DE NOTRE GALAXIE",
+     "x": 0.5,
+     "y": 0.52,
+     "w": 760,
+     "h": 760,
+     "dur": 7.0,
+     "zoom": 0.06,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "2022 · LA MÊME ÉQUIPE",
+     "size": 48,
+     "x": 0.5,
+     "y": 0.07,
+     "tone": "yellow",
+     "dur": 3.5,
+     "t0": 0.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 330.85,
+   "end": 343.15,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 780,
+     "y": 560,
+     "r": 95
+    },
+    {
+     "type": "blackhole",
+     "x": 1130,
+     "y": 540,
+     "r": 80
+    },
+    {
+     "type": "label",
+     "text": "et on les entend aussi",
+     "size": 54,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 0.1
+    },
+    {
+     "type": "tag",
+     "text": "2015 · LIGO · ONDES GRAVITATIONNELLES",
+     "x": 0.04,
+     "y": 0.15,
+     "t0": 3.0
+    },
+    {
+     "type": "pill",
+     "text": "36 + 29 MASSES SOLAIRES",
+     "size": 44,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.25,
+     "t0": 9.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 343.15,
+   "end": 351.05,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 960,
+     "y": 540,
+     "r": 130
+    },
+    {
+     "type": "balance",
+     "left": "36 + 29",
+     "right": "62",
+     "tilt": 0.28,
+     "x": 0.22,
+     "y": 0.6,
+     "t0": 0.0
+    },
+    {
+     "type": "counter",
+     "label": "ÉNERGIE RAYONNÉE",
+     "from": 0,
+     "to": 3,
+     "unit": "masses solaires",
+     "x": 0.66,
+     "y": 0.12,
+     "t1": 1.6,
+     "t0": 3.3
+    },
+    {
+     "type": "label",
+     "text": "en une fraction de seconde",
+     "size": 44,
+     "x": 0.62,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 5.3
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 351.05,
+   "end": 371.95,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1450,
+     "y": 540,
+     "r": 170
+    },
+    {
+     "type": "tag",
+     "text": "SEPTEMBRE 2025 · LIGO-VIRGO-KAGRA",
+     "x": 0.04,
+     "y": 0.07,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "LE SIGNAL LE PLUS NET JAMAIS ENREGISTRÉ",
+     "size": 44,
+     "x": 0.34,
+     "y": 0.18,
+     "tone": "yellow",
+     "dur": 4,
+     "t0": 1.2
+    },
+    {
+     "type": "pill",
+     "text": "≈ 34 + 32 MASSES SOLAIRES",
+     "size": 42,
+     "tone": "red",
+     "x": 0.04,
+     "y": 0.26,
+     "t0": 5.9
+    },
+    {
+     "type": "label",
+     "text": "UNE PRÉDICTION DE HAWKING · 1971",
+     "size": 48,
+     "x": 0.3,
+     "y": 0.5,
+     "tone": "yellow",
+     "dur": 4.4,
+     "t0": 9.8
+    },
+    {
+     "type": "label",
+     "text": "APRÈS LA FUSION, L'AIRE DE L'HORIZON A AUGMENTÉ",
+     "size": 40,
+     "x": 0.3,
+     "y": 0.6,
+     "dur": 3.8,
+     "t0": 14.2
+    },
+    {
+     "type": "stamp",
+     "text": "CONFIRMÉ",
+     "tone": "green",
+     "x": 0.3,
+     "y": 0.78,
+     "rot": -0.06,
+     "size": 130,
+     "dur": 3.6,
+     "t0": 17.0
+    },
+    {
+     "type": "label",
+     "text": "plus grand que la somme des deux",
+     "size": 42,
+     "x": 0.5,
+     "y": 0.95,
+     "tone": "yellow",
+     "dur": 3.3,
+     "t0": 17.5
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 371.95,
+   "end": 404.75,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1500,
+     "y": 560,
+     "r": 220
+    },
+    {
+     "type": "astronaut",
+     "x": 440,
+     "y": 880,
+     "s": 80,
+     "rot": 0.3,
+     "vx": 10
+    },
+    {
+     "type": "label",
+     "text": "LE JEU DE LA SURVIE",
+     "size": 56,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.1
+    },
+    {
+     "type": "options",
+     "title": "TES OPTIONS",
+     "sc": 1.5,
+     "x": 0.04,
+     "y": 0.2,
+     "items": [
+      {
+       "text": "FUIR EN FUSÉE",
+       "at": 4.0,
+       "out": 6.600000000000023
+      },
+      {
+       "text": "ENVOYER UN ADIEU",
+       "at": 13.0,
+       "out": 15.600000000000023
+      },
+      {
+       "text": "GÉANT, SANS DISQUE",
+       "at": 22.100000000000023
+      }
+     ],
+     "t0": 3.8
+    },
+    {
+     "type": "stick",
+     "x": 0.62,
+     "y": 0.72,
+     "s": 300,
+     "pose": "panic",
+     "label": "TOI",
+     "dur": 28,
+     "t0": 4.1
+    },
+    {
+     "type": "stamp",
+     "text": "IMPOSSIBLE",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.08,
+     "size": 110,
+     "dur": 2.8,
+     "t0": 6.1
+    },
+    {
+     "type": "label",
+     "text": "pas même la lumière",
+     "size": 46,
+     "x": 0.5,
+     "y": 0.7,
+     "tone": "yellow",
+     "dur": 2,
+     "t0": 9.7
+    },
+    {
+     "type": "stamp",
+     "text": "IMPOSSIBLE",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": 0.08,
+     "size": 110,
+     "dur": 3,
+     "t0": 15.6
+    },
+    {
+     "type": "label",
+     "text": "pour ceux qui te regardent : tu es figé",
+     "size": 44,
+     "x": 0.3,
+     "y": 0.55,
+     "dur": 3,
+     "t0": 18.9
+    },
+    {
+     "type": "stamp",
+     "text": "TU NE REVIENS JAMAIS",
+     "tone": "yellow",
+     "x": 0.5,
+     "y": 0.5,
+     "rot": -0.06,
+     "size": 90,
+     "dur": 3.2,
+     "t0": 29.6
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 404.75,
+   "end": 424.35,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1560,
+     "y": 540,
+     "r": 180
+    },
+    {
+     "type": "label",
+     "text": "VERDICT",
+     "size": 70,
+     "x": 0.34,
+     "y": 0.12,
+     "tone": "yellow",
+     "dur": 3,
+     "t0": 0.1
+    },
+    {
+     "type": "label",
+     "text": "PETIT TROU NOIR  →  LES MARÉES",
+     "size": 54,
+     "x": 0.34,
+     "y": 0.35,
+     "tone": "red",
+     "dur": 15,
+     "t0": 1.8
+    },
+    {
+     "type": "label",
+     "text": "GÉANT  →  CHALEUR ET RAYONS X",
+     "size": 54,
+     "x": 0.34,
+     "y": 0.5,
+     "tone": "yellow",
+     "dur": 12.5,
+     "t0": 4.3
+    },
+    {
+     "type": "label",
+     "text": "L'INTÉRIEUR  →  PERSONNE NE SAIT",
+     "size": 54,
+     "x": 0.34,
+     "y": 0.65,
+     "dur": 6,
+     "t0": 10.9
+    },
+    {
+     "type": "stamp",
+     "text": "À SUIVRE",
+     "x": 0.34,
+     "y": 0.82,
+     "rot": -0.06,
+     "size": 110,
+     "dur": 3.8,
+     "t0": 15.5
+    },
+    {
+     "type": "tag",
+     "text": "MÊME LA NASA : ON IGNORE CE QU'IL Y A DEDANS",
+     "x": 0.04,
+     "y": 0.92,
+     "t0": 15.2
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 424.35,
+   "end": 446.45,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1560,
+     "y": 600,
+     "r": 50
+    },
+    {
+     "type": "planet",
+     "kind": "earth",
+     "seed": 2,
+     "x": 700,
+     "y": 620,
+     "r": 50,
+     "light": -1.6
+    },
+    {
+     "type": "label",
+     "text": "RETOUR À LA RÈGLE DU DÉBUT",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 3.4,
+     "t0": 0.2
+    },
+    {
+     "type": "label",
+     "text": "LE DANGER = LA DISTANCE, PAS L'ATTRACTION",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.18,
+     "dur": 5.2,
+     "t0": 2.3
+    },
+    {
+     "type": "pill",
+     "text": "DE LOIN : LA MÊME GRAVITÉ QU'UNE ÉTOILE",
+     "size": 38,
+     "x": 0.2,
+     "y": 0.3,
+     "tone": "red",
+     "t0": 8.2
+    },
+    {
+     "type": "counter",
+     "label": "GAIA BH1",
+     "from": 0,
+     "to": 1560,
+     "unit": "a.l.",
+     "x": 0.04,
+     "y": 0.45,
+     "t1": 1.4,
+     "t0": 12.7
+    },
+    {
+     "type": "stamp",
+     "text": "NE MENACE PERSONNE",
+     "tone": "green",
+     "x": 0.5,
+     "y": 0.7,
+     "rot": -0.06,
+     "size": 90,
+     "dur": 3,
+     "t0": 16.2
+    },
+    {
+     "type": "label",
+     "text": "le danger, c'est de s'en approcher",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.92,
+     "tone": "yellow",
+     "dur": 3.2,
+     "t0": 18.1
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.05
+   }
+  },
+  {
+   "start": 446.45,
+   "end": 454.75,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 1280,
+     "y": 540,
+     "r": 210
+    },
+    {
+     "type": "astronaut",
+     "x": 520,
+     "y": 540,
+     "s": 70,
+     "vx": -12,
+     "rot": 0.3
+    },
+    {
+     "type": "label",
+     "text": "un trou noir n'est pas un monstre qui rôde",
+     "size": 50,
+     "x": 0.5,
+     "y": 0.08,
+     "dur": 3.6,
+     "t0": 1.6
+    },
+    {
+     "type": "label",
+     "text": "c'est un endroit sans retour",
+     "size": 52,
+     "x": 0.5,
+     "y": 0.9,
+     "tone": "yellow",
+     "dur": 2.6,
+     "t0": 3.9
+    },
+    {
+     "type": "label",
+     "text": "on commence tout juste à le regarder en face",
+     "size": 44,
+     "x": 0.5,
+     "y": 0.08,
+     "tone": "yellow",
+     "dur": 2.4,
+     "t0": 5.8
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.12,
+    "zoomTo": 1.0,
+    "fx": 0.65
+   }
+  },
+  {
+   "start": 454.75,
+   "end": 465.74,
+   "els": [
+    {
+     "type": "blackhole",
+     "x": 900,
+     "y": 930,
+     "r": 90
+    },
+    {
+     "type": "astronaut",
+     "x": 650,
+     "y": 930,
+     "s": 60,
+     "rot": 0.3
+    },
+    {
+     "type": "endcard",
+     "text": "MERCI D'AVOIR REGARDÉ",
+     "ask": "PETIT TROU NOIR OU GÉANT ?",
+     "t0": 0.0
+    }
+   ],
+   "cam": {
+    "zoomFrom": 1.0,
+    "zoomTo": 1.04
+   },
+   "trans": "fade"
+  }
+ ]
+}
